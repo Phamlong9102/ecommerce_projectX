@@ -9,13 +9,13 @@ function DefaultLayout({ children }) {
       <div>
          <Header />
 
-         <div className="container">
+         <div className="container-1">
             <Menu />
             <div className="content">{children}</div>
          </div>
 
          <Footer />
-         <BackToTop />
+         {/* <BackToTop /> */}
       </div>
    );
 }

@@ -7,12 +7,8 @@ import Cart from '~/pages/Cart';
 import Checkout from '~/pages/Checkout';
 import Admin from '~/pages/Admin';
 import Search from '~/pages/Search';
-import Test from '~/pages/Test';
-
-
 
 // Phần products và phần checkout có thêm 1 layout riêng 
-
 
 const publicRoutes = [
   { path: '/', component: Home },
@@ -21,8 +17,6 @@ const publicRoutes = [
   { path: '/search', component: Search },
   { path: '/checkout', component: Checkout, layout: DefaultLayout2 },
   { path: '/products', component: Products, layout: DefaultLayout2 },
-
-  { path: '/test', component: Test, layout: null },
 ];
 
 const privateRoutes = [];
