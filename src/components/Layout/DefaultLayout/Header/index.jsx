@@ -1,6 +1,6 @@
 function Header() {
    return (
-      <header className="w-full hidden lg:flex xl:flex 2xl:flex text-color-header header-color header-height items-center justify-between leading-[0rem] select-none">
+      <header className="hidden lg:flex xl:flex 2xl:flex text-color-header header-color header-height items-center justify-between leading-[0rem] select-none">
          <div className="ml-12">
             <span className="text-xs">Free shipping on domestic orders over $150</span>
          </div>

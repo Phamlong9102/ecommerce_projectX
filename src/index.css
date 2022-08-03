@@ -6,7 +6,10 @@
    html {
       font-family: 'Poppins';
       font-family: 'Montserrat', sans-serif;
+      padding: 0; 
+      margin: 0; 
    }
+   /* Header */
    .header-color {
       @apply bg-black;
    }
@@ -15,5 +18,33 @@
    }
    .text-color-header {
       @apply text-white;
+   }
+   .text-menu-color {
+      @apply text-black;
+   }
+   
+   /* Footer */
+   /* Content footer*/ 
+   .font-size-content-footer {
+      @apply text-[13px]; 
+   }
+   .font-family-content-footer {
+      @apply font-['Montserrat']
+   }
+
+   /* Title footer*/
+   .font-size-title-footer {
+      @apply text-lg
+   }
+   .font-family-title-footer {
+      @apply font-['Poppins']
+   }
+   .font-weight-title-footer {
+      @apply font-semibold
+   }
+
+   /* hover styles content footer*/
+   .hover-styles-content-footer {
+      @apply text-white hover:text-slate-300		
    }
 }

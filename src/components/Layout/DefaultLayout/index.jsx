@@ -2,21 +2,26 @@
 import Header from './Header';
 import Menu from './Menu';
 import Footer from './Footer';
-import BackToTop from './BackToTop';
+// eslint-disable-next-line no-unused-vars
+import BackToTop from '../DefaultLayout2/BackToTop/ScrollButton';
 
 function DefaultLayout({ children }) {
    return (
-      <div>
+      <div className="">
          <Header />
 
-         <div className="container-1">
+         <div className="z-[999] body">
             <Menu />
-            <div className="content">{children}</div>
+            <div className="content">
+               {children}
+            </div>
+            <BackToTop />
          </div>
 
+         
          <Footer />
-         {/* <BackToTop /> */}
       </div>
+      
    );
 }
 

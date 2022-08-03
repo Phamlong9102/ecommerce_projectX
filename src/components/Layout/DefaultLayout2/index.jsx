@@ -2,9 +2,8 @@
 import Header from './Header';
 import Menu from './Menu';
 import Footer from './Footer';
-import BackToTop from './BackToTop';
+import BackToTop from '../DefaultLayout2/BackToTop/ScrollButton';
 import Directional from './Directional';
-
 
 function DefaultLayout({ children }) {
    return (

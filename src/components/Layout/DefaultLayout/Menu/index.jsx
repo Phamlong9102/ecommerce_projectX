@@ -7,7 +7,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function Menu() {
    return (
-      <div className="w-full flex justify-between mx-12 ">
+      <div className="flex justify-between mx-12 text-menu-color select-none">
          <div className="flex mt-9 cursor-pointer">
             <div>
                <a href="/">
@@ -43,7 +43,7 @@ function Menu() {
                </div>
                <span className="">Search</span>
             </div>
-            <div className="mr-5">
+            <div className="">
                <FontAwesomeIcon icon={faBars} />
             </div>
          </div>
