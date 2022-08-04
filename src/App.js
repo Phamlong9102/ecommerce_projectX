@@ -44,6 +44,7 @@ function App() {
                })}
             </Routes>
          </div>
+         {/* <script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script> */}
       </Router>
    );
 }

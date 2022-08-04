@@ -10,7 +10,7 @@ function DefaultLayout({ children }) {
       <div className="">
          <Header />
 
-         <div className="z-[999] body">
+         <div className="body">
             <Menu />
             <div className="content">
                {children}
@@ -19,7 +19,7 @@ function DefaultLayout({ children }) {
          </div>
 
          
-         <Footer />
+         {/* <Footer /> */}
       </div>
       
    );
