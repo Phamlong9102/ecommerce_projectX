@@ -1,5 +1,4 @@
 // Tải cơ định tuyến (Router) cho trang web
-
 import '~/index.css';
 import { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';

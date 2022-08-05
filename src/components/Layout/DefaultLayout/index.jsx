@@ -2,7 +2,6 @@
 import Header from './Header';
 import Menu from './Menu';
 import Footer from './Footer';
-// eslint-disable-next-line no-unused-vars
 import BackToTop from '../DefaultLayout2/BackToTop/ScrollButton';
 
 function DefaultLayout({ children }) {

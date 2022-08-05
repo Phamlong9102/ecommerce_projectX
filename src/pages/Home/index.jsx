@@ -1,15 +1,16 @@
 import 'tw-elements';
-import PinkBackGround from '~/images/PinkBackGround.jpg';
-import BlueBackGround from '~/images/BlueBackGround.jpg';
-import ElementSlide1 from '~/images/ElementSlide1.png';
-import ElementSlide2 from '~/images/ElementSlide2.png';
-import ElementSlide3 from '~/images/ElementSlide3.png';
-import ElementSlide4 from '~/images/ElementSlide4.png';
-import ElementSlide5 from '~/images/ElementSlide5.png';
-import ElementSlide6 from '~/images/ElementSlide6.png';
+import PinkBackGround from '~/images/HeaderImages/PinkBackGround.jpg';
+import BlueBackGround from '~/images/HeaderImages/BlueBackGround.jpg';
+import ElementSlide1 from '~/images/HeaderImages/ElementSlide1.png';
+import ElementSlide2 from '~/images/HeaderImages/ElementSlide2.png';
+import ElementSlide3 from '~/images/HeaderImages/ElementSlide3.png';
+import ElementSlide4 from '~/images/HeaderImages/ElementSlide4.png';
+import ElementSlide5 from '~/images/HeaderImages/ElementSlide5.png';
+import ElementSlide6 from '~/images/HeaderImages/ElementSlide6.png';
 
 function Home() {
    return (
+      // Carousel
       <div className="select-none mt-9 mx-[52px]">
          <div id="carouselExampleControls" class="carousel slide relative" data-bs-ride="carousel">
             <div class="carousel-inner relative w-full overflow-hidden">
@@ -79,6 +80,10 @@ function Home() {
             </div>
          </div>
       </div>
+
+      // Web banner
+      
+      
    );
 }
 

@@ -1,4 +1,4 @@
-import logoWeb from '~/images/logoWeb.png';
+import logoWeb from '~/images/HeaderImages/logoWeb.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';

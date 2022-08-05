@@ -1,5 +1,5 @@
-import whiteLogoWeb from '~/images/whiteLogoWeb.png';
-import visaCard from '~/images/visaCard.png';
+import whiteLogoWeb from '~/images/FooterImages/whiteLogoWeb.png';
+import visaCard from '~/images/FooterImages/visaCard.png';
 
 function Footer() {
    return (
