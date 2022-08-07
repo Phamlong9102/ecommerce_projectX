@@ -1,8 +1,10 @@
 // import Carousel
 import 'tw-elements';
-import 'flowbite';
-import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+// Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay, FreeMode } from 'swiper';
+import 'swiper/css/bundle';
 
 // first Carousel
 import PinkBackGround from '~/images/HeaderImages/PinkBackGround.jpg';
@@ -20,6 +22,15 @@ import banner02 from '~/images/BannerImages/banner02.png';
 import banner03 from '~/images/BannerImages/banner03.png';
 import banner04 from '~/images/BannerImages/banner04.jpg';
 import banner05 from '~/images/BannerImages/banner05.png';
+
+// Carousel Brand
+import brand01 from '~/images/CarouselBrand/brand01.png';
+import brand02 from '~/images/CarouselBrand/brand02.png';
+import brand03 from '~/images/CarouselBrand/brand03.png';
+import brand04 from '~/images/CarouselBrand/brand04.png';
+import brand05 from '~/images/CarouselBrand/brand05.png';
+import brand06 from '~/images/CarouselBrand/brand06.png';
+import brand07 from '~/images/CarouselBrand/brand07.png';
 
 import { Link } from 'react-router-dom';
 
@@ -123,71 +134,98 @@ function Home() {
             </div>
          </div>
 
-         <div className="flex text-center	 justify-center relative mt-[136px]">
-            <div className="absolute flex flex-col z-1">
+         <div className="flex text-center	 justify-center relative mt-[50px] ">
+            <div className="absolute flex flex-col mt-[76px] z-[100]">
                <span className="collection-title">Summer Collection</span>
                <span className="mt-[18px] describe-title">What they're saying</span>
             </div>
 
-            <div className="flex justify-center relative w-[1252px] h-[500px] bg-[#f7f8fa] mt-[136px] mx-[50px]">
-               <div className="swiper mySwiper">
-                  <div className="swiper-wrapper">
-                     <div className="swiper-slide">
-                        <div className="">
-                           <span className="">
-                              Ne sed vero libris, his vivendo referrentur an. Torquatos voluptatum sit
-                           </span>
-                           <span className="">
-                              ad. Legendos dignissim eu mea, sea ei doming inimicus asdolescens.
-                           </span>
-                           <span className="">
-                              Stet iusto deserunt sed in, ex quo quot invidunt.{' '}
-                           </span>
-                        </div>
-                        <div className="">
-                           <span className="">Johana Hughes</span>
-                           <span className="">DESIGNER</span>
-                        </div>
+            <div className="flex justify-center absolute w-[1252px] h-[500px] bg-[#f7f8fa] mt-[136px] mx-[50px]x">
+               <Swiper
+                  className="mySwiper cursor-pointer absolute top-12% w-[560px] h-[300px] mt-[60px] swiper-pagination-bullets"
+                  modules={[Pagination, Navigation, Autoplay]}
+                  pagination={{ clickable: true }}
+                  autoplay={true}
+                  loop={true}
+               >
+                  <SwiperSlide className="mt-[50px]">
+                     <div className="describe-content">
+                        <span className="">
+                           Ne sed vero libris, his vivendo referrentur an. Torquatos voluptatum sit
+                        </span>
+                        <span className="">ad. Legendos dignissim eu mea, sea ei doming inimicus asdolescens.</span>
+                        <span className="">Stet iusto deserunt sed in, ex quo quot invidunt.</span>
                      </div>
-                     <div className="">
-                        <div className="">
-                           <span className="">
-                              Duo alii persius qualisque in, sea ne affect iudicabit vituperatorribus.
-                           </span>
-                           <span className="">
-                              Exerci fabellas mei ea, est ad audire eripuit tincidunt. Omnes meliore
-                           </span>
-                           <span className="">
-                              qui id, sit no scaevola maluisset persequeris.
-                           </span>
-                        </div>
-                        <div className="">
-                           <span className="">Mario Jonson</span>
-                           <span className="">DESIGNER</span>
-                        </div>
+                     <div className="mt-10 flex flex-col">
+                        <span className="name-of-designer">Johana Hughes</span>
+                        <span className="name-of-job">DESIGNER</span>
                      </div>
-                     <div className="">
-                        <div className="">
-                           <span className="">
-                              At quidam dissentiet definition eam, te nec ullum similique.
-                           </span>
-                           <span className="">
-                              Verear appareat advarsarium id eos, eum ei aperivi vivendo quaestio,
-                           </span>
-                           <span className="">mea leg ea. Quo probo noluisse menandri an.</span>
-                        </div>
-                        <div className="">
-                           <span className="">Jenifer Jacobs</span>
-                           <span className="">DESIGNER</span>
-                        </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="mt-[50px]">
+                     <div className="describe-content">
+                        <span className="">
+                           Duo alii persius qualisque in, sea ne affect iudicabit vituperatorribus.
+                        </span>
+                        <span className="">Exerci fabellas mei ea, est ad audire eripuit tincidunt. Omnes meliore</span>
+                        <span className="">qui id, sit no scaevola maluisset persequeris.</span>
                      </div>
-                  </div>
-                  <div className="swiper-button-next btn_btn"></div>
-                  <div className="swiper-button-prev btn_btn"></div>
-                  <div className="swiper-pagination"></div>
+                     <div className="mt-10 flex flex-col">
+                        <span className="name-of-designer">Mario Jonson</span>
+                        <span className="name-of-job">DESIGNER</span>
+                     </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="mt-[50px]">
+                     <div className="describe-content">
+                        <span className="">At quidam dissentiet definition eam, te nec ullum similique.</span>
+                        <span className="">Verear appareat advarsarium id eos, eum ei aperivi vivendo quaestio,</span>
+                        <span className="">mea leg ea. Quo probo noluisse menandri an.</span>
+                     </div>
+                     <div className="mt-10 flex flex-col">
+                        <span className="name-of-designer">Jenifer Jacobs</span>
+                        <span className="name-of-job">DESIGNER</span>
+                     </div>
+                  </SwiperSlide>
+               </Swiper>
+
+               <div className="absolute top-[64%] cursor-pointer w-[1252px] h-[48px]">
+                  <Swiper
+                     className="mySwiper w-[100%] top-[80%]"
+                     slidesPerView={5}
+                     spaceBetween={30}
+                     loop={true}
+                     autoplay={{
+                        delay: 2500
+                     }}
+                     freeMode={true}
+                     modules={[FreeMode, Autoplay]}
+                  >
+                     <SwiperSlide className="">
+                        <img className="" src={brand01} alt="" />
+                     </SwiperSlide>
+                     <SwiperSlide className="">
+                        <img className="" src={brand02} alt="" />
+                     </SwiperSlide>
+                     <SwiperSlide className="">
+                        <img className="" src={brand03} alt="" />
+                     </SwiperSlide>
+                     <SwiperSlide className="">
+                        <img className="" src={brand04} alt="" />
+                     </SwiperSlide>
+                     <SwiperSlide className="">
+                        <img className="" src={brand05} alt="" />
+                     </SwiperSlide>
+                     <SwiperSlide className="">
+                        <img className="" src={brand06} alt="" />
+                     </SwiperSlide>
+                     <SwiperSlide className="">
+                        <img className="" src={brand07} alt="" />
+                     </SwiperSlide>
+                  </Swiper>
                </div>
             </div>
          </div>
+
+         
       </>
    );
 }

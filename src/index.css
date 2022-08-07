@@ -7,6 +7,8 @@
    :root {
       --header-color: #000;
       --header-height: 48px;
+      --swiper-theme-color: #000 !important; 
+      --swiper-pagination-bullet-inactive-color: #000 !important;
    }
 
    * {
@@ -22,6 +24,39 @@
       font-family: 'Montserrat', sans-serif;
       padding: 0;
       margin: 0;
+   }
+
+   /* Swpier */
+   .swiper {
+      width: 100%;
+      height: 100%;
+   }
+
+   .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+   }
+
+   .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
    }
    /* Header */
    .header-color {
@@ -64,25 +99,34 @@
 
    /* Banner styles */
    .banner-text {
-      @apply text-white text-[120px] font-['Poppins'] font-bold leading-[120px]
+      @apply text-white text-[120px] font-['Poppins'] font-bold leading-[120px];
    }
 
    /* Collection title */
    .collection-title {
-      @apply text-[13px] uppercase font-normal		tracking-widest leading-[21px] font-['Montserrat'] text-[#3d3d3d]
+      @apply text-[13px] uppercase font-normal		tracking-widest leading-[21px] font-['Montserrat'] text-[#3d3d3d];
    }
    .describe-title {
-      @apply font-semibold font-['Poppins'] text-[38px] leading-[1.1em] text-black
+      @apply font-semibold font-['Poppins'] text-[38px] leading-[1.1em] text-black;
    }
 
    /* Describe Designer */
    .describe-content {
-      @apply text-[16px] leading-[26px] text-[#3d3d3d] font-normal font-['Montserrat']
+      @apply text-[16px] leading-[26px] text-[#3d3d3d] font-normal font-['Montserrat'];
    }
    .name-of-designer {
-      @apply text-[16px] font-semibold	font-['Montserrat'] leading-[1.33em] text-black
+      @apply text-[16px] font-semibold	font-['Montserrat'] leading-[1.33em] text-black;
    }
    .name-of-job {
-      @apply text-[10px] uppercase font-normal tracking-[0.16em] leading-[21px] font-['Montserrat']
+      @apply text-[10px] uppercase font-normal tracking-[0.16em] leading-[21px] font-['Montserrat'];
    }
+
+   .back-ground-color-black {
+      @apply text-black !important
+   }
+
+   .swiper-pagination-bullets {
+      @apply bottom-[50px] !important
+   }
+
 }
