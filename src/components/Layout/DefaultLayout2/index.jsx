@@ -3,22 +3,24 @@ import Header from './Header';
 import Menu from './Menu';
 import Footer from './Footer';
 import BackToTop from '../DefaultLayout2/BackToTop/ScrollButton';
-import Directional from './Directional';
 
 function DefaultLayout({ children }) {
    return (
-      <div>
+      <div className="">
          <Header />
 
-         <div className="container">
+         <div className="body">
             <Menu />
-            <Directional /> 
-            <div className="content">{children}</div>
+            <div className="content">
+               {children}
+            </div>
+            <BackToTop />
          </div>
 
+         
          <Footer />
-         <BackToTop />
       </div>
+      
    );
 }
 

@@ -2,13 +2,14 @@
 import { DefaultLayout2 } from '~/components/Layout'; 
 
 import Home from '~/pages/Home';
-import Products from '~/pages/Products';
+import Store from '~/pages/Store';
+import ProductsDetail from '~/pages/ProductsDetail';
 import Cart from '~/pages/Cart';
 import Checkout from '~/pages/Checkout';
 import Admin from '~/pages/Admin';
 import Search from '~/pages/Search';
 
-// Phần products và phần checkout có thêm 1 layout riêng 
+// Phần Store và phần Checkout có thêm 1 layout riêng 
 
 const publicRoutes = [
   { path: '/', component: Home },
@@ -16,7 +17,9 @@ const publicRoutes = [
   { path: '/cart', component: Cart },
   { path: '/search', component: Search },
   { path: '/checkout', component: Checkout, layout: DefaultLayout2 },
-  { path: '/products', component: Products, layout: DefaultLayout2 },
+  { path: '/store', component: Store, layout: DefaultLayout2 },
+  { path: '/productsdetail', component: ProductsDetail, layout: DefaultLayout2 },
+
 ];
 
 const privateRoutes = [];

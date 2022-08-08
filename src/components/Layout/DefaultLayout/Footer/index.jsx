@@ -3,7 +3,7 @@ import visaCard from '~/images/FooterImages/visaCard.png';
 
 function Footer() {
    return (
-      <footer className="z-[-1] w-full fixed bottom-0 left-0 h-[522px] bg-black text-white">
+      <footer className="w-full bottom-0 left-0 h-[522px] mt-[400px] bg-black text-white select-none">
          <div className="flex justify-between mx-32 pt-[132px] pb-[10px]">
             <div className="">
                <div>

@@ -1,12 +1,13 @@
 // import Carousel
 import 'tw-elements';
+import { Link } from 'react-router-dom';
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, FreeMode } from 'swiper';
 import 'swiper/css/bundle';
 
-// first Carousel
+// Under Menu
 import PinkBackGround from '~/images/HeaderImages/PinkBackGround.jpg';
 import BlueBackGround from '~/images/HeaderImages/BlueBackGround.jpg';
 import ElementSlide1 from '~/images/HeaderImages/ElementSlide1.png';
@@ -15,6 +16,32 @@ import ElementSlide3 from '~/images/HeaderImages/ElementSlide3.png';
 import ElementSlide4 from '~/images/HeaderImages/ElementSlide4.png';
 import ElementSlide5 from '~/images/HeaderImages/ElementSlide5.png';
 import ElementSlide6 from '~/images/HeaderImages/ElementSlide6.png';
+
+// Products Demo
+import ProductsDemo01 from '~/images/ProductsDemo/ProductsDemo01.jpg';
+import ProductsDemo02 from '~/images/ProductsDemo/ProductsDemo02.jpg';
+import ProductsDemo03 from '~/images/ProductsDemo/ProductsDemo03.jpg';
+import ProductsDemo04 from '~/images/ProductsDemo/ProductsDemo04.jpg';
+import ProductsDemo05 from '~/images/ProductsDemo/ProductsDemo05.jpg';
+import ProductsDemo06 from '~/images/ProductsDemo/ProductsDemo06.jpg';
+import ProductsDemo07 from '~/images/ProductsDemo/ProductsDemo07.jpg';
+import ProductsDemo08 from '~/images/ProductsDemo/ProductsDemo08.jpg';
+
+// Shopping everyday
+import SE01 from '~/images/ShoppingEveryDay/SE01.jpg'
+import SE02 from '~/images/ShoppingEveryDay/SE02.jpg'
+import SE03 from '~/images/ShoppingEveryDay/SE03.jpg'
+import SE04 from '~/images/ShoppingEveryDay/SE04.jpg'
+import SE05 from '~/images/ShoppingEveryDay/SE05.jpg'
+import SE06 from '~/images/ShoppingEveryDay/SE06.jpg'
+import SE07 from '~/images/ShoppingEveryDay/SE07.jpg'
+import SE08 from '~/images/ShoppingEveryDay/SE08.jpg'
+
+// Bag and Backpacks 
+import Bag01 from '~/images/BagAndBackpacks/Bag01.jpg'
+import Bag02 from '~/images/BagAndBackpacks/Bag02.jpg'
+import Bag03 from '~/images/BagAndBackpacks/Bag03.jpg'
+import Bag04 from '~/images/BagAndBackpacks/Bag04.jpg'
 
 // Web banner
 import banner01 from '~/images/BannerImages/banner01.png';
@@ -32,7 +59,14 @@ import brand05 from '~/images/CarouselBrand/brand05.png';
 import brand06 from '~/images/CarouselBrand/brand06.png';
 import brand07 from '~/images/CarouselBrand/brand07.png';
 
-import { Link } from 'react-router-dom';
+// TimeToShine
+import TimeToShine01 from '~/images/TimeToShine/TimeToShine01.png';
+
+// Fashion Blog
+import FashionBlog01 from '~/images/FashionBlog/FashionBlog01.jpg';
+import FashionBlog02 from '~/images/FashionBlog/FashionBlog02.jpg';
+import FashionBlog03 from '~/images/FashionBlog/FashionBlog03.jpg';
+import FashionBlog04 from '~/images/FashionBlog/FashionBlog04.jpg';
 
 function Home() {
    return (
@@ -108,6 +142,257 @@ function Home() {
             </div>
          </div>
 
+         {/* ProductsDemo  */}
+         <div className="flex mt-[86px] justify-center select-none cursor-pointer">
+            <div className="relative max-w-[358px] mr-[90px]">
+               <div className="absolute flex flex-col z-[100] top-[27%] left-[-33%]">
+                  <div className="">
+                     <span className="title-products-demo">Elegant and</span>
+                  </div>
+                  <div className="">
+                     <span className="title-products-demo">Stylish Look</span>
+                  </div>
+               </div>
+
+               <div className="absolute z-[100] top-[44%] left-[-31%] underline underline-offset-8">
+                  <span className="see-whole-collection">See Whole Collection</span>
+               </div>
+
+               <Swiper
+                  className="absolute mySwiper max-w-[358px] "
+                  navigation={true}
+                  loop={true}
+                  modules={[Navigation]}
+               >
+                  <SwiperSlide>
+                     <img className="relative" src={ProductsDemo03} alt="" />
+                     <div className="absolute top-[3%] left-[5%]">
+                        <span className="price-products-demo">$350.00</span>
+                     </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                     <img className="relative" src={ProductsDemo02} alt="" />
+                     <div className="absolute top-[3%] left-[5%]">
+                        <span className="price-products-demo">$230.00</span>
+                     </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                     <img className="relative" src={ProductsDemo01} alt="" />
+                     <div className="absolute top-[3%] left-[5%]">
+                        <span className="price-products-demo">$270.00</span>
+                     </div>
+                  </SwiperSlide>
+               </Swiper>
+            </div>
+
+            <div className="max-w-[284px] ml-[90px] mt-[146px]">
+               <img src={ProductsDemo04} alt="" />
+            </div>
+         </div>
+
+         {/* Products Demo 2 */}
+         <div className="flex justify-center">
+            <div className="select-none mr-[90px] mt-[134px] pl-[144px]">
+               <img className="h-[282px] " src={ProductsDemo05} alt="" />
+            </div>
+
+            <div className="relative max-w-[358px] ml-[90px]">
+               <div className="absolute flex flex-col z-[100] top-[27%] left-[-33%]">
+                  <div className="">
+                     <span className="title-products-demo">Elegant and</span>
+                  </div>
+                  <div className="">
+                     <span className="title-products-demo">Stylish Look</span>
+                  </div>
+               </div>
+
+               <div className="absolute z-[100] top-[44%] left-[-31%] underline underline-offset-8">
+                  <span className="see-whole-collection">See Whole Collection</span>
+               </div>
+
+               <Swiper
+                  className="absolute mySwiper max-w-[358px] "
+                  navigation={true}
+                  loop={true}
+                  modules={[Navigation]}
+               >
+                  <SwiperSlide>
+                     <img className="relative" src={ProductsDemo06} alt="" />
+                     <div className="absolute top-[3%] left-[5%]">
+                        <span className="price-products-demo">$250.00</span>
+                     </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                     <img className="relative" src={ProductsDemo07} alt="" />
+                     <div className="absolute top-[3%] left-[5%]">
+                        <span className="price-products-demo">$550.00</span>
+                     </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                     <img className="relative" src={ProductsDemo08} alt="" />
+                     <div className="absolute top-[3%] left-[5%]">
+                        <span className="price-products-demo">$130.00</span>
+                     </div>
+                  </SwiperSlide>
+               </Swiper>
+            </div>
+         </div>
+
+         {/* Summer collection Shopping everyday */}
+         <div className="mt-[130px] flex flex-col text-center">
+            <div className=" ">
+               <span className="bag-and-bagpacks-summer-collection">Summer Collection</span>
+            </div>
+            <div className="mt-[16px]">
+               <span className="describe-title">Shopping Everyday</span>
+            </div>
+            <div className="mt-[20px]">
+               <span className="describe-content">Autem neglegentur in duo, ex aperiam fabulas mei, exerci</span>
+            </div>
+            <div className="">
+               <span className="describe-content">menandri explicari ut mei. Eam cibo et.</span>
+            </div>
+         </div>
+
+         {/* Shopping everyday products  */}
+         <div className="mt-[60px] select-none flex justify-center selection-default">
+            <div className="grid grid-cols-4 gap-4">
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={SE01} alt="" />
+                  <div className="absolute top-[3%] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
+                     <span className="head-tag-fashion-blog">New</span>
+                  </div>
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Clutch Bag</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$225.00</span>
+                     </div>
+                  </div>
+                  <div className=''>
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+                  
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={SE02} alt="" />
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Orange Airsuit</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$175.00</span>
+                     </div>
+                  </div>
+                  <div className=''>
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+                  
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={SE03} alt="" />
+                  <div className="absolute top-[3%] left-[3%] w-[50px] h-[20px] bg-black text-white leading-[20px] text-center rotate-90">
+                     <span className="head-tag-fashion-blog">Sale</span>
+                  </div>
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Orange Sandal</span>
+                     </div>
+                     <div>
+                        <span className="price-line-through-shopping-everyday-products">$125.00</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$175.00</span>
+                     </div>
+                  </div>
+                  <div className=''>
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+                  
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={SE04} alt="" />
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Blue Suit</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$360.00</span>
+                     </div>
+                  </div>
+                  <div className=''>
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+                  
+               </div>
+               <div className="relative cursor-pointer mx-[8px] mt-[64px]">
+                  <img className="w-full max-h-[342px]" src={SE05} alt="" />
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Orange Weil</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$60.00</span>
+                     </div>
+                  </div>
+                  <div className=''>
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+                  
+               </div>
+               <div className="relative cursor-pointer mx-[8px] mt-[64px]">
+                  <img className="w-full max-h-[342px]" src={SE06} alt="" />
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">White Purse</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$75.00</span>
+                     </div>
+                  </div>
+                  <div className=''>
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+                  
+               </div>
+               <div className="relative cursor-pointer mx-[8px] mt-[64px]">
+                  <img className="w-full max-h-[342px]" src={SE07} alt="" />
+                  <div className="absolute top-[3%] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
+                     <span className="head-tag-fashion-blog">New</span>
+                  </div>
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Red Suit</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$456.00</span>
+                     </div>
+                  </div>
+                  <div className=''>
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+                  
+               </div>
+               <div className="relative cursor-pointer mx-[8px] mt-[64px]">
+                  <img className="w-full max-h-[342px]" src={SE08} alt="" />
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Golden Sandals</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$115.00</span>
+                     </div>
+                  </div>
+                  <div className=''>
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+
+         {/* Sleeveless top */}
          <div className="mt-[122px] select-none flex justify-center">
             <div className="relative bg-test w-[1347px] h-[700px]">
                <div className="absolute right-0">
@@ -134,8 +419,68 @@ function Home() {
             </div>
          </div>
 
-         <div className="flex text-center	 justify-center relative mt-[50px] ">
-            <div className="absolute flex flex-col mt-[76px] z-[100]">
+         <div className='flex text-center flex-col mt-[130px]'>
+            <div className="">
+               <span className='bag-and-bagpacks-summer-collection'>Summer Collection</span>
+            </div>
+            <div className="mt-[16px]">
+               <span className='describe-title'>Bags and Backpacks</span>
+            </div>
+         </div>
+
+         <div className='flex justify-center mt-[50px] select-none '>
+            <div className='grid grid-cols-4 gap-4'>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={Bag01} alt="" />
+                  <div className="flex flex-col text-center mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Mission Bag</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$110.00</span>
+                     </div>
+                  </div>
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={Bag02} alt="" />
+                  <div className="flex flex-col text-center mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">City Mini Bag</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$85.00</span>
+                     </div>
+                  </div> 
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={Bag03} alt="" />           
+                  <div className="flex flex-col text-center mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Shoudler Bag</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$90.00</span>
+                     </div>
+                  </div>
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={Bag04} alt="" />
+                  <div className="flex flex-col text-center mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Drawstring Bag</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$360.00</span>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+
+         {/* What they're saying*/}
+         <div className="flex justify-center text-center w-full h-[634px] mt-[80px] relative selection-default">
+            <div className="absolute flex text-center justify-center flex-col mt-[76px] z-[100]">
                <span className="collection-title">Summer Collection</span>
                <span className="mt-[18px] describe-title">What they're saying</span>
             </div>
@@ -194,7 +539,7 @@ function Home() {
                      spaceBetween={30}
                      loop={true}
                      autoplay={{
-                        delay: 2500
+                        delay: 2500,
                      }}
                      freeMode={true}
                      modules={[FreeMode, Autoplay]}
@@ -225,7 +570,120 @@ function Home() {
             </div>
          </div>
 
-         
+         {/* Time to shine */}
+         <div className="flex justify-center mt-[200px] ">
+            <div className="bg-test relative w-[1347px] h-[600px]">
+               <div className="absolute top-0 left-[4%] bg-[#ecf4fa] w-[684px] h-[500px]">
+                  <div className="absolute top-[-14%] left-[9%]">
+                     <img className="w-[83%]" src={TimeToShine01} alt="" />
+                  </div>
+               </div>
+
+               <div className="absolute top-[8%] left-[52%] flex flex-col selection-default">
+                  <span className="collection-title ">Summer Collecton</span>
+                  <span className="describe-title mt-[18px]">Time to Shine</span>
+
+                  <div className="flex flex-col mt-[40px] describe-content">
+                     <span>Ne sed vero libris, his vivendo referrentur an.</span>
+                     <span>Torquatos voluptatum sit ad. Legendos dignissim eu</span>
+                     <span>Torquatos voluptatum sit ad. Legendos dignissim eu</span>
+                     <span>deserunt sed in, ex quo quot invidunt.</span>
+                     <span className="mt-[68px] see-whole-collection underline underline-offset-8">
+                        See Whole Collection
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         {/* FashionBlog title*/}
+         <div className="selection-default">
+            <div className="flex flex-col text-center justify-center">
+               <span className="collection-title">Love Shopping</span>
+               <span className="describe-title mt-[18px]">Fashion Blog</span>
+            </div>
+            <div className="describe-content flex flex-col text-center justify-center mt-[18px]">
+               <span>Autem neglegentur in duo, ex aperiam fabulas mei, exerci</span>
+               <span>menandri explicari ut mei. Eam cibo.</span>
+            </div>
+         </div>
+
+         {/* Fashion Blog */}
+         <div className="mt-[60px] select-none flex justify-center selection-default">
+            <div className="grid grid-cols-4 gap-4">
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={FashionBlog01} alt="" />
+                  <div className="absolute top-[calc(8%-2px)] left-[-15%] w-[114px] h-[40px] bg-white text-black leading-[40px] text-center rotate-90">
+                     <span className="head-tag-fashion-blog">September 9</span>
+                  </div>
+                  <div className="flex flex-col name-of-job mt-[28px]">
+                     <span>Admin / Accessories / Casual</span>
+                  </div>
+                  <div className="flex flex-col title-content-blog-styles mt-[6px]">
+                     <span>Believe that life is worth</span>
+                     <span>living and your belief will </span>
+                     <span>help create the fact.</span>
+                  </div>
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={FashionBlog02} alt="" />
+                  <div className="absolute top-[calc(8%-2px)] left-[-15%] w-[114px] h-[40px] bg-white text-black leading-[40px] text-center rotate-90">
+                     <span className="head-tag-fashion-blog">September 9</span>
+                  </div>
+                  <div className="flex flex-col name-of-job mt-[28px]">
+                     <span>Admin / Accessories / Style</span>
+                  </div>
+                  <div className="flex flex-col title-content-blog-styles mt-[6px]">
+                     <span>Age and size are only </span>
+                     <span>numbers. It's the attitude</span>
+                     <span>you bring to clothes.</span>
+                  </div>
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={FashionBlog03} alt="" />
+                  <div className="absolute top-[calc(8%-2px)] left-[-15%] w-[114px] h-[40px] bg-white text-black leading-[40px] text-center rotate-90">
+                     <span className="head-tag-fashion-blog">September 9</span>
+                  </div>
+                  <div className="flex flex-col name-of-job mt-[28px]">
+                     <span>Admin / Accessories / Minimal</span>
+                  </div>
+                  <div className="flex flex-col title-content-blog-styles mt-[6px]">
+                     <span>Any half-awake materialist</span>
+                     <span>well knows - which you</span>
+                     <span>hold holds you.</span>
+                  </div>
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={FashionBlog04} alt="" />
+                  <div className="absolute top-[calc(8%-2px)] left-[-15%] w-[114px] h-[40px] bg-white text-black leading-[40px] text-center rotate-90">
+                     <span className="head-tag-fashion-blog">September 9</span>
+                  </div>
+                  <div className="flex flex-col name-of-job mt-[28px]">
+                     <span>Admin / Accessories / Creative</span>
+                  </div>
+                  <div className="flex flex-col title-content-blog-styles mt-[6px]">
+                     <span>Comfort and simplicity are</span>
+                     <span>two keys that I follow when it</span>
+                     <span>comes to fashion.</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         {/* Join our Newletter */}
+         <div className="flex relative justify-center mt-[100px] mx-[48px] selection-default">
+            <div className="absolute bg-[#f7f8fa] w-[1248px] min-h-[320px] mx-[48px]">
+               <div className="absolute top-[-7%] left-[36%]">
+                  <span className="describe-title">Join our Newsletter</span>
+               </div>
+               <div className="absolute  mt-[70px] left-[26%] text-center underline underline-offset-[14px]">
+                  <input className="your-email" type="text" placeholder="Your email" />
+               </div>
+               <div className="absolute cursor-pointer w-[128px] h-[46px] bg-black top-[45%] left-[45%] text-center leading-[46px]">
+                  <button className="button-newsletter">Send</button>
+               </div>
+            </div>
+         </div>
       </>
    );
 }

@@ -18,7 +18,7 @@ function DefaultLayout({ children }) {
          </div>
 
          
-         {/* <Footer /> */}
+         <Footer />
       </div>
       
    );

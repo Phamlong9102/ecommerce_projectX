@@ -3,130 +3,200 @@
 @tailwind utilities;
 
 @layer components {
-   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-   :root {
-      --header-color: #000;
-      --header-height: 48px;
-      --swiper-theme-color: #000 !important; 
-      --swiper-pagination-bullet-inactive-color: #000 !important;
-   }
+   /* CSS chung */
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+      :root {
+         --header-color: #000;
+         --header-height: 48px;
+         --swiper-theme-color: #000 !important; 
+         --swiper-pagination-bullet-inactive-color: #000 !important;
+      }
 
-   * {
-      box-sizing: border-box;
-   }
+      * {
+         box-sizing: border-box;
+      }
 
-   body {
-      text-rendering: optimizeSpeed;
-   }
+      body {
+         text-rendering: optimizeSpeed;
+      }
 
-   html {
-      font-family: 'Poppins';
-      font-family: 'Montserrat', sans-serif;
-      padding: 0;
-      margin: 0;
-   }
+      html {
+         font-family: 'Poppins';
+         font-family: 'Montserrat';
+         padding: 0;
+         margin: 0;
+      }
+   /* Hết CSS chung */
 
    /* Swpier */
-   .swiper {
-      width: 100%;
-      height: 100%;
-   }
+      .swiper {
+         width: 100%;
+         height: 100%;
+      }
+      .swiper-slide {
+         text-align: center;
+         font-size: 18px;
+         background: #fff;
+         /* Center slide text vertically */
+         display: -webkit-box;
+         display: -ms-flexbox;
+         display: -webkit-flex;
+         display: flex;
+         -webkit-box-pack: center;
+         -ms-flex-pack: center;
+         -webkit-justify-content: center;
+         justify-content: center;
+         -webkit-box-align: center;
+         -ms-flex-align: center;
+         -webkit-align-items: center;
+         align-items: center;
+      }
+      .swiper-slide img {
+         display: block;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   /* Hết Swpier */
 
-   .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
+   /* Trang Home */
+      /* Header */
+      .header-color {
+         @apply bg-black;
+      }
+      .header-height {
+         @apply h-12;
+      }
+      .text-color-header {
+         @apply text-white;
+      }
+      .text-menu-color {
+         @apply text-black;
+      }
 
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-   }
+      /* Products Demo */
+      .price-products-demo {
+         @apply text-[16px] font-['Montserrat'] font-medium	
+      }
+      .title-products-demo {
+         @apply text-[25px] font-['Poppins'] font-semibold 
+      }
+      .see-whole-collection {
+         @apply text-[13px] font-['Poppins'] font-semibold
+      }
 
-   .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-   }
-   /* Header */
-   .header-color {
-      @apply bg-black;
-   }
-   .header-height {
-      @apply h-12;
-   }
-   .text-color-header {
-      @apply text-white;
-   }
-   .text-menu-color {
-      @apply text-black;
-   }
+      /* Shopping everyday products */
+      .price-shopping-everyday-products {
+         @apply text-[14px] font-['Poppins'] font-normal	
+      }
+      .price-line-through-shopping-everyday-products {
+         @apply  text-[#a8a8a8]	 line-through text-[14px] font-['Poppins'] font-normal	
+      }
+      .products-name-shopping-everyday {
+         @apply text-[16px] font-['Poppins'] font-semibold 
+      }
+      .clothes-shopping-everyday-products {
+         @apply text-[10px] uppercase font-medium leading-[0.16em] 
+      }
 
-   /* Footer */
-   /* Content footer*/
-   .font-size-content-footer {
-      @apply text-[13px];
-   }
-   .font-family-content-footer {
-      @apply font-['Montserrat'];
-   }
+      /* Bags and Backpacks */
+      .bag-and-bagpacks-summer-collection {
+         @apply text-[12px] uppercase font-medium tracking-[0.29em] leading-[21px] font-['Montserrat'] text-[#3d3d3d]
+      }
 
-   /* Title footer*/
-   .font-size-title-footer {
-      @apply text-lg;
-   }
-   .font-family-title-footer {
-      @apply font-['Poppins'];
-   }
-   .font-weight-title-footer {
-      @apply font-semibold;
-   }
 
-   /* hover styles content footer*/
-   .hover-styles-content-footer {
-      @apply text-white hover:text-slate-300;
-   }
+      /* Footer */
+      /* Content footer*/
+      .font-size-content-footer {
+         @apply text-[13px];
+      }
+      .font-family-content-footer {
+         @apply font-['Montserrat'];
+      }
 
-   /* Banner styles */
-   .banner-text {
-      @apply text-white text-[120px] font-['Poppins'] font-bold leading-[120px];
-   }
+      /* Title footer*/
+      .font-size-title-footer {
+         @apply text-lg;
+      }
+      .font-family-title-footer {
+         @apply font-['Poppins'];
+      }
+      .font-weight-title-footer {
+         @apply font-semibold;
+      }
 
-   /* Collection title */
-   .collection-title {
-      @apply text-[13px] uppercase font-normal		tracking-widest leading-[21px] font-['Montserrat'] text-[#3d3d3d];
-   }
-   .describe-title {
-      @apply font-semibold font-['Poppins'] text-[38px] leading-[1.1em] text-black;
-   }
+      /* hover styles content footer*/
+      .hover-styles-content-footer {
+         @apply text-white hover:text-slate-300;
+      }
 
-   /* Describe Designer */
-   .describe-content {
-      @apply text-[16px] leading-[26px] text-[#3d3d3d] font-normal font-['Montserrat'];
-   }
-   .name-of-designer {
-      @apply text-[16px] font-semibold	font-['Montserrat'] leading-[1.33em] text-black;
-   }
-   .name-of-job {
-      @apply text-[10px] uppercase font-normal tracking-[0.16em] leading-[21px] font-['Montserrat'];
-   }
+      /* Banner styles */
+      .banner-text {
+         @apply text-white text-[120px] font-['Poppins'] font-bold leading-[120px];
+      }
 
-   .back-ground-color-black {
-      @apply text-black !important
-   }
+      /* Collection title */
+      .collection-title {
+         @apply text-[13px] uppercase font-normal		tracking-widest leading-[21px] font-['Montserrat'] text-[#3d3d3d];
+      }
+      .describe-title {
+         @apply font-semibold font-['Poppins'] text-[38px] leading-[1.1em] text-black;
+      }
 
-   .swiper-pagination-bullets {
-      @apply bottom-[50px] !important
-   }
+      /* Describe Designer */
+      .describe-content {
+         @apply text-[16px] leading-[26px] text-[#3d3d3d] font-normal font-['Montserrat'];
+      }
+      .name-of-designer {
+         @apply text-[16px] font-semibold	font-['Montserrat'] leading-[1.33em] text-black;
+      }
+      .name-of-job {
+         @apply text-[10px] uppercase font-normal tracking-[0.16em] leading-[21px] font-['Montserrat'];
+      }
+
+      .back-ground-color-black {
+         @apply text-black !important
+      }
+
+      .swiper-pagination-bullets {
+         @apply bottom-[50px] !important
+      }
+
+      /* Selection default */
+      .selection-default {
+         @apply selection:bg-black selection:text-white
+      }
+
+      /* See Whole Collection */
+      .see-whole-collection {
+         @apply text-[13px] font-['Poppins'] font-semibold text-black
+      }
+
+      .head-tag-fashion-blog {
+         @apply  text-[12px] font-['Montserrat'] uppercase
+      }
+
+      /* Fashion Blog */
+      .title-content-blog-styles {
+         @apply text-[18px] font-['Poppins'] text-black font-semibold	
+      }
+
+      /* Join our Newsletter */
+      .your-email {
+         @apply min-w-[600px] min-h-[18px] text-[10px] font-medium font-['Montserrat'] bg-[#f7f8fa] text-center uppercase tracking-[0.1rem] border-x-0 border-t-0 pb-2  border-b-[1px] border-b-stone-500/75 focus:border-b-stone-900	 focus:outline-none cursor-pointer
+      }
+
+      .button-newsletter {
+         @apply  text-white font-[Poppins] text-[13px] font-semibold	
+      }
+   /* Hết trang Home */
+   
+   /* Trang Store */
+      .store-menu-route {
+         @apply text-[10px] uppercase tracking-[0.145em] text-[#1e1e1e] font-medium font-['Montserrat']  
+      }
+      .store-big-title {
+         @apply text-[25px] font-semibold font-['Poppins'] text-black 
+      }
 
 }
