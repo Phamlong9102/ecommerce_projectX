@@ -1,0 +1,149 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Clutch Bag",
+      "price": 175,
+      "classify": "Bag and Backpack",
+      "star": 5,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 34,
+      "category": "clothes",
+      "tag": "clothes, lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 2,
+      "name": "Orage Airsuit",
+      "price": 225,
+      "classify": "skirt",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 33,
+      "category": "clothes",
+      "tag": "clothes, lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 3,
+      "name": "Orange Sandals",
+      "sale_price": 125,
+      "price": 75,
+      "classify": "skirt",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 31,
+      "category": "clothes",
+      "tag": "clothes, lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 4,
+      "name": "Blue Suit",
+      "price": 360,
+      "classify": "clothes",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 30,
+      "category": "clothes",
+      "tag": "clothes, lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 5,
+      "name": "Orange Weil",
+      "price": 60,
+      "classify": "clothes",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 29,
+      "category": "clothes",
+      "tag": "clothes, lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 6,
+      "name": "White Purse",
+      "price": 75,
+      "classify": "Bag and Backpack",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 28,
+      "category": "clothes",
+      "tag": "clothes, lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 7,
+      "name": "Red Suit",
+      "price": 456,
+      "classify": "clothes",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 27,
+      "category": "clothes",
+      "tag": "clothes, lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 8,
+      "name": "Golden Sandals",
+      "price": 115,
+      "classify": "high heels",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 26,
+      "category": "clothes",
+      "tag": "clothes, lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 9,
+      "name": "Mision Bag",
+      "price": 110,
+      "classify": "Bag and Backpack",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 38,
+      "category": "clothes",
+      "tag": "clothes, lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 10,
+      "name": "City Mini Bag",
+      "price": 85,
+      "classify": "Bag and Backpack",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 37,
+      "category": "bags",
+      "tag": "modẻn, stylish",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 11,
+      "name": "Shoudler Bag",
+      "price": 90,
+      "classify": "Bag and Backpack",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 36,
+      "category": "bags",
+      "tag": "lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    },
+    {
+      "id": 12,
+      "name": "Drawstring Bag",
+      "price": 45,
+      "classify": "Bag and Backpack",
+      "star": 0,
+      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
+      "sku": 35,
+      "category": "bags",
+      "tag": "lifestyle",
+      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+    } 
+  ]
+}

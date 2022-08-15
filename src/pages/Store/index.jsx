@@ -37,66 +37,7 @@ function Store() {
          </div>
 
          {/*Danh sách sản phẩm  */}
-         <div className="mt-[32px] mx-[20px]">
-            <div className="grid grid-cols-4 gap-4">
-               <div className="relative cursor-pointer mx-[8px]">
-                  <img className="w-full max-h-[326px]" src={SE01} alt="" />
-                  <div className="absolute top-[calc(5%-1px)] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
-                     <span className="head-tag-fashion-blog">Sale</span>
-                  </div> 
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px]">
-                  <img className="w-full max-h-[326px]" src={SE02} alt="" />
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px]">
-                  <img className="w-full max-h-[326px]" src={SE03} alt="" />
-                  <div className="absolute top-[calc(5%-1px)] left-[3%] w-[50px] h-[20px] bg-black text-white leading-[20px] text-center rotate-90">
-                     <span className="head-tag-fashion-blog">Sale</span>
-                  </div>
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px]">
-                  <img className="w-full max-h-[326px]" src={SE04} alt="" />
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px] mt-[20px]">
-                  <img className="w-full max-h-[326px]" src={SE05} alt="" />
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px] mt-[20px]">
-                  <img className="w-full max-h-[326px]" src={SE06} alt="" />
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px] mt-[20px]">
-                  <img className="w-full max-h-[326px]" src={SE07} alt="" />
-                  <div className="absolute top-[calc(5%-1px)] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
-                     <span className="head-tag-fashion-blog">New</span>
-                  </div>
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px] mt-[20px] ">
-                  <img className="w-full max-h-[326px]" src={SE08} alt="" />
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px] mt-[50px]">
-                  <img className="w-full max-h-[326px]" src={Bag01} alt="" />
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px] mt-[50px]">
-                  <img className="w-full max-h-[326px]" src={Bag02} alt="" />
-               </div>
-
-               <div className="relative cursor-pointer mx-[8px] mt-[50px]">
-                  <img className="w-full max-h-[326px]" src={Bag03} alt="" />
-               </div>
-               
-               <div className="relative cursor-pointer mx-[8px] mt-[50px]">
-                  <img className="w-full max-h-[326px]" src={Bag04} alt="" />
-               </div>
-            </div>
-         </div>
+         
       </>
    );
 }
