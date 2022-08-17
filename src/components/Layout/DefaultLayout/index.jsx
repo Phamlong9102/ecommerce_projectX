@@ -17,7 +17,6 @@ function DefaultLayout({ children }) {
             <BackToTop />
          </div>
 
-         
          <Footer />
       </div>
       

@@ -4,24 +4,25 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function Menu() {
    return (
       <div className="flex justify-between mx-12 text-menu-color select-none">
          <div className="flex mt-9 cursor-pointer">
             <div>
-               <a href="/">
+               <Link to="/">
                   <img className="h-[23px]" src={logoWeb} alt="Logo Web" />
-               </a>
+               </Link>
             </div>
-            <div className="flex font text-sm text-center ml-5	font-semibold	font-['Poppins']">
-               <ul className="list-none mx-5">Home</ul>
-               <ul className="list-none mx-5">Pages</ul>
-               <ul className="list-none mx-5">Store</ul>
-               <ul className="list-none mx-5">Shop</ul>
-               <ul className="list-none mx-5">Blog</ul>
-               <ul className="list-none mx-5">Porfolio</ul>
-               <ul className="list-none mx-5">Elements</ul>
+            <div className="flex font text-sm text-center ml-5	font-semibold font-['Poppins']">
+               <Link to="/" className="list-none mx-5">Home</Link>
+               <Link to="" className="list-none mx-5">Pages</Link>
+               <Link to="/store" className="list-none mx-5">Store</Link>
+               <Link to="" className="list-none mx-5">Shop</Link>
+               <Link to="" className="list-none mx-5">Blog</Link>
+               <Link to="" className="list-none mx-5">Porfolio</Link>
+               <Link to="" className="list-none mx-5">Elements</Link>
             </div>
          </div>
          <div className="flex mt-9 text-sm font-[Poppins] font-semibold	cursor-pointer	">

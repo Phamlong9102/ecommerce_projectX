@@ -1,3 +1,5 @@
+import config from '~/config';
+
 // File này dùng để Route (điều hướng) các web con trong dự án
 import { DefaultLayout2 } from '~/components/Layout'; 
 
@@ -8,17 +10,20 @@ import Cart from '~/pages/Cart';
 import Checkout from '~/pages/Checkout';
 import Admin from '~/pages/Admin';
 import Search from '~/pages/Search';
+import ClutchBag from '~/pages/ClutchBag';
+
 
 // Phần Store và phần Checkout có thêm 1 layout riêng 
-
 const publicRoutes = [
-  { path: '/', component: Home },
-  { path: '/admin', component: Admin },
-  { path: '/cart', component: Cart },
-  { path: '/search', component: Search },
-  { path: '/checkout', component: Checkout, layout: DefaultLayout2 },
-  { path: '/store', component: Store, layout: DefaultLayout2 },
-  { path: '/productsdetail', component: ProductsDetail, layout: DefaultLayout2 },
+  { path: config.routes.home, component: Home },
+  { path: config.routes.admin, component: Admin },
+  { path: config.routes.cart, component: Cart },
+  { path: config.routes.search, component: Search },
+  { path: config.routes.store, component: Store, layout: DefaultLayout2 },
+  { path: config.routes.clutch, component: ClutchBag },
+
+  // { path: config.routes.checkout, component: Checkout, layout: DefaultLayout2 },
+  // { path: config.routes.productsdetail, component: ProductsDetail, layout: DefaultLayout2 },
 
 ];
 

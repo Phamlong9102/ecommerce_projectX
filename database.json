@@ -2,7 +2,9 @@
   "products": [
     {
       "id": 1,
+      "image": "./src/images/BagAndBackpacks/Bag01.jpg", 
       "name": "Clutch Bag",
+      "to": "clutch-bag", 
       "price": 175,
       "classify": "Bag and Backpack",
       "star": 5,
@@ -15,6 +17,7 @@
     {
       "id": 2,
       "name": "Orage Airsuit",
+      "to": "orage-airsuit", 
       "price": 225,
       "classify": "skirt",
       "star": 0,
@@ -27,6 +30,7 @@
     {
       "id": 3,
       "name": "Orange Sandals",
+      "to": "orage-sandals", 
       "sale_price": 125,
       "price": 75,
       "classify": "skirt",
@@ -40,6 +44,7 @@
     {
       "id": 4,
       "name": "Blue Suit",
+      "to": "blue-suit", 
       "price": 360,
       "classify": "clothes",
       "star": 0,
@@ -52,6 +57,7 @@
     {
       "id": 5,
       "name": "Orange Weil",
+      "to": "orange-weil", 
       "price": 60,
       "classify": "clothes",
       "star": 0,
@@ -64,6 +70,7 @@
     {
       "id": 6,
       "name": "White Purse",
+      "to": "white-purse", 
       "price": 75,
       "classify": "Bag and Backpack",
       "star": 0,
@@ -76,6 +83,7 @@
     {
       "id": 7,
       "name": "Red Suit",
+      "to": "red-suit", 
       "price": 456,
       "classify": "clothes",
       "star": 0,
@@ -88,6 +96,7 @@
     {
       "id": 8,
       "name": "Golden Sandals",
+      "to": "golden-sandals", 
       "price": 115,
       "classify": "high heels",
       "star": 0,
@@ -100,6 +109,7 @@
     {
       "id": 9,
       "name": "Mision Bag",
+      "to": "mision-bag", 
       "price": 110,
       "classify": "Bag and Backpack",
       "star": 0,
@@ -112,6 +122,7 @@
     {
       "id": 10,
       "name": "City Mini Bag",
+      "to": "city-mini-bag", 
       "price": 85,
       "classify": "Bag and Backpack",
       "star": 0,
@@ -124,6 +135,7 @@
     {
       "id": 11,
       "name": "Shoudler Bag",
+      "to": "shoudler-bag", 
       "price": 90,
       "classify": "Bag and Backpack",
       "star": 0,
@@ -136,7 +148,8 @@
     {
       "id": 12,
       "name": "Drawstring Bag",
-      "price": 45,
+      "to": "drawstring-bag", 
+      "price": 45,  
       "classify": "Bag and Backpack",
       "star": 0,
       "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",

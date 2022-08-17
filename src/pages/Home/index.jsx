@@ -142,7 +142,7 @@ function Home() {
             </div>
          </div>
 
-         {/* ProductsDemo  */}
+         {/* ProductsDemo */}
          <div className="flex mt-[86px] justify-center select-none cursor-pointer">
             <div className="relative max-w-[358px] mr-[90px]">
                <div className="absolute flex flex-col z-[100] top-[27%] left-[-33%]">
@@ -253,13 +253,12 @@ function Home() {
                <span className="describe-content">menandri explicari ut mei. Eam cibo et.</span>
             </div>
          </div>
-
          {/* Shopping everyday products  */}
          <div className="mt-[60px] select-none flex justify-center selection-default">
             <div className="grid grid-cols-4 gap-4">
                <div className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={SE01} alt="" />
-                  <div className="absolute top-[3%] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
+                  <div className="absolute top-[calc(3%+3px)] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">New</span>
                   </div>
                   <div className="flex justify-between mt-[22px]">
@@ -273,8 +272,8 @@ function Home() {
                   <div className=''>
                      <span className="name-of-job">Clothes</span>
                   </div>
-                  
                </div>
+               
                <div className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={SE02} alt="" />
                   <div className="flex justify-between mt-[22px]">
@@ -292,7 +291,7 @@ function Home() {
                </div>
                <div className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={SE03} alt="" />
-                  <div className="absolute top-[3%] left-[3%] w-[50px] h-[20px] bg-black text-white leading-[20px] text-center rotate-90">
+                  <div className="absolute top-[calc(3%+3px)] left-[3%] w-[50px] h-[20px] bg-black text-white leading-[20px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">Sale</span>
                   </div>
                   <div className="flex justify-between mt-[22px]">
@@ -358,7 +357,7 @@ function Home() {
                </div>
                <div className="relative cursor-pointer mx-[8px] mt-[64px]">
                   <img className="w-full max-h-[342px]" src={SE07} alt="" />
-                  <div className="absolute top-[3%] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
+                  <div className="absolute top-[calc(3%+3px)] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">New</span>
                   </div>
                   <div className="flex justify-between mt-[22px]">
@@ -473,7 +472,6 @@ function Home() {
                         <span className="price-shopping-everyday-products">$360.00</span>
                      </div>
                   </div>
-                  
                </div>
             </div>
          </div>

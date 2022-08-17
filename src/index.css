@@ -198,5 +198,7 @@
       .store-big-title {
          @apply text-[25px] font-semibold font-['Poppins'] text-black 
       }
+   
+   /* Chữ  */
 
 }
