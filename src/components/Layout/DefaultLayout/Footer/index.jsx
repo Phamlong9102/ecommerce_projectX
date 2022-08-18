@@ -146,7 +146,10 @@ function Footer() {
          </div>
          <div className='flex justify-center mt-2.5 font-size-content-footer font-family-content-footer'>
             <div className="">
-               <span className="">@ 2018 Qode Interactive, All Rights Reserved</span>
+               <span className="">@ 2018 
+                  <a className='hover-styles-content-footer ml-[3px]' href={'https://qodeinteractive.com'} target="_blank" rel="noopener noreferrer">Quode Interactive,</a>
+                  All Rights Reserved
+               </span>
             </div>
          </div>
       </footer>

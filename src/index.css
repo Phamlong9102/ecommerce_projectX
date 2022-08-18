@@ -126,9 +126,15 @@
       }
 
       /* hover styles content footer*/
-      .hover-styles-content-footer {
-         @apply text-white hover:text-slate-300;
+      @layer utilities {
+         .hover-styles-content-footer {
+            color: #fff; 
+         }
+         .hover-styles-content-footer:hover {
+            color: #b1b2b2; 
+         }
       }
+      
 
       /* Banner styles */
       .banner-text {
@@ -199,6 +205,43 @@
          @apply text-[25px] font-semibold font-['Poppins'] text-black 
       }
    
-   /* Chữ  */
-
+   /* Trang Clutch Bag */
+      @layer utilities {
+         .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+            color: #000 !important;
+         }
+         .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+            font-family: Poppins !important; 
+            font-size: 17px !important; 
+            font-weight: 700 !important; 
+            letter-spacing: 0 !important;
+            text-transform: none !important;
+            padding: 13px 9px !important;
+        }
+        .css-1aquho2-MuiTabs-indicator {
+            height: 1px !important;  
+            background-color: #000 !important; 
+         }
+         .css-19kzrtu {
+            padding: 0 !important;
+            margin: 32px 0 20px !important;
+         }
+         .css-ahj2mt-MuiTypography-root {
+            font-size: 15px !important;
+            font-weight: 400 !important;
+            line-height: 26px !important;
+            color: #000 !important;
+            -webkit-font-smoothing: antialiased !important;
+            font-family: Montserrat !important
+         }
+         .additional-infomation {
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: .16em;
+         }
+         .css-i4bv87-MuiSvgIcon-root {
+            font-size: 1rem !important;
+         }
+      }
 }

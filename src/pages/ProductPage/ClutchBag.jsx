@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+
+import BasicTab from '~/ComponentChildOfProduct/TabPanel';
 
 import ClutchBag01 from '~/images/Store/ClutchBag/ClutchBag01.jpg';
 import ClutchBag02 from '~/images/Store/ClutchBag/ClutchBag02.jpg';
@@ -12,43 +9,16 @@ import ClutchBag04 from '~/images/Store/ClutchBag/ClutchBag04.jpg';
 import ClutchBag05 from '~/images/Store/ClutchBag/ClutchBag05.jpg';
 import ClutchBag06 from '~/images/Store/ClutchBag/ClutchBag06.jpg';
 
+import SE02 from '~/images/ShoppingEveryDay/SE02.jpg';
+import SE03 from '~/images/ShoppingEveryDay/SE03.jpg';
+import SE04 from '~/images/ShoppingEveryDay/SE04.jpg';
+import SE05 from '~/images/ShoppingEveryDay/SE05.jpg';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp, faAngleDown, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 function ClutchBag() {
-   interface TabPanelProps {
-      children?: React.ReactNode;
-      index: number;
-      value: number;
-    }
-    
-    function TabPanel(props: TabPanelProps) {
-      const { children, value, index, ...other } = props;
-    
-      return (
-        <div
-          role="tabpanel"
-          hidden={value !== index}
-          id={`simple-tabpanel-${index}`}
-          aria-labelledby={`simple-tab-${index}`}
-          {...other}
-        >
-          {value === index && (
-            <Box sx={{ p: 3 }}>
-              <Typography>{children}</Typography>
-            </Box>
-          )}
-        </div>
-      );
-    }
-    
-    function a11yProps(index: number) {
-      return {
-        id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
-      };
-    }
    return (
       <>
          {/* Điều hướng */}
@@ -156,23 +126,81 @@ function ClutchBag() {
             </div>
          </div>
 
-         <div className="">
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-               <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                  <Tab label="Item One" {...a11yProps(0)} />
-                  <Tab label="Item Two" {...a11yProps(1)} />
-                  <Tab label="Item Three" {...a11yProps(2)} />
-               </Tabs>
-            </Box>
-            <TabPanel value={value} index={0}>
-               Item One
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-               Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-               Item Three
-            </TabPanel>
+         <div className="mx-[128px] mt-[70px]">
+            <BasicTab />
+         </div>
+
+         <div className="mx-[128px] mt-[76px] mb-[53px] selection-default">
+            <span className="text-[25px] leading-[1.12em] text-black font-semibold font-['Poppins']">
+               Related products
+            </span>
+         </div>
+
+         <div className="mx-[128px] selection-default">
+            <div className='grid grid-cols-4 gap-4'>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={SE02} alt="" />
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Orange Airsuit</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$175.00</span>
+                     </div>
+                  </div>
+                  <div className="">
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={SE03} alt="" />
+                  <div className="absolute top-[calc(3%+3px)] left-[3%] w-[50px] h-[20px] bg-black text-white leading-[20px] text-center rotate-90">
+                     <span className="head-tag-fashion-blog">Sale</span>
+                  </div>
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Orange Sandal</span>
+                     </div>
+                     <div>
+                        <span className="price-line-through-shopping-everyday-products">$125.00</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$175.00</span>
+                     </div>
+                  </div>
+                  <div className="">
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={SE04} alt="" />
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Blue Suit</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$360.00</span>
+                     </div>
+                  </div>
+                  <div className="">
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+               </div>
+               <div className="relative cursor-pointer mx-[8px]">
+                  <img className="w-full max-h-[342px]" src={SE05} alt="" />
+                  <div className="flex justify-between mt-[22px]">
+                     <div>
+                        <span className="products-name-shopping-everyday">Orange Weil</span>
+                     </div>
+                     <div>
+                        <span className="price-shopping-everyday-products">$60.00</span>
+                     </div>
+                  </div>
+                  <div className="">
+                     <span className="name-of-job">Clothes</span>
+                  </div>
+               </div>
+            </div>
          </div>
       </>
    );
