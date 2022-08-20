@@ -135,7 +135,6 @@
          }
       }
       
-
       /* Banner styles */
       .banner-text {
          @apply text-white text-[120px] font-['Poppins'] font-bold leading-[120px];
@@ -143,7 +142,7 @@
 
       /* Collection title */
       .collection-title {
-         @apply text-[13px] uppercase font-normal		tracking-widest leading-[21px] font-['Montserrat'] text-[#3d3d3d];
+         @apply text-[13px] uppercase font-normal tracking-widest leading-[21px] font-['Montserrat'] text-[#3d3d3d];
       }
       .describe-title {
          @apply font-semibold font-['Poppins'] text-[38px] leading-[1.1em] text-black;
@@ -244,4 +243,68 @@
             font-size: 1rem !important;
          }
       }
+   
+   /* Trang Cart thanh toán */
+      @layer utilities {
+         .background-cart {
+            background-image: url("/src/images/Cart/Cart01.jpg");
+            background-color: #cccccc;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+         }
+         .css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+            background-color: #f4f4f4 !important;
+            box-shadow: none !important; 
+         }
+         .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+            padding: 0 !important;
+            margin: 0 !important;
+         }
+         .css-ahj2mt-MuiTypography-root {
+            font-size: 18px !important;
+            font-weight: 600 !important;
+            font-family: Poppins !important;
+         }
+         .css-o4b71y-MuiAccordionSummary-content {
+            -webkit-flex-grow: 0 !important;
+            flex-grow: 0 !important;
+         }
+         .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+            display: flex !important; 
+            justify-content: flex-start !important; 
+         }
+         .css-yw020d-MuiAccordionSummary-expandIconWrapper {
+            padding-left: 5px !important;
+         }
+         .css-15v22id-MuiAccordionDetails-root {
+            padding: 0 !important;
+         }
+         .css-13r4j3i .MuiTextField-root {
+            margin: 0 !important;
+         }
+         .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+            border: none !important;
+            outline: none !important;
+         }
+         .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+            font-family: Montserrat !important; 
+            font-size: 14px !important;
+         }
+         .css-yw020d-MuiAccordionSummary-expandIconWrapper {
+            padding: 0 !important; 
+         }
+         .css-yw020d-MuiAccordionSummary-expandIconWrapper {
+            margin-left: 6px; 
+         }
+         .css-ay87if .MuiTextField-root {
+            margin: 0 !important;
+         }
+         .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root:hover {
+            border: none !important;
+         }
+ 
+      } 
 }

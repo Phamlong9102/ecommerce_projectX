@@ -21,10 +21,6 @@ import CityMiniBag from '~/pages/ProductPage/CityMiniBag';
 import ShoulderBag from '~/pages/ProductPage/ShoulderBag';
 import DrawstringBag from '~/pages/ProductPage/DrawstringBag';
 
-
-import Checkout from '~/pages/Checkout';
-import ProductsDetail from '~/pages/ProductsDetail';
-
 // Phần Store và phần Checkout có thêm 1 layout riêng 
 const publicRoutes = [
   { path: config.routes.home, component: Home },

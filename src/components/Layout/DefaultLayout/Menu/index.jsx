@@ -42,7 +42,7 @@ function Menu() {
                <div className="mr-2.5">
                   <FontAwesomeIcon icon={faBagShopping} />
                </div>
-               <span className="">Search</span>
+               <Link to="/cart" className="">0 / $0.00</Link>
             </div>
             <div className="">
                <FontAwesomeIcon icon={faBars} />
