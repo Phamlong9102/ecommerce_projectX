@@ -256,7 +256,7 @@ function Home() {
          {/* Shopping everyday products  */}
          <div className="mt-[60px] select-none flex justify-center selection-default">
             <div className="grid grid-cols-4 gap-4">
-               <Link to="store/clutch-bag" className="relative cursor-pointer mx-[8px]">
+               <Link to="store/clutch-bag/1" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={SE01} alt="" />
                   <div className="absolute top-[calc(3%+3px)] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">New</span>
@@ -273,8 +273,7 @@ function Home() {
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
-               
-               <Link to="/store/orange-airsuit" className="relative cursor-pointer mx-[8px]">
+               <Link to="/store/orange-airsuit/2" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={SE02} alt="" />
                   <div className="flex justify-between mt-[22px]">
                      <div>
@@ -287,9 +286,8 @@ function Home() {
                   <div className=''>
                      <span className="name-of-job">Clothes</span>
                   </div>
-                  
                </Link>
-               <Link to="/store/orange-sandal" className="relative cursor-pointer mx-[8px]">
+               <Link to="/store/orange-sandal/3" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={SE03} alt="" />
                   <div className="absolute top-[calc(3%+3px)] left-[3%] w-[50px] h-[20px] bg-black text-white leading-[20px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">Sale</span>
@@ -309,7 +307,7 @@ function Home() {
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
-               <Link to="/store/blue-suit" className="relative cursor-pointer mx-[8px]">
+               <Link to="/store/blue-suit/4" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={SE04} alt="" />
                   <div className="flex justify-between mt-[22px]">
                      <div>
@@ -323,7 +321,7 @@ function Home() {
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
-               <Link to="/store/orange-weil" className="relative cursor-pointer mx-[8px] mt-[64px]">
+               <Link to="/store/orange-weil/5" className="relative cursor-pointer mx-[8px] mt-[64px]">
                   <img className="w-full max-h-[342px]" src={SE05} alt="" />
                   <div className="flex justify-between mt-[22px]">
                      <div>
@@ -337,7 +335,7 @@ function Home() {
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
-               <Link to="/store/white-purse" className="relative cursor-pointer mx-[8px] mt-[64px]">
+               <Link to="/store/white-purse/6" className="relative cursor-pointer mx-[8px] mt-[64px]">
                   <img className="w-full max-h-[342px]" src={SE06} alt="" />
                   <div className="flex justify-between mt-[22px]">
                      <div>
@@ -351,7 +349,7 @@ function Home() {
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
-               <Link to="/store/red-suit" className="relative cursor-pointer mx-[8px] mt-[64px]">
+               <Link to="/store/red-suit/7" className="relative cursor-pointer mx-[8px] mt-[64px]">
                   <img className="w-full max-h-[342px]" src={SE07} alt="" />
                   <div className="absolute top-[calc(3%+3px)] left-[3%] w-[50px] h-[20px] bg-white text-black leading-[20px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">New</span>
@@ -368,7 +366,7 @@ function Home() {
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
-               <Link to="/store/golden-sandals" className="relative cursor-pointer mx-[8px] mt-[64px]">
+               <Link to="/store/golden-sandals/8" className="relative cursor-pointer mx-[8px] mt-[64px]">
                   <img className="w-full max-h-[342px]" src={SE08} alt="" />
                   <div className="flex justify-between mt-[22px]">
                      <div>
@@ -424,7 +422,7 @@ function Home() {
 
          <div className='flex justify-center mt-[50px] select-none '>
             <div className='grid grid-cols-4 gap-4'>
-               <Link to="/store/mission-bag" className="relative cursor-pointer mx-[8px]">
+               <Link to="/store/mission-bag/9" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={Bag01} alt="" />
                   <div className="flex flex-col text-center mt-[22px]">
                      <div>
@@ -435,7 +433,7 @@ function Home() {
                      </div>
                   </div>
                </Link>
-               <Link to="/store/city-mini-bag" className="relative cursor-pointer mx-[8px]">
+               <Link to="/store/city-mini-bag/10" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={Bag02} alt="" />
                   <div className="flex flex-col text-center mt-[22px]">
                      <div>
@@ -446,7 +444,7 @@ function Home() {
                      </div>
                   </div> 
                </Link>
-               <Link to="/store/shoulder-bag" className="relative cursor-pointer mx-[8px]">
+               <Link to="/store/shoulder-bag/11" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={Bag03} alt="" />           
                   <div className="flex flex-col text-center mt-[22px]">
                      <div>
@@ -457,7 +455,7 @@ function Home() {
                      </div>
                   </div>
                </Link>
-               <Link to="/store/drawstring-bag" className="relative cursor-pointer mx-[8px]">
+               <Link to="/store/drawstring-bag/12" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={Bag04} alt="" />
                   <div className="flex flex-col text-center mt-[22px]">
                      <div>

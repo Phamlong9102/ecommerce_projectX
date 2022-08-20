@@ -41,10 +41,6 @@ const publicRoutes = [
   { path: config.routes.shoulder_bag, component: ShoulderBag },
   { path: config.routes.drawstring_bag, component: DrawstringBag },
 
-  
-
-
-
   // { path: config.routes.checkout, component: Checkout, layout: DefaultLayout2 },
   // { path: config.routes.productsdetail, component: ProductsDetail, layout: DefaultLayout2 },
 
