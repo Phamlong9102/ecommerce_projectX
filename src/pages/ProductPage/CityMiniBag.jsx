@@ -1,5 +1,6 @@
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'; 
 import { Link } from 'react-router-dom';
-import TabPanel from '~/ComponentChildOfProduct/TabPanel';
+
 
 import CMB01 from '~/images/Store/CityMiniBag/CMB01.jpg';
 import CMB02 from '~/images/Store/CityMiniBag/CMB02.jpg';

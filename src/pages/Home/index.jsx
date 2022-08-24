@@ -72,7 +72,7 @@ function Home() {
    return (
       <>
          {/* Carousel carousel */}
-         <div className="select-none mt-9 mx-[52px]">
+         <div className="select-none mt-9 mx-[52px] selection-default">
             <div id="carouselExampleControls" class="carousel slide relative" data-bs-ride="carousel">
                <div class="carousel-inner relative w-full overflow-hidden">
                   <div class="carousel-item active relative float-left w-full">
@@ -143,7 +143,7 @@ function Home() {
          </div>
 
          {/* ProductsDemo */}
-         <div className="flex mt-[86px] justify-center select-none cursor-pointer">
+         <div className="flex mt-[86px] justify-center selection-default">
             <div className="relative max-w-[358px] mr-[90px]">
                <div className="absolute flex flex-col z-[100] top-[27%] left-[-33%]">
                   <div className="">
@@ -154,7 +154,7 @@ function Home() {
                   </div>
                </div>
 
-               <div className="absolute z-[100] top-[44%] left-[-31%] underline underline-offset-8">
+               <div className="absolute z-[100] top-[44%] left-[-31%] underline underline-offset-8 cursor-pointer">
                   <span className="see-whole-collection">See Whole Collection</span>
                </div>
 
@@ -191,7 +191,7 @@ function Home() {
          </div>
 
          {/* Products Demo 2 */}
-         <div className="flex justify-center">
+         <div className="flex justify-center selection-default">
             <div className="select-none mr-[90px] mt-[134px] pl-[144px]">
                <img className="h-[282px] " src={ProductsDemo05} alt="" />
             </div>
@@ -206,7 +206,7 @@ function Home() {
                   </div>
                </div>
 
-               <div className="absolute z-[100] top-[44%] left-[-31%] underline underline-offset-8">
+               <div className="absolute z-[100] top-[44%] left-[-31%] underline underline-offset-8 cursor-pointer">
                   <span className="see-whole-collection">See Whole Collection</span>
                </div>
 
@@ -239,7 +239,7 @@ function Home() {
          </div>
 
          {/* Summer collection Shopping everyday */}
-         <div className="mt-[130px] flex flex-col text-center">
+         <div className="mt-[130px] flex flex-col text-center selection-default">
             <div className=" ">
                <span className="bag-and-bagpacks-summer-collection">Summer Collection</span>
             </div>
@@ -385,7 +385,7 @@ function Home() {
          </div>
 
          {/* Sleeveless top */}
-         <div className="mt-[122px] select-none flex justify-center">
+         <div className="mt-[122px] select-none flex justify-center selection-default">
             <div className="relative bg-test w-[1347px] h-[700px]">
                <div className="absolute right-0">
                   <img className="max-w-[650px] min-h-[690px]" src={banner01} alt="" />
@@ -411,7 +411,7 @@ function Home() {
             </div>
          </div>
 
-         <div className='flex text-center flex-col mt-[130px]'>
+         <div className='flex text-center flex-col mt-[130px] selection-default'>
             <div className="">
                <span className='bag-and-bagpacks-summer-collection'>Summer Collection</span>
             </div>
@@ -420,7 +420,7 @@ function Home() {
             </div>
          </div>
 
-         <div className='flex justify-center mt-[50px] select-none '>
+         <div className='flex justify-center mt-[50px] select-none selection-default'>
             <div className='grid grid-cols-4 gap-4'>
                <Link to="/store/mission-bag/9" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={Bag01} alt="" />
@@ -562,7 +562,7 @@ function Home() {
          </div>
 
          {/* Time to shine */}
-         <div className="flex justify-center mt-[200px] ">
+         <div className="flex justify-center mt-[200px] selection-default">
             <div className="bg-test relative w-[1347px] h-[600px]">
                <div className="absolute top-0 left-[4%] bg-[#ecf4fa] w-[684px] h-[500px]">
                   <div className="absolute top-[-14%] left-[9%]">
@@ -570,7 +570,7 @@ function Home() {
                   </div>
                </div>
 
-               <div className="absolute top-[8%] left-[52%] flex flex-col selection-default">
+               <div className="absolute top-[8%] left-[52%] flex flex-col  ">
                   <span className="collection-title ">Summer Collecton</span>
                   <span className="describe-title mt-[18px]">Time to Shine</span>
 
@@ -579,7 +579,7 @@ function Home() {
                      <span>Torquatos voluptatum sit ad. Legendos dignissim eu</span>
                      <span>Torquatos voluptatum sit ad. Legendos dignissim eu</span>
                      <span>deserunt sed in, ex quo quot invidunt.</span>
-                     <span className="mt-[68px] see-whole-collection underline underline-offset-8">
+                     <span className="mt-[68px] cursor-pointer see-whole-collection underline underline-offset-8">
                         See Whole Collection
                      </span>
                   </div>
@@ -595,7 +595,7 @@ function Home() {
             </div>
             <div className="describe-content flex flex-col text-center justify-center mt-[18px]">
                <span>Autem neglegentur in duo, ex aperiam fabulas mei, exerci</span>
-               <span>menandri explicari ut mei. Eam cibo.</span>
+               <span>menandri explicari ut mei. Eam cibo.</span>  
             </div>
          </div>
 

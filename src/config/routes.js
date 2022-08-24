@@ -2,7 +2,8 @@
 // những tuyến đường 
 const routes = {
     home: '/',
-    admin: '/admin',
+    admin_products: '/admin-products',
+    admin_users: '/admin-users',  
     cart: '/cart',
     checkout: '/checkout',
     search: '/search',
@@ -20,9 +21,6 @@ const routes = {
     shoulder_bag: '/store/shoulder-bag/11',
     drawstring_bag: '/store/drawstring-bag/12',
 
-
-
-    productsdetail: '/@:to'
 };
 
 export default routes;

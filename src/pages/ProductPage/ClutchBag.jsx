@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import BasicTab from '~/ComponentChildOfProduct/TabPanel';
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'; 
 
 import ClutchBag01 from '~/images/Store/ClutchBag/ClutchBag01.jpg';
 import ClutchBag02 from '~/images/Store/ClutchBag/ClutchBag02.jpg';
@@ -127,7 +127,7 @@ function ClutchBag() {
          </div>
 
          <div className="mx-[128px] mt-[70px]">
-            <BasicTab />
+            <TabPanel />
          </div>
 
          <div className="mx-[128px] mt-[76px] mb-[53px] selection-default">

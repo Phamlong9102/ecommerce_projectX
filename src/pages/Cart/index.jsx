@@ -1,4 +1,3 @@
-import Cart01 from '~/images/Cart/Cart01.jpg';
 import Cart02 from '~/images/Cart/Cart02.jpg';
 import Cart03 from '~/images/Cart/Cart03.jpg';
 
@@ -8,8 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { faRightLong } from '@fortawesome/free-solid-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
 
-import ChangeAdress from '~/ChangeAdressComponent/ChangeAdress';
-
+import ChangeAdress from '~/components/ChildrenLayout/ChangeAdress/ChangeAdress'; 
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

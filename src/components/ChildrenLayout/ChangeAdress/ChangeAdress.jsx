@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import SelectTextFields from '~/SelectTextFields/SelectTextFields';
+import SelectTextFields from '../SelectTextFields/SelectTextFields'; 
 
 function ChangeAdress() {
    return (

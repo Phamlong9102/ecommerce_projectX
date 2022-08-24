@@ -129,7 +129,7 @@
       "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 37,
       "category": "bags",
-      "tag": "modẻn, stylish",
+      "tag": "modern, stylish",
       "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
     },
     {
@@ -158,5 +158,91 @@
       "tag": "lifestyle",
       "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
     } 
+  ], 
+
+  "users": [
+    {
+      "id": 1, 
+      "name": "Chí Anh Tran", 
+      "age": 47, 
+      "address": "Cầu Giấy, Hà Nội", 
+      "phone-number": "0123453219"
+    }, 
+    {
+      "id": 2, 
+      "name": "Diệp Lan Trần", 
+      "age": 22, 
+      "address": "Nam Từ Liêm, Hà Nội", 
+      "phone-number": "0123489389" 
+    }, 
+    {
+      "id": 3, 
+      "name": "Tuân Bích Phạm", 
+      "age": 39, 
+      "address": "Ba Đình, Hà Nội", 
+      "phone-number": "0123490289" 
+    }, 
+    {
+      "id": 4, 
+      "name": "Trí Tú Ngô", 
+      "age": 13, 
+      "address": "Quận 1, Hồ Chí Minh", 
+      "phone-number": "0123493089" 
+    }, 
+    {
+      "id": 5, 
+      "name": "Ngọc Minh Phạm", 
+      "age": 62, 
+      "address": "Quận 2, Hồ Chí Minh", 
+      "phone-number": "01234523589" 
+    }, 
+    {
+      "id": 6, 
+      "name": "Bích Yên Nguyen", 
+      "age": 54, 
+      "address": "Quảng Ninh", 
+      "phone-number": "0123478389" 
+    }, 
+    {
+      "id": 7, 
+      "name": "Hữu Huy Bùi", 
+      "age": 12, 
+      "address": "Thái Nguyên", 
+      "phone-number": "0123459049" 
+    }, 
+    {
+      "id": 8, 
+      "name": "Tuyến Quỳnh Ngo", 
+      "age": 53, 
+      "address": "Hà Giang", 
+      "phone-number": "01238346789" 
+    }, {
+      "id": 9, 
+      "name": "Hương Công Hoàng", 
+      "age": 46, 
+      "address": "Cao Bằng", 
+      "phone-number": "0136456789" 
+    }, 
+    {
+      "id": 37, 
+      "name": "Phạm Thăng Long", 
+      "age": 22, 
+      "address": "Lạng Sơn", 
+      "phone-number": "0123432789" 
+    }, 
+    {
+      "id": 20, 
+      "name": "Bích Yên Nguyen", 
+      "age": 22, 
+      "address": "Bắc Ninh", 
+      "phone-number": "0129376789" 
+    }, 
+    {
+      "id": 12, 
+      "name": "Nam Lành Văn", 
+      "age": 37, 
+      "address": "Ninh bình", 
+      "phone-number": "0749456789" 
+    }
   ]
 }

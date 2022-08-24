@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import TabPanel from '~/ComponentChildOfProduct/TabPanel';
+
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'; 
 
 import GS01 from '~/images/Store/GoldenSandals/GS01.jpg';
 import GS02 from '~/images/Store/GoldenSandals/GS02.jpg';

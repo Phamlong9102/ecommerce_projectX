@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import TabPanel from '~/ComponentChildOfProduct/TabPanel';
+
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'; 
 
 import OW01 from '~/images/Store/OrangeWeil/OW01.jpg';
 import OW02 from '~/images/Store/OrangeWeil/OW02.jpg';

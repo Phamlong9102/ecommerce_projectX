@@ -6,7 +6,8 @@ import { DefaultLayout2 } from '~/components/Layout';
 import Home from '~/pages/Home';
 import Store from '~/pages/Store';
 import Cart from '~/pages/Cart';
-import Admin from '~/pages/Admin';
+
+
 import Search from '~/pages/Search';
 import ClutchBag from '~/pages/ProductPage/ClutchBag';
 import OrangeAirsuit from '~/pages/ProductPage/OrangeAirsuit'; 
@@ -21,13 +22,13 @@ import CityMiniBag from '~/pages/ProductPage/CityMiniBag';
 import ShoulderBag from '~/pages/ProductPage/ShoulderBag';
 import DrawstringBag from '~/pages/ProductPage/DrawstringBag';
 
-// Phần Store và phần Checkout có thêm 1 layout riêng 
+import AdministratorProducts from '~/pages/Administrartor/AdministratorProducts'; 
+import AdministratorUsers from '~/pages/Administrartor/AdministratorUsers'; 
+
 const publicRoutes = [
   { path: config.routes.home, component: Home },
-  { path: config.routes.admin, component: Admin },
   { path: config.routes.cart, component: Cart },
   { path: config.routes.search, component: Search },
-  { path: config.routes.store, component: Store, layout: DefaultLayout2 },
   { path: config.routes.clutch_bag, component: ClutchBag },
   { path: config.routes.orange_airsuit, component: OrangeAirsuit },
   { path: config.routes.orange_sandal, component: OrangeSandal },
@@ -41,8 +42,11 @@ const publicRoutes = [
   { path: config.routes.shoulder_bag, component: ShoulderBag },
   { path: config.routes.drawstring_bag, component: DrawstringBag },
 
-  // { path: config.routes.checkout, component: Checkout, layout: DefaultLayout2 },
-  // { path: config.routes.productsdetail, component: ProductsDetail, layout: DefaultLayout2 },
+  { path: config.routes.admin_products, component: AdministratorProducts, layout : null },
+  { path: config.routes.admin_users, component: AdministratorUsers, layout : null },
+
+  
+  { path: config.routes.store, component: Store, layout: DefaultLayout2 },
 
 ];
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import TabPanel from '~/ComponentChildOfProduct/TabPanel';
+
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'; 
 
 import WP01 from '~/images/Store/WhitePurse/WP01.jpg';
 import WP02 from '~/images/Store/WhitePurse/WP02.jpg';

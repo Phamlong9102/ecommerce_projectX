@@ -307,4 +307,36 @@
          }
  
       } 
+   
+   /* Trang Admin */
+      @layer utilities {
+         .css-r11z79-MuiDataGrid-root .MuiDataGrid-row:not(.MuiDataGrid-row--dynamicHeight)>.MuiDataGrid-cell {
+            display: flex; 
+            justify-content: center; 
+         }
+         .css-r11z79-MuiDataGrid-root .MuiDataGrid-columnHeader--alignRight .MuiDataGrid-columnHeaderTitleContainer {
+            display: flex; 
+            justify-content: center; 
+         }
+         .css-r11z79-MuiDataGrid-root .MuiDataGrid-columnHeaderTitleContainer {
+            display: flex; 
+            justify-content: center; 
+         }
+         .css-mj2xxh {
+            height: 700px !important; 
+         }
+         .css-r11z79-MuiDataGrid-root .MuiDataGrid-columnHeader--alignRight .MuiDataGrid-columnHeaderDraggableContainer {
+            display: flex; 
+            justify-content: center; 
+         }
+      }
+   /* Thanh toán trang Home */
+      @layer utilities {
+         .children-cart-00 {
+            visibility: hidden;
+         }
+         .cart-00:hover .children-cart-00 {
+            visibility: visible;
+         }
+      }
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import TabPanel from '~/ComponentChildOfProduct/TabPanel';
+
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'; 
 
 import DSB01 from '~/images/Store/DrawstringBag/DSB01.jpg';
 import DSB02 from '~/images/Store/DrawstringBag/DSB02.jpg';
@@ -50,7 +51,7 @@ function DrawstringBag() {
                      <img className="w-[112px] h-[136px]" src={DSB02} alt="" />
                   </div>
                   <div className="mt-[10px]">
-                     <img className="w-[112px] h-[136px]" src={DSB04} alt="" />
+                     <img className="w-[112px] h-[136px]" src={DSB03} alt="" />
                   </div>
                   <div className="mt-[10px]">
                      <img className="w-[112px] h-[136px]" src={DSB04} alt="" />
