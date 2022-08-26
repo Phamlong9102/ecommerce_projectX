@@ -60,7 +60,7 @@ function ReviewForClutchBag() {
             <span className="text-[10px] uppercase tracking-[0.16em] font-normal">Your Review *</span>
          </div>
          <div className="mt-[12px]">
-            <input className="w-full min-h-[200px] bg-[#f6f6f6] border-none outline-none " type="text" />
+            <input className="cursor-pointer w-full min-h-[200px] bg-[#f6f6f6] border-none outline-none " type="text" />
          </div>
          <div className="mt-[18px] flex ">
             <div className="flex flex-col basis-1/2">
@@ -69,7 +69,7 @@ function ReviewForClutchBag() {
                </div>
                <div>
                   <input
-                     className=" w-[90%] border-t-0 boder-l-0 border-r-0 border-b-[1px] focus:border-black outline-none"
+                     className="cursor-pointer w-[90%] border-t-0 boder-l-0 border-r-0 border-b-[1px] focus:border-black outline-none"
                      type="text"
                   />
                </div>
@@ -80,7 +80,7 @@ function ReviewForClutchBag() {
                </div>
                <div>
                   <input
-                     className=" w-[90%] border-t-0 boder-l-0 border-r-0 border-b-[1px] focus:border-black outline-none"
+                     className="cursor-pointer w-[90%] border-t-0 boder-l-0 border-r-0 border-b-[1px] focus:border-black outline-none"
                      type="text"
                   />
                </div>

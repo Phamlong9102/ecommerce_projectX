@@ -18,7 +18,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
+import { useState } from 'react'; 
+ 
 function ShoulderBag() {
+
+   const [count, setCount] = useState(0); 
+
    return (
       <>
          {/* Điều hướng */}
@@ -79,7 +84,7 @@ function ShoulderBag() {
                <div className="mt-[57px] flex">
                   <div className="relative w-[48px] h-[48px] border-[#d3d3d3] border outline-1">
                      <div className="absolute top-[27%] left-[42%]">
-                        <span className="font-semibold text-[15px] leading-[26px] font-['Montserrat']">0</span>
+                        <span className="font-semibold text-[15px] leading-[26px] font-['Montserrat']">{count}</span>
                      </div>
                      <div className="absolute left-[101%] top-[-1px] w-[24px] h-[24px] text-center border-[#d3d3d3] border outline-1">
                         <FontAwesomeIcon className="text-[10px]" icon={faAngleUp} />

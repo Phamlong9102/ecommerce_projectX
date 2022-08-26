@@ -87,14 +87,14 @@ export default function BasicTabs() {
                      type="text"
                   />
                </div>
-               <div className="mt-[25px] ">
+               <div className="mt-[16px]">
                   <input
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="PassWord"
                      type="text"
                   />
                </div>
-               <div className="mt-[16px] flex items-center">
+               <div className="mt-[18px] flex items-center">
                   <div className="">
                      <input type="checkbox" />
                   </div>
@@ -102,7 +102,7 @@ export default function BasicTabs() {
                      <span className="text-[13px] font-light">Remember me</span>
                   </div>
                </div>
-               <div to="" className="mt-[6px]">
+               <div to="" className="mt-[12px]">
                   <span className="text-[13px] font-light font-['Poppins']">Lost your password?</span>
                </div>
                <div className="mt-[20px]">

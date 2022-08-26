@@ -46,7 +46,7 @@ const publicRoutes = [
   { path: config.routes.admin_users, component: AdministratorUsers, layout : null },
 
   
-  { path: config.routes.store, component: Store, layout: DefaultLayout2 },
+  { path: config.routes.store, component: Store },
 
 ];
 

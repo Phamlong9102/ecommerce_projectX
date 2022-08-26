@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import ReviewForClutchBag from './ReviewForClutchBag';
 
 
-function TabPanel(props) {
+function TabPanelForClutchBag(props) {
    const { children, value, index, ...other } = props;
 
    return (
@@ -28,7 +28,7 @@ function TabPanel(props) {
    );
 }
 
-TabPanel.propTypes = {
+TabPanelForClutchBag.propTypes = {
    children: PropTypes.node,
    index: PropTypes.number.isRequired,
    value: PropTypes.number.isRequired,
@@ -58,10 +58,10 @@ export default function BasicTabs() {
                   {...a11yProps(0)}
                />
                <Tab className="" label="Additional Information" {...a11yProps(1)} />
-               <Tab className="" label="Review(0)" {...a11yProps(2)} />
+               <Tab className="" label="Review(1)" {...a11yProps(2)} />
             </Tabs>
          </Box>
-         <TabPanel className="css-19kzrtu" value={value} index={0}>
+         <TabPanelForClutchBag className="css-19kzrtu" value={value} index={0}>
             <div className="css-ahj2mt-MuiTypography-root">
                <span className="css-ahj2mt-MuiTypography-root">
                   Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere
@@ -79,8 +79,8 @@ export default function BasicTabs() {
                   saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel.
                </span>
             </div>
-         </TabPanel>
-         <TabPanel value={value} index={1}>
+         </TabPanelForClutchBag>
+         <TabPanelForClutchBag value={value} index={1}>
             <div className="additional-infomation flex flex-col">
                <div>
                   <span>Weigth: &nbsp;&nbsp;&nbsp;&nbsp;  2kg</span>
@@ -89,9 +89,10 @@ export default function BasicTabs() {
                   <span>Dimension 20 x 10 x 5</span>
                </div>
             </div>
-         </TabPanel>
-         <TabPanel value={value} index={2}>
-         </TabPanel>
+         </TabPanelForClutchBag>
+         <TabPanelForClutchBag value={value} index={2}>
+            <ReviewForClutchBag />
+         </TabPanelForClutchBag>
       </Box>
    );
 }

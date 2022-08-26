@@ -18,7 +18,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
+import { useState } from 'react'; 
+
 function GoldenSandals() {
+
+   const [count, setCount] = useState(0); 
+
    return (
       <>
          {/* Điều hướng */}
@@ -33,11 +38,11 @@ function GoldenSandals() {
                </Link>
                <span className="mx-[10px]">/</span>
                <Link className="" to="">
-                  <span className="">GoldenSandals</span>
+                  <span className="">Golden Sandals</span>
                </Link>
             </div>
             <div className="absolute top-[48%] left-[4%] mt-[10px]">
-               <span className="store-big-title">GoldenSandals</span>
+               <span className="store-big-title">Golden Sandals</span>
             </div>
          </div>
 
@@ -79,14 +84,14 @@ function GoldenSandals() {
                <div className="mt-[57px] flex">
                   <div className="relative w-[48px] h-[48px] border-[#d3d3d3] border outline-1">
                      <div className="absolute top-[27%] left-[42%]">
-                        <span className="font-semibold text-[15px] leading-[26px] font-['Montserrat']">0</span>
+                        <span className="font-semibold text-[15px] leading-[26px] font-['Montserrat']">{count}</span>
                      </div>
-                     <div className="absolute left-[101%] top-[-1px] w-[24px] h-[24px] text-center border-[#d3d3d3] border outline-1">
+                     <button onClick={() => setCount(count + 1)} className="absolute left-[101%] top-[-1px] w-[24px] h-[24px] text-center border-[#d3d3d3] border outline-1">
                         <FontAwesomeIcon className="text-[10px]" icon={faAngleUp} />
-                     </div>
-                     <div className="absolute top-[49%] left-[101%] w-[24px] h-[24px] text-center border-[#d3d3d3] border outline-1">
+                     </button>
+                     <button onClick={() => setCount(Math.max(count - 1, 0))} className="absolute top-[49%] left-[101%] w-[24px] h-[24px] text-center border-[#d3d3d3] border outline-1">
                         <FontAwesomeIcon className="text-[10px]" icon={faAngleDown} />
-                     </div>
+                     </button>
                   </div>
                   <button className="ml-[43px] w-[170px] h-[46px] bg-black  button:underline button:underline-offset-8">
                      <span className="text-[13px] font-['Poppins'] font-semibold text-white">Add To Cart</span>

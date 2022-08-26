@@ -57,7 +57,7 @@ function Menu() {
                </div>
                <span className="">Whislist</span>
             </div>
-            <div className="relative cart-00 flex mr-9">
+            <Link to="/cart" className="relative cart-00 flex mr-9">
                <div className="mr-2.5">
                   <FontAwesomeIcon icon={faBagShopping} />
                </div>
@@ -144,7 +144,7 @@ function Menu() {
                      </Link>
                   </div>
                </div>
-            </div>
+            </Link>
             <div className="">
                <FontAwesomeIcon icon={faBars} />
             </div>

@@ -159,7 +159,7 @@ function Home() {
                </div>
 
                <Swiper
-                  className="absolute mySwiper max-w-[358px] "
+                  className="absolute mySwiper max-w-[358px] cursor-pointer"
                   navigation={true}
                   loop={true}
                   modules={[Navigation]}
@@ -211,7 +211,7 @@ function Home() {
                </div>
 
                <Swiper
-                  className="absolute mySwiper max-w-[358px] "
+                  className="absolute mySwiper max-w-[358px] cursor-pointer"
                   navigation={true}
                   loop={true}
                   modules={[Navigation]}
