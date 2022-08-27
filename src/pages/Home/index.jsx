@@ -28,20 +28,20 @@ import ProductsDemo07 from '~/images/ProductsDemo/ProductsDemo07.jpg';
 import ProductsDemo08 from '~/images/ProductsDemo/ProductsDemo08.jpg';
 
 // Shopping everyday
-import SE01 from '~/images/ShoppingEveryDay/SE01.jpg'
-import SE02 from '~/images/ShoppingEveryDay/SE02.jpg'
-import SE03 from '~/images/ShoppingEveryDay/SE03.jpg'
-import SE04 from '~/images/ShoppingEveryDay/SE04.jpg'
-import SE05 from '~/images/ShoppingEveryDay/SE05.jpg'
-import SE06 from '~/images/ShoppingEveryDay/SE06.jpg'
-import SE07 from '~/images/ShoppingEveryDay/SE07.jpg'
-import SE08 from '~/images/ShoppingEveryDay/SE08.jpg'
+import SE01 from '~/images/ShoppingEveryDay/SE01.jpg';
+import SE02 from '~/images/ShoppingEveryDay/SE02.jpg';
+import SE03 from '~/images/ShoppingEveryDay/SE03.jpg';
+import SE04 from '~/images/ShoppingEveryDay/SE04.jpg';
+import SE05 from '~/images/ShoppingEveryDay/SE05.jpg';
+import SE06 from '~/images/ShoppingEveryDay/SE06.jpg';
+import SE07 from '~/images/ShoppingEveryDay/SE07.jpg';
+import SE08 from '~/images/ShoppingEveryDay/SE08.jpg';
 
-// Bag and Backpacks 
-import Bag01 from '~/images/BagAndBackpacks/Bag01.jpg'
-import Bag02 from '~/images/BagAndBackpacks/Bag02.jpg'
-import Bag03 from '~/images/BagAndBackpacks/Bag03.jpg'
-import Bag04 from '~/images/BagAndBackpacks/Bag04.jpg'
+// Bag and Backpacks
+import Bag01 from '~/images/BagAndBackpacks/Bag01.jpg';
+import Bag02 from '~/images/BagAndBackpacks/Bag02.jpg';
+import Bag03 from '~/images/BagAndBackpacks/Bag03.jpg';
+import Bag04 from '~/images/BagAndBackpacks/Bag04.jpg';
 
 // Web banner
 import banner01 from '~/images/BannerImages/banner01.png';
@@ -68,7 +68,23 @@ import FashionBlog02 from '~/images/FashionBlog/FashionBlog02.jpg';
 import FashionBlog03 from '~/images/FashionBlog/FashionBlog03.jpg';
 import FashionBlog04 from '~/images/FashionBlog/FashionBlog04.jpg';
 
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 function Home() {
+   const [data, setData] = useState({ products: [] });
+
+   useEffect(() => {
+      const fetchData = async () => {
+         const result = await axios('http://localhost:3000/products');
+
+         setData(result.data);
+      };
+
+      fetchData();
+   }, []);
+   
+   console.log(data)
    return (
       <>
          {/* Carousel carousel */}
@@ -253,6 +269,7 @@ function Home() {
                <span className="describe-content">menandri explicari ut mei. Eam cibo et.</span>
             </div>
          </div>
+         
          {/* Shopping everyday products  */}
          <div className="mt-[60px] select-none flex justify-center selection-default">
             <div className="grid grid-cols-4 gap-4">
@@ -269,7 +286,7 @@ function Home() {
                         <span className="price-shopping-everyday-products">$175.00</span>
                      </div>
                   </div>
-                  <div className=''>
+                  <div className="">
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
@@ -283,7 +300,7 @@ function Home() {
                         <span className="price-shopping-everyday-products">$225.00</span>
                      </div>
                   </div>
-                  <div className=''>
+                  <div className="">
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
@@ -303,7 +320,7 @@ function Home() {
                         <span className="price-shopping-everyday-products">$75.00</span>
                      </div>
                   </div>
-                  <div className=''>
+                  <div className="">
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
@@ -317,7 +334,7 @@ function Home() {
                         <span className="price-shopping-everyday-products">$360.00</span>
                      </div>
                   </div>
-                  <div className=''>
+                  <div className="">
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
@@ -331,7 +348,7 @@ function Home() {
                         <span className="price-shopping-everyday-products">$60.00</span>
                      </div>
                   </div>
-                  <div className=''>
+                  <div className="">
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
@@ -345,7 +362,7 @@ function Home() {
                         <span className="price-shopping-everyday-products">$75.00</span>
                      </div>
                   </div>
-                  <div className=''>
+                  <div className="">
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
@@ -362,7 +379,7 @@ function Home() {
                         <span className="price-shopping-everyday-products">$456.00</span>
                      </div>
                   </div>
-                  <div className=''>
+                  <div className="">
                      <span className="name-of-job">Clothes</span>
                   </div>
                </Link>
@@ -376,10 +393,9 @@ function Home() {
                         <span className="price-shopping-everyday-products">$115.00</span>
                      </div>
                   </div>
-                  <div className=''>
+                  <div className="">
                      <span className="name-of-job">Clothes</span>
                   </div>
-                  
                </Link>
             </div>
          </div>
@@ -411,17 +427,17 @@ function Home() {
             </div>
          </div>
 
-         <div className='flex text-center flex-col mt-[130px] selection-default'>
+         <div className="flex text-center flex-col mt-[130px] selection-default">
             <div className="">
-               <span className='bag-and-bagpacks-summer-collection'>Summer Collection</span>
+               <span className="bag-and-bagpacks-summer-collection">Summer Collection</span>
             </div>
             <div className="mt-[16px]">
-               <span className='describe-title'>Bags and Backpacks</span>
+               <span className="describe-title">Bags and Backpacks</span>
             </div>
          </div>
 
-         <div className='flex justify-center mt-[50px] select-none selection-default'>
-            <div className='grid grid-cols-4 gap-4'>
+         <div className="flex justify-center mt-[50px] select-none selection-default">
+            <div className="grid grid-cols-4 gap-4">
                <Link to="/store/mission-bag/9" className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={Bag01} alt="" />
                   <div className="flex flex-col text-center mt-[22px]">
@@ -442,10 +458,10 @@ function Home() {
                      <div>
                         <span className="price-shopping-everyday-products">$85.00</span>
                      </div>
-                  </div> 
+                  </div>
                </Link>
                <Link to="/store/shoulder-bag/11" className="relative cursor-pointer mx-[8px]">
-                  <img className="w-full max-h-[342px]" src={Bag03} alt="" />           
+                  <img className="w-full max-h-[342px]" src={Bag03} alt="" />
                   <div className="flex flex-col text-center mt-[22px]">
                      <div>
                         <span className="products-name-shopping-everyday">Shoudler Bag</span>
@@ -595,7 +611,7 @@ function Home() {
             </div>
             <div className="describe-content flex flex-col text-center justify-center mt-[18px]">
                <span>Autem neglegentur in duo, ex aperiam fabulas mei, exerci</span>
-               <span>menandri explicari ut mei. Eam cibo.</span>  
+               <span>menandri explicari ut mei. Eam cibo.</span>
             </div>
          </div>
 
@@ -667,7 +683,7 @@ function Home() {
                <div className="absolute top-[-7%] left-[36%]">
                   <span className="describe-title">Join our Newsletter</span>
                </div>
-               <div className="absolute  mt-[70px] left-[26%] text-center underline underline-offset-[14px]">
+               <div className="absolute mt-[70px] left-[26%] text-center underline underline-offset-[14px]">
                   <input className="your-email" type="text" placeholder="Your email" />
                </div>
                <div className="absolute cursor-pointer w-[128px] h-[46px] bg-black top-[45%] left-[45%] text-center leading-[46px]">

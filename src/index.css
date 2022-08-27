@@ -187,7 +187,7 @@
 
    /* Join our Newsletter */
    .your-email {
-      @apply min-w-[600px] min-h-[18px] text-[10px] font-medium font-['Montserrat'] bg-[#f7f8fa] text-center uppercase tracking-[0.1rem] border-x-0 border-t-0 pb-2  border-b-[1px] border-b-stone-500/75 focus:border-b-stone-900	 focus:outline-none cursor-pointer;
+      @apply min-w-[600px] min-h-[18px] text-[10px] font-medium font-['Montserrat'] bg-[#f7f8fa] placeholder:text-[#000] text-center uppercase tracking-[0.1rem] border-x-0 border-t-0 pb-2  border-b-[1px] border-b-[#ccc] focus:border-b-black	 focus:outline-none cursor-pointer;
    }
 
    .button-newsletter {

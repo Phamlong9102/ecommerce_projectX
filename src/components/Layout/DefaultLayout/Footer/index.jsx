@@ -1,6 +1,8 @@
 import whiteLogoWeb from '~/images/FooterImages/whiteLogoWeb.png';
 import visaCard from '~/images/FooterImages/visaCard.png';
 
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+
 function Footer() {
    return (
       <footer className="w-full bottom-0 left-0 h-[522px] mt-[400px] bg-black text-white select-none">
@@ -132,12 +134,13 @@ function Footer() {
                      Newsletter
                   </span>
                </div>
-               <div className="mt-[30px]">
+               <div className="mt-[30px] relative">
                   <input
                      className="bg-black border-x-0 border-t-0 pb-2 placeholder:text-white placeholder:font-normal placeholder:uppercase placeholder:text-[10px] placeholder:tracking-widest	focus:outline-none border-b-[1px] border-white"
                      type="text"
                      placeholder="Your email"
                   />
+                  <MailOutlineIcon sx={{ fontSize: 18 }} className="absolute top-[20%] left-[91%] "/>
                </div>
             </div>
          </div>
