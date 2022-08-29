@@ -11,92 +11,8 @@ import { GridRowModes, GridToolbarContainer, GridActionsCellItem } from '@mui/x-
 import { DataGrid } from '@mui/x-data-grid';
 import { randomId } from '@mui/x-data-grid-generator';
 
-const initialRows = [
-   {
-      id: 1,
-      name: 'Chí Anh Tran',
-      age: 47,
-      address: 'Cầu Giấy, Hà Nội',
-      phone_number: '0123453219',
-   },
-   {
-      id: 2,
-      name: 'Diệp Lan Trần',
-      age: 22,
-      address: 'Nam Từ Liêm, Hà Nội',
-      phone_number: '0123489389',
-   },
-   {
-      id: 3,
-      name: 'Tuân Bích Phạm',
-      age: 39,
-      address: 'Ba Đình, Hà Nội',
-      phone_number: '0123490289',
-   },
-   {
-      id: 4,
-      name: 'Trí Tú Ngô',
-      age: 13,
-      address: 'Quận 1, Hồ Chí Minh',
-      phone_number: '0123493089',
-   },
-   {
-      id: 5,
-      name: 'Ngọc Minh Phạm',
-      age: 62,
-      address: 'Quận 2, Hồ Chí Minh',
-      phone_number: '01234523589',
-   },
-   {
-      id: 6,
-      name: 'Bích Yên Nguyen',
-      age: 54,
-      address: 'Quảng Ninh',
-      phone_number: '0123478389',
-   },
-   {
-      id: 7,
-      name: 'Hữu Huy Bùi',
-      age: 12,
-      address: 'Thái Nguyên',
-      phone_number: '0123459049',
-   },
-   {
-      id: 8,
-      name: 'Tuyến Quỳnh Ngo',
-      age: 53,
-      address: 'Hà Giang',
-      phone_number: '01238346789',
-   },
-   {
-      id: 9,
-      name: 'Hương Công Hoàng',
-      age: 46,
-      address: 'Cao Bằng',
-      phone_number: '0136456789',
-   },
-   {
-      id: 10,
-      name: 'Nguyễn Văn Hiệp',
-      age: 22,
-      address: 'Lạng Sơn',
-      phone_number: '0123432789',
-   },
-   {
-      id: 11,
-      name: 'Bích Yên Nguyen',
-      age: 22,
-      address: 'Bắc Ninh',
-      phone_number: '0129376789',
-   },
-   {
-      id: 12,
-      name: 'Nam Lành Văn',
-      age: 37,
-      address: 'Ninh Bình',
-      phone_number: '0749456789',
-   },
-];
+import axios from 'axios'; 
+import { useEffect } from 'react'; 
 
 function EditToolbar(props) {
    const { setRows, setRowModesModel } = props;
@@ -112,7 +28,7 @@ function EditToolbar(props) {
 
    return (
       <GridToolbarContainer>
-         <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
+         <Button sx={{ color: '#000' }} startIcon={<AddIcon />} onClick={handleClick}>
             Add User
          </Button>
       </GridToolbarContainer>
@@ -125,8 +41,26 @@ EditToolbar.propTypes = {
 };
 
 export default function FullFeaturedCrudGrid() {
-   const [rows, setRows] = React.useState(initialRows);
+   
+   const [rows, setRows] = React.useState([]);
    const [rowModesModel, setRowModesModel] = React.useState({});
+
+   useEffect(() => {
+      axios.get('http://localhost:3000/users')
+         .then(res => {
+            const data = res.data.map((user) => {
+               return {
+                  "id": user.id,
+                  "name": user.name, 
+                  "age": user.age, 
+                  "address": user.address,
+                  "phone_number": user.phone_number
+               }
+            })
+            setRows(data)
+         })
+         .catch(err => { console.log('Error:', err ) })
+      }, [])
 
    const handleRowEditStart = (params, event) => {
       event.defaultMuiPrevented = true;

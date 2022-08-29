@@ -10,7 +10,7 @@ const routes = {
     store: '/store',
     clutch_bag: '/store/clutch-bag/1',
     orange_airsuit: '/store/orange-airsuit/2',
-    orange_sandal: '/store/orange-sandal/3',
+    orange_sandal: '/store/orange-sandals/3',
     blue_suit: '/store/blue-suit/4',
     orange_weil: '/store/orange-weil/5',
     white_purse: '/store/white-purse/6',

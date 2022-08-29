@@ -1,4 +1,5 @@
-import TableUsers from '~/components/ChildrenLayout/AdminTable/TableProducts';
+import TableProducts from '~/components/ChildrenLayout/AdminTable/TableProducts';
+
 
 import { Link } from 'react-router-dom';
 
@@ -24,7 +25,7 @@ function AdministratorProducts() {
                </Link>
             </div>
             <div className="w-full h-full">
-               <TableUsers />
+               <TableProducts />
             </div>
          </div>
       </>

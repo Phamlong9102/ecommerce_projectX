@@ -1,6 +1,8 @@
 import Cart02 from '~/images/Cart/Cart02.jpg';
 import Cart03 from '~/images/Cart/Cart03.jpg';
 
+import Bag03 from '~/images/BagAndBackpacks/Bag03.jpg';
+
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import CloseIcon from '@mui/icons-material/Close';
@@ -34,7 +36,7 @@ function Cart() {
                   </div>
                   <div className="flex mt-[25px]">
                      <Link to="/store/golden-sandals/8">
-                        <img className="w-[116px] h-[155px]" src={Cart02} alt="" />
+                        <img className="w-[116px] h-[155px]" src={Bag03} alt="" />
                      </Link>
                      <div className="flex flex-col ml-[22px] justify-center	">
                         <div>

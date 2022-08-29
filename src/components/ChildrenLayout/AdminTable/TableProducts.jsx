@@ -11,95 +11,11 @@ import { GridRowModes, GridToolbarContainer, GridActionsCellItem } from '@mui/x-
 import { DataGrid } from '@mui/x-data-grid';
 import { randomId } from '@mui/x-data-grid-generator';
 
-const initialRows = [
-   {
-      id: 1,
-      name: 'Clutch Bag',
-      price: 175,
-      classify: 'Bag and Backpack',
-      category: 'clothes',
-   },
-   {
-      id: 2,
-      name: 'Orange Sandals',
-      price: 225,
-      classify: 'skirt',
-      category: 'clothes',
-   },
-   {
-      id: 3,
-      name: 'Orange Sandals',
-      price: 125,
-      sale_price: 75,
-      classify: 'skirt',
-      category: 'clothes',
-   },
-   {
-      id: 4,
-      name: 'Blue Suit',
-      price: 360,
-      classify: 'clothes',
-      category: 'clothes',
-   },
-   {
-      id: 5,
-      name: 'Orange Weil',
-      price: 60,
-      classify: 'clothes',
-      category: 'clothes',
-   },
-   {
-      id: 6,
-      name: 'White Purse',
-      price: 75,
-      classify: 'Bag and Backpack',
-      category: 'clothes',
-   },
-   {
-      id: 7,
-      name: 'Red Suit',
-      price: 456,
-      classify: 'clothes',
-      category: 'clothes',
-   },
-   {
-      id: 8,
-      name: 'Golden Sandals',
-      price: 115,
-      classify: 'high heels',
-      category: 'clothes',
-   },
-   {
-      id: 9,
-      name: 'Mission Bag',
-      price: 110,
-      classify: 'Bag and Backpack',
-      category: 'clothes',
-   },
-   {
-      id: 10,
-      name: 'City Mini Bag',
-      price: 85,
-      classify: 'Bag and Backpack',
-      category: 'bags',
-   },
-   {
-      id: 11,
-      name: 'Shoulder Bag',
-      price: 90,
-      classify: 'Bag and Backpack',
-      category: 'bags',
-   },
-   {
-      id: 12,
-      name: 'Drawstring Bag',
-      price: 45,
-      classify: 'Bag and Backpack',
-      category: 'bags',
-   },
-];
+import { useEffect } from 'react'; 
+import axios from 'axios';
 
 function EditToolbar(props) {
+
    const { setRows, setRowModesModel } = props;
 
    const handleClick = () => {
@@ -113,7 +29,7 @@ function EditToolbar(props) {
 
    return (
       <GridToolbarContainer>
-         <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
+         <Button sx={{ color: '#000',  }} startIcon={<AddIcon />} onClick={handleClick}>
             Add Product
          </Button>
       </GridToolbarContainer>
@@ -126,9 +42,28 @@ EditToolbar.propTypes = {
 };
 
 export default function FullFeaturedCrudGrid() {
-   const [rows, setRows] = React.useState(initialRows);
+   
+   const [rows, setRows] = React.useState([]);
    const [rowModesModel, setRowModesModel] = React.useState({});
 
+   useEffect(() => {
+      axios.get('http://localhost:3000/products')
+         .then(res => {
+            const data = res.data.map((product) => {
+               return {
+                  "id": product.id,
+                  "name": product.name, 
+                  "price": product.price, 
+                  "classify": product.classify,
+                  "category": product.category
+               }
+            })
+            setRows(data)
+         })
+         .catch(err => { console.log('Error:', err ) })
+      }, [])
+
+      
    const handleRowEditStart = (params, event) => {
       event.defaultMuiPrevented = true;
    };
