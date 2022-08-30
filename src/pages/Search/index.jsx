@@ -14,15 +14,15 @@ function Search() {
       <>
          {/* Điều hướng */}
          <div className="w-full h-[140px] relative flex justify-center bg-[#f6f6f6] mt-[32px] selection-default">
-            <div className="absolute top-[40%] left-[9%] store-menu-route">
+            <div className="absolute flex top-[40%] left-[9%] store-menu-route">
                <Link className="" to="/">
                   <span className="">Home</span>
                </Link>
                <span className="mx-[10px]">/</span>
-               <Link className="" to="/store">
+               <div className="" to="/store">
                   <span className="">Search result for ""</span>
-               </Link>
-            </div>
+               </div>
+            </div>   
             <div className="absolute top-[48%] left-[9%] mt-[10px]">
                <span className="store-big-title">Search result for: </span>
             </div>

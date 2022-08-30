@@ -1,13 +1,12 @@
-import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'; 
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel';
 import RelatedProduct from '~/components/ChildrenLayout/ProductPageChildren/RelatedProduct';
 import ProductPageChildren from '~/components/ChildrenLayout/ProductPageChildren/ProductPageChildren';
 
 import { Link } from 'react-router-dom';
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
- 
-function ShoulderBag() {
 
+function ShoulderBag() {
    const [data, setData] = useState([]);
 
    useEffect(() => {
@@ -37,14 +36,14 @@ function ShoulderBag() {
                   <span className="">Shoulder</span>
                </Link>
             </div>
-            <div className="absolute top-0 left-[4%] mt-[10px]">
-               <span className="store-big-title">ShoulderBag</span>
+            <div className="absolute top-[48%] left-[4%] mt-[10px]">
+               <span className="store-big-title">Shoulder Bag</span>
             </div>
          </div>
 
          {/* Render UI */}
          {data.slice(10, 11).map((product) => (
-            <ProductPageChildren key={product.id} product={product}/>
+            <ProductPageChildren key={product.id} product={product} />
          ))}
 
          <div className="mx-[128px] mt-[70px]">

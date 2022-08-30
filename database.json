@@ -15,11 +15,10 @@
       "price": 175,
       "classify": "Bag and Backpack",
       "star": 5,
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 34,
       "category": "hand bags",
       "tag": "clothes, lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 2,
@@ -34,11 +33,10 @@
       "imageURL05": "http://localhost:8000/static/media/OA06.9b28cc676f552ad2060a.jpg", 
       "price": 225,
       "classify": "skirt",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 33,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 3,
@@ -55,11 +53,10 @@
       "sale_price": 125,
       "price": 75,
       "classify": "skirt",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 31,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 4,
@@ -74,11 +71,10 @@
       "imageURL05": "http://localhost:8000/static/media/BS06.4cbcc5178b8a31bb8951.jpg", 
       "price": 360,
       "classify": "clothes",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 30,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 5,
@@ -93,11 +89,10 @@
       "imageURL05": "http://localhost:8000/static/media/OW06.2d24c4e85332310a9beb.jpg", 
       "price": 60,
       "classify": "clothes",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 29,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 6,
@@ -112,11 +107,10 @@
       "imageURL05": "http://localhost:8000/static/media/WP06.a0af7f417c60cef91ccd.jpg ", 
       "price": 75,
       "classify": "Bag and Backpack",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 28,
       "category": "wallet",
       "tag": "clothes, lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 7,
@@ -132,11 +126,10 @@
       "new": true,
       "price": 456,
       "classify": "clothes",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 27,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 8,
@@ -151,11 +144,10 @@
       "imageURL05": "http://localhost:8000/static/media/GS06.6e77b2bdd779ee1b5b87.jpg", 
       "price": 115,
       "classify": "high heels",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 26,
       "category": "high heels",
       "tag": "clothes, lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 9,
@@ -170,11 +162,10 @@
       "imageURL05": "http://localhost:8000/static/media/MB06.6e8d068ee5dc8622b970.jpg", 
       "price": 110,
       "classify": "Bag and Backpack",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 38,
       "category": "bags",
       "tag": "clothes, lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 10,
@@ -189,11 +180,10 @@
       "imageURL05": "http://localhost:8000/static/media/CMB06.bd3c8e836aed9d2ab5fe.jpg", 
       "price": 85,
       "classify": "Bag and Backpack",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 37,
       "category": "bags",
       "tag": "modern, stylish",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 11,
@@ -208,30 +198,28 @@
       "imageURL05": "http://localhost:8000/static/media/SB06.c27a35da45d1dfd91951.jpg", 
       "price": 90,
       "classify": "Bag and Backpack",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 36,
       "category": "bags",
       "tag": "lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     },
     {
       "id": 12,
       "name": "Drawstring Bag",
       "url": "/store/drawstring-bag/12",
       "imageURL": "http://localhost:8000/static/media/Bag04.2813ce77835ca4643605.jpg",
-      "imageURL00": "http://localhost:8000/static/media/SB01.9829ad569c4bd6e64335.jpg", 
-      "imageURL01": "http://localhost:8000/static/media/SB02.85f1cc9143261e770de1.jpg", 
-      "imageURL02": "http://localhost:8000/static/media/SB03.7787f6254f5a8bb606c7.jpg", 
-      "imageURL03": "http://localhost:8000/static/media/SB04.4dfeb9dfedc071a80481.jpg", 
-      "imageURL04": "http://localhost:8000/static/media/SB05.3dbfc9c04b112ba382f1.jpg", 
-      "imageURL05": "http://localhost:8000/static/media/SB05.3dbfc9c04b112ba382f1.jpg", 
+      "imageURL00": "http://localhost:8000/static/media/DSB01.20cc7311361973a9e039.jpg", 
+      "imageURL01": "http://localhost:8000/static/media/DSB02.7d88dcaaf71c263d3d90.jpg", 
+      "imageURL02": "http://localhost:8000/static/media/DSB03.3f5699e7e2b547a64c2e.jpg", 
+      "imageURL03": "http://localhost:8000/static/media/DSB04.6b8d67cde063985ae4af.jpg", 
+      "imageURL04": "http://localhost:8000/static/media/DSB05.f392dc84727a77314302.jpg", 
+      "imageURL05": "http://localhost:8000/static/media/DSB06.2813ce77835ca4643605.jpg", 
       "price": 45,
       "classify": "Bag and Backpack",
-      "description1": "Lorem proin gravida nibh enean sonauris hime sollicitudin enean , lom himenaeos lorem ean consertquat estruda cono pero.",
       "sku": 35,
       "category": "bags",
       "tag": "lifestyle",
-      "description2": "Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere legere incorrupte. Eum an vocent commodo referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu quot virtute usu, nonumy eruditi suscipit duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne. Nam ex posse argumentum eloquentiam, saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel."
+      "description_product": "Lorem ipsum dolor"
     }
   ],
   "users": [

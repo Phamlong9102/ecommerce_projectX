@@ -13,7 +13,6 @@ function DrawstringBag() {
    useEffect(() => {
       const fetchData = async () => {
          const result = await axios('http://localhost:3000/products');
-
          setData(result.data);
       };
 
@@ -42,7 +41,10 @@ function DrawstringBag() {
             </div>
          </div>
 
-         c
+         {/* Render UI */}
+         {data.slice(11, 12).map((product) => (
+            <ProductPageChildren key={product.id} product={product}/>
+         ))}
 
          <div className="mx-[128px] mt-[70px]">
             <TabPanel />

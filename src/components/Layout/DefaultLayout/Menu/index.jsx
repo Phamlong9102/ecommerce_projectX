@@ -10,6 +10,7 @@ import SE08 from '~/images/ShoppingEveryDay/SE08.jpg';
 import SE01 from '~/images/ShoppingEveryDay/SE01.jpg';
 
 import CloseIcon from '@mui/icons-material/Close';
+import SearchForm from '~/components/ChildrenLayout/SearchForm/SearchForm';
 
 function Menu() {
    return (
@@ -44,19 +45,20 @@ function Menu() {
                </Link>
             </div>
          </div>
+         
          <div className="flex mt-9 text-sm font-[Poppins] font-semibold	cursor-pointer	">
+            
             <div className="flex mr-9">
-               <div className="mr-2.5">
-                  <FontAwesomeIcon icon={faMagnifyingGlass} />
-               </div>
-               <span className="">Search</span>
+               <SearchForm />
             </div>
+            
             <div className="flex mr-9">
                <div className="mr-2.5">
                   <FontAwesomeIcon icon={faHeart} />
                </div>
                <span className="">Whislist</span>
             </div>
+            
             <Link to="/cart" className="relative cart-00 flex mr-9">
                <div className="mr-2.5">
                   <FontAwesomeIcon icon={faBagShopping} />

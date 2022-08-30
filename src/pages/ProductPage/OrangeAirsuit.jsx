@@ -42,10 +42,7 @@ function OrangeAirsuit() {
             </div>
          </div>
 
-         {/* Render UI */}
-         {data.slice(1, 2).map((product) => (
-            <ProductPageChildren key={product.id} product={product}/>
-         ))}
+         c
 
          <div className="mx-[128px] mt-[70px]">
             <TabPanel />

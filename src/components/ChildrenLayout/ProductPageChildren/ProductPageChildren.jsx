@@ -31,8 +31,13 @@ function ProductPageChildren({ product }) {
             </div>
             <div className="relative ml-[10px]">
                {product.new && (
-                  <div className="absolute w-[50px] h-[20px] top-0 left-[3%] z-[100] bg-white text-black text-center rotate-90">
+                  <div className="absolute w-[50px] h-[20px] top-[calc(2%+1px)] leading-[20px] left-[1px] z-[1] bg-white text-black text-center rotate-90">
                      <span className="uppercase text-[11px] tracking-[1px]">New</span>
+                  </div>
+               )}
+               {product.sale && (
+                  <div className="absolute w-[50px] h-[20px] top-[calc(2%+1px)] leading-[20px] left-[1px] z-[100] bg-black text-white text-center rotate-90">
+                     <span className="uppercase text-[11px] tracking-[1px]">Sale</span>
                   </div>
                )}
                <img className="relative w-532px h-[721px] " src={product.imageURL05} alt="" />

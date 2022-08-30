@@ -422,4 +422,20 @@
          background-color: #000; 
       }
    }
+   /* Search */
+      @layer utilities {
+         .css-1lnhmug-MuiButtonBase-root-MuiButton-root:hover {
+            background-color: transparent !important;
+         }
+         .css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
+            background-color: #f9efec !important;
+         }
+         .css-zw3mfo-MuiModal-root-MuiDialog-root {
+            z-index: 10 !important;
+         }
+         .css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
+            z-index: 10 !important;
+         }
+      }
+
 }
