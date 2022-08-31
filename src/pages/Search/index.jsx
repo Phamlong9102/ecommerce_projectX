@@ -9,7 +9,30 @@ import Search02 from '~/images/Search/Search02.jpg';
 import Search03 from '~/images/Search/Search03.jpg';
 import Search04 from '~/images/Search/Search04.jpg';
 
+import { useState, useEffect } from 'react'; 
+import axios from 'axios';
+
+import { useSearchParams } from 'react-router-dom';
+
+import SearchResult from '~/components/ChildrenLayout/SearchResult/SearchResult'; 
+
 function Search() {
+
+   const [searchParams, setSearchParams] = useSearchParams();
+   
+   const search = searchParams.get("search")
+
+   const [data, setData] = useState([]);
+
+   useEffect(() => {
+      const fetchData = async () => {
+         const result = await axios('https://630ed147379256341881df89.mockapi.io/search');
+         setData(result.data);
+         console.log(result);
+      };
+      fetchData();
+   }, []);
+   
    return (
       <>
          {/* Điều hướng */}
@@ -20,11 +43,11 @@ function Search() {
                </Link>
                <span className="mx-[10px]">/</span>
                <div className="" to="/store">
-                  <span className="">Search result for ""</span>
+                  <span className="">Search result for {search}</span>
                </div>
             </div>   
             <div className="absolute top-[48%] left-[9%] mt-[10px]">
-               <span className="store-big-title">Search result for: </span>
+               <span className="store-big-title">Search result for: {search}</span>
             </div>
          </div>
 
@@ -119,6 +142,10 @@ function Search() {
                     <FontAwesomeIcon className="font-normal" icon={faAngleRight} />
                 </button>
             </div>
+         </div>
+
+         <div className="mt-[48px] mx-[122px]">
+            <span className="text-[15px] font-normal text-black ">No product were found</span>
          </div>
          
       </>

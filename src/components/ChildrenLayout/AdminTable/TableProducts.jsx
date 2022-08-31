@@ -47,7 +47,7 @@ export default function FullFeaturedCrudGrid() {
    const [rowModesModel, setRowModesModel] = React.useState({});
 
    useEffect(() => {
-      axios.get('http://localhost:3000/products')
+      axios.get('https://630ed147379256341881df89.mockapi.io/products')
          .then(res => {
             const data = res.data.map((product) => {
                return {

@@ -11,8 +11,7 @@ function Store() {
 
    useEffect(() => {
       const fetchData = async () => {
-         const result = await axios('http://localhost:3000/products');
-
+         const result = await axios('https://630dc755b37c364eb70b48ff.mockapi.io/api/product/products');
          setData(result.data);
       };
 

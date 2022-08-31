@@ -63,7 +63,7 @@ function Home() {
 
    useEffect(() => {
       const fetchData = async () => {
-         const result = await axios('http://localhost:3000/products');
+         const result = await axios('https://630ed147379256341881df89.mockapi.io/products');
          setData(result.data);
       };
       fetchData();
