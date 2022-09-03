@@ -8,7 +8,6 @@ import * as React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 function SearchForm() {
 
    const [open, setOpen] = React.useState(false);
@@ -70,7 +69,7 @@ function SearchForm() {
                   placeholder="Search..."
                   onChange={(e)=> setSearchInput(e.target.value)}   
                   onKeyPress={navigateToSearch}
-                  onKeyUp={handleEnterClose} 
+                  onKeyUp={handleEnterClose}
                />
             </div>
          </Dialog>

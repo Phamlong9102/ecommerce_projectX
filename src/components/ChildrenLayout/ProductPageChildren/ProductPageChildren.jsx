@@ -4,10 +4,20 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import { Link } from 'react-router-dom';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+
+
+import { AppContext } from '~/contexts/AppContext';
 
 function ProductPageChildren({ product }) {
    const [count, setCount] = useState(0);
+
+   const {setCartItems} = useContext(AppContext);
+   
+
+   const handleClick = (e) => {
+      setCartItems([product])
+   } 
 
    return (
       <div className="mt-[80px] flex justify-center selection-default">
@@ -98,7 +108,7 @@ function ProductPageChildren({ product }) {
                      <FontAwesomeIcon className="text-[10px]" icon={faAngleDown} />
                   </button>
                </div>
-               <button className="ml-[43px] w-[170px] h-[46px] bg-black  button:underline button:underline-offset-8">
+               <button onClick={handleClick} className="ml-[43px] w-[170px] h-[46px] bg-black  button:underline button:underline-offset-8">
                   <span className="text-[13px] font-['Poppins'] font-semibold text-white">Add To Cart</span>
                </button>
             </div>

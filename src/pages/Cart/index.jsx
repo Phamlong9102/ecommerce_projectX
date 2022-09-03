@@ -1,7 +1,4 @@
-import Cart02 from '~/images/Cart/Cart02.jpg';
 import Cart03 from '~/images/Cart/Cart03.jpg';
-
-import Bag03 from '~/images/BagAndBackpacks/Bag03.jpg';
 
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -9,15 +6,14 @@ import CloseIcon from '@mui/icons-material/Close';
 import { faRightLong } from '@fortawesome/free-solid-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
 
-import ChangeAdress from '~/components/ChildrenLayout/ChangeAdress/ChangeAdress'; 
+import ChangeAdress from '~/components/ChildrenLayout/ChangeAdress/ChangeAdress';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { useState } from 'react';  
+import { useState } from 'react';
 
 function Cart() {
-   const [count, setCount] = useState(0); 
-
+   const [count, setCount] = useState(0);
 
    return (
       <>
@@ -33,48 +29,6 @@ function Cart() {
                <div className="flex flex-col border-b-[1px] border-[#ccc] pb-[24px]">
                   <div className="">
                      <span className="text-[25px] font-semibold font-['Poppins']">Shopping Cart</span>
-                  </div>
-                  <div className="flex mt-[25px]">
-                     <Link to="/store/golden-sandals/8">
-                        <img className="w-[116px] h-[155px]" src={Bag03} alt="" />
-                     </Link>
-                     <div className="flex flex-col ml-[22px] justify-center	">
-                        <div>
-                           <Link
-                              to="/store/golden-sandals/8"
-                              className="text-black text-[15px] font-medium font-['Poppins']"
-                           >
-                              Golden Sandals
-                           </Link>
-                        </div>
-                        <div>
-                           <span className="text-[14px] font-normal text-[#2d2d2d] font-['Poppins']">$115.00</span>
-                        </div>
-                     </div>
-                     <div className="relative flex flex-col justify-center">
-                        <input
-                           type="text"
-                           readOnly
-                           className="w-[195px] h-[50px] cursor-pointer border-[#d3d3d3] focus:border-black border-[1px] border-solid  ml-[86px]"
-                        ></input>
-                        <div className="absolute top-[43%] left-[38%] before:content-['Quantity'] before:text-[14px] before:text-[#464646] before:font-['Montserrat'] "></div>
-                        {/* Giảm số lượng trong giỏ hàng */}
-                        <button onClick={() => setCount(Math.max(count - 1, 0))} 
-                           className="absolute top-[43%] left-[80%]">
-                           <KeyboardArrowLeftIcon sx={{ fontSize: '18px' }} />
-                        </button>
-                        <div className="absolute top-[43%] left-[calc(85%+4px)]">
-                           <span className=" text-[12px] font-light">{count}</span>
-                        </div>
-                        {/* Tăng số lượng trong giỏ hàng */}
-                        <button onClick={() => setCount(count + 1)} 
-                           className="absolute top-[43%] left-[90%]">
-                           <KeyboardArrowRightIcon sx={{ fontSize: '18px' }} />
-                        </button>
-                     </div>
-                     <button className="flex flex-col justify-center ml-[50px]">
-                        <CloseIcon sx={{ fontSize: '20px', fontWeight: 'normal' }} />
-                     </button>
                   </div>
                </div>
                <div className="flex flex-col border-b-[1px] border-[#ccc] pb-[24px]">
@@ -102,15 +56,16 @@ function Cart() {
                            className="w-[195px] h-[50px] cursor-pointer border-[#d3d3d3] focus:border-black border-[1px] border-solid  ml-[86px]"
                         ></input>
                         <div className="absolute top-[43%] left-[38%] before:content-['Quantity'] before:text-[14px] before:text-[#464646] before:font-['Montserrat'] "></div>
-                        <button onClick={() => setCount(Math.max(count - 1, 0)) } 
-                           className="absolute top-[43%] left-[80%]">
+                        <button
+                           onClick={() => setCount(Math.max(count - 1, 0))}
+                           className="absolute top-[43%] left-[80%]"
+                        >
                            <KeyboardArrowLeftIcon sx={{ fontSize: '18px' }} />
                         </button>
                         <div className="absolute top-[43%] left-[calc(85%+4px)]">
                            <span className=" text-[12px] font-light">{count}</span>
                         </div>
-                        <button onClick={() => setCount(count + 1)}
-                           className="absolute top-[43%] left-[90%]">
+                        <button onClick={() => setCount(count + 1)} className="absolute top-[43%] left-[90%]">
                            <KeyboardArrowRightIcon sx={{ fontSize: '18px' }} />
                         </button>
                      </div>

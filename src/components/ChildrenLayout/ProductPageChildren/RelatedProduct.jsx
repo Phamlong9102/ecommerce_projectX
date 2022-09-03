@@ -8,7 +8,7 @@ function RelatedProduct() {
 
    useEffect(() => {
       const fetchData = async () => {
-         const result = await axios('https://630dc755b37c364eb70b48ff.mockapi.io/api/product/products');
+         const result = await axios('https://630ed147379256341881df89.mockapi.io/products');
          setData(result.data);
       };
       fetchData();

@@ -1,5 +1,7 @@
-// Trang cửa hàng
 import { Link } from 'react-router-dom';
+
+import Sorting from './Sorting';
+import PriceFilterAndCategory from './PriceFilterAndCategory';
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -11,13 +13,12 @@ function Store() {
 
    useEffect(() => {
       const fetchData = async () => {
-         const result = await axios('https://630dc755b37c364eb70b48ff.mockapi.io/api/product/products');
+         const result = await axios('https://630ed147379256341881df89.mockapi.io/products');
          setData(result.data);
       };
 
       fetchData();
    }, []);
-
    return (
       <>
          {/* Điều hướng */}
@@ -36,14 +37,24 @@ function Store() {
             </div>
          </div>
 
-         {/* Shopping everyday products  */}
-         <div className="mt-[60px] select-none flex justify-center selection-default mx-[120px]">
-            <div>
-               <div className="grid grid-cols-4 gap-4">
-                  {data.slice(0, 12).map((product) => (
-                     <ProductDemo key={product.id} product={product} />
-                  ))}
+         <div className="flex">
+            <div className="">
+               <Sorting />
+
+               {/* Shopping everyday products  */}
+               <div className="mt-[18px] select-none flex justify-center selection-default ml-[80px]">
+                  <div>
+                     <div className="grid grid-cols-3 gap-3">
+                        {data.slice(0, 12).map((product) => (
+                           <ProductDemo key={product.id} product={product} />
+                        ))}
+                     </div>
+                  </div>
                </div>
+            </div>
+
+            <div className="mt-[120px]">
+               <PriceFilterAndCategory />
             </div>
          </div>
       </>

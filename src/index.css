@@ -321,7 +321,7 @@
          justify-content: center;
       }
       .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
-         color: black !important; 
+         color: black !important;
       }
       .css-1d6wzja-MuiButton-startIcon {
          color: black !important;
@@ -398,7 +398,7 @@
          letter-spacing: 0 !important;
          text-transform: none !important;
          font-size: 18px !important;
-         font-family: 'Poppins' !important; 
+         font-family: 'Poppins' !important;
          color: #000 !important;
          font-weight: 600 !important;
       }
@@ -407,35 +407,38 @@
          letter-spacing: 0 !important;
          text-transform: none !important;
          font-size: 18px !important;
-         font-family: 'Poppins' !important; 
+         font-family: 'Poppins' !important;
          color: #000 !important;
          font-weight: 600 !important;
       }
       .under-00 {
          content: '';
          position: absolute;
-         bottom: -4px; 
-         left: 0; 
-         right: 0; 
-         height: 1px; 
-         width: 100%; 
-         background-color: #000; 
+         bottom: -4px;
+         left: 0;
+         right: 0;
+         height: 1px;
+         width: 100%;
+         background-color: #000;
       }
    }
    /* Search */
-      @layer utilities {
-         .css-1lnhmug-MuiButtonBase-root-MuiButton-root:hover {
-            background-color: transparent !important;
-         }
-         .css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
-            background-color: #f9efec !important;
-         }
-         .css-zw3mfo-MuiModal-root-MuiDialog-root {
-            z-index: 10 !important;
-         }
-         .css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
-            z-index: 10 !important;
-         }
+   @layer utilities {
+      .css-1lnhmug-MuiButtonBase-root-MuiButton-root:hover {
+         background-color: transparent !important;
       }
+      .css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
+         background-color: #f9efec !important;
+      }
+      .css-zw3mfo-MuiModal-root-MuiDialog-root {
+         z-index: 10 !important;
+      }
+      .css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
+         z-index: 10 !important;
+      }
+   }
+   /* Store Sorting */
+   @layer utilities {
 
+   }
 }

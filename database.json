@@ -11,6 +11,7 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-1-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-1-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-1.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-1-150x150.jpg", 
       "new": true, 
       "price": 175,
       "classify": "Bag and Backpack",
@@ -18,7 +19,8 @@
       "sku": 34,
       "category": "bags",
       "tag": "clothes, lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": true
     },
     {
       "id": 2,
@@ -31,12 +33,13 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-2-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-2-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-2.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-2-150x150.jpg", 
       "price": 225,
       "classify": "skirt",
       "sku": 33,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
     },
     {
       "id": 3,
@@ -49,6 +52,7 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-3-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-3-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-3.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-3-150x150.jpg", 
       "sale": true, 
       "sale_price": 125,
       "price": 75,
@@ -56,7 +60,8 @@
       "sku": 31,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": true
     },
     {
       "id": 4,
@@ -69,12 +74,13 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-4-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-4-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-4.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-4-150x150.jpg", 
       "price": 360,
       "classify": "clothes",
       "sku": 30,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
     },
     {
       "id": 5,
@@ -87,12 +93,14 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-5-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-5-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-5.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-5-150x150.jpg", 
       "price": 60,
       "classify": "clothes",
       "sku": 29,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": true
     },
     {
       "id": 6,
@@ -105,6 +113,7 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-6-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-6-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-6.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-6-150x150.jpg", 
       "price": 75,
       "classify": "Bag and Backpack",
       "sku": 28,
@@ -123,13 +132,15 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-7-gallery-2-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-7-gallery-1-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-7.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-7-150x150.jpg", 
       "new": true,
       "price": 456,
       "classify": "clothes",
       "sku": 27,
       "category": "clothes",
       "tag": "clothes, lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": true
     },
     {
       "id": 8,
@@ -142,6 +153,7 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-8-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-8-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-8.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-8-150x150.jpg", 
       "price": 115,
       "classify": "high heels",
       "sku": 26,
@@ -160,12 +172,14 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-1-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-1-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-1.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-1-150x150.jpg", 
       "price": 110,
       "classify": "Bag and Backpack",
       "sku": 38,
       "category": "bags",
       "tag": "clothes, lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": true
     },
     {
       "id": 10,
@@ -178,6 +192,7 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-2-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-2-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-2.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-2-150x150.jpg", 
       "price": 85,
       "classify": "Bag and Backpack",
       "sku": 37,
@@ -196,12 +211,14 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-3-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-3-gallery-5-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-3.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-3-150x150.jpg", 
       "price": 90,
       "classify": "Bag and Backpack",
       "sku": 36,
       "category": "bags",
       "tag": "lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": true
     },
     {
       "id": 12,
@@ -214,12 +231,14 @@
       "imageURL03": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-4-gallery-4-600x800.jpg", 
       "imageURL04": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-4-gallery-4-600x800.jpg", 
       "imageURL05": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-4-2.jpg", 
+      "imageURLSearch": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-4-2-150x150.jpg", 
       "price": 45,
       "classify": "Bag and Backpack",
       "sku": 35,
       "category": "bags",
       "tag": "lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": true
     }
   ],
   "users": [
