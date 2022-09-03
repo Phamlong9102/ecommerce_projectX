@@ -5,14 +5,17 @@ import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { AppContext } from '~/contexts/AppContext';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 function ProductPopper() {
    const { cartItems } = useContext(AppContext);
 
-   const handleDelete = (cartItems) => {
-      console.log('Delete');
-   };
+   const { setCartItems } = useContext(AppContext);
+
+   const deleteButton = (e) => {
+      setCartItems([])
+   }
+
    return (
       <>
          <div to="/cart" className="relative cart-00 flex mr-9">
@@ -61,7 +64,7 @@ function ProductPopper() {
                         </div>
                      </div>
                      <div className="ml-[12px]">
-                        <button onClick={handleDelete} className="">
+                        <button onClick={deleteButton} className="">
                            <CloseIcon className="" />
                         </button>
                      </div>

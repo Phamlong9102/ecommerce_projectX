@@ -20,7 +20,7 @@
       "category": "bags",
       "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
-      "popularity": true
+      "popularity": 1
     },
     {
       "id": 2,
@@ -40,6 +40,7 @@
       "category": "clothes",
       "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
+      "popularity": 4
     },
     {
       "id": 3,
@@ -61,7 +62,7 @@
       "category": "clothes",
       "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
-      "popularity": true
+      "popularity": 8
     },
     {
       "id": 4,
@@ -81,6 +82,7 @@
       "category": "clothes",
       "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
+      "popularity": 12
     },
     {
       "id": 5,
@@ -100,7 +102,7 @@
       "category": "clothes",
       "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
-      "popularity": true
+      "popularity": 2
     },
     {
       "id": 6,
@@ -119,7 +121,8 @@
       "sku": 28,
       "category": "wallet",
       "tag": "clothes, lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": 7
     },
     {
       "id": 7,
@@ -140,7 +143,7 @@
       "category": "clothes",
       "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
-      "popularity": true
+      "popularity": 9
     },
     {
       "id": 8,
@@ -159,7 +162,8 @@
       "sku": 26,
       "category": "high heels",
       "tag": "clothes, lifestyle",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": 16
     },
     {
       "id": 9,
@@ -179,7 +183,7 @@
       "category": "bags",
       "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
-      "popularity": true
+      "popularity": 8
     },
     {
       "id": 10,
@@ -198,7 +202,8 @@
       "sku": 37,
       "category": "bags",
       "tag": "modern, stylish",
-      "description_product": "Lorem ipsum dolor"
+      "description_product": "Lorem ipsum dolor", 
+      "popularity": 0
     },
     {
       "id": 11,
@@ -218,7 +223,7 @@
       "category": "bags",
       "tag": "lifestyle",
       "description_product": "Lorem ipsum dolor", 
-      "popularity": true
+      "popularity": 12
     },
     {
       "id": 12,
@@ -238,192 +243,80 @@
       "category": "bags",
       "tag": "lifestyle",
       "description_product": "Lorem ipsum dolor", 
-      "popularity": true
+      "popularity":  10
     }
   ],
   "users": [
     {
       "id": 1,
-      "name": "Chí Anh Tran",
-      "age": 47,
-      "address": "Hà Nội",
-      "phone_number": "0123453219"
+      "username": "Chí Anh Tran",
+      "email": "email@gmail.com",
+      "password": 123456123456 
     },
     {
       "id": 2,
-      "name": "Diệp Lan Trần",
-      "age": 22,
-      "address": "Hà Nội",
-      "phone_number": "0123489389"
+      "username": "Diệp Lan Trần",
+      "email": "email@gmail.com",
+      "password": 123456 
     },
     {
       "id": 3,
-      "name": "Tuân Bích Phạm",
-      "age": 39,
-      "address": "Hà Nội",
-      "phone_number": "0123490289"
+      "username": "Tuân Bích Phạm",
+      "email": "email@gmail.com",
+      "password": 123456 
     },
     {
       "id": 4,
-      "name": "Trí Tú Ngô",
-      "age": 13,
-      "address": "Hồ Chí Minh",
-      "phone_number": "0123493089"
+      "username": "Trí Tú Ngô",
+      "email": "email@gmail.com",
+      "password": 123456 
     },
     {
       "id": 5,
-      "name": "Ngọc Minh Phạm",
-      "age": 62,
-      "address": "Hồ Chí Minh",
-      "phone_number": "01234523589"
+      "username": "Ngọc Minh Phạm",
+      "email": "email@gmail.com",
+      "password": 123456 
     },
     {
       "id": 6,
-      "name": "Bích Yên Nguyen",
-      "age": 54,
-      "address": "Quảng Ninh",
-      "phone_number": "0123478389"
+      "username": "Bích Yên Nguyen",
+      "email": "email@gmail.com",
+      "password": 123456 
     },
     {
       "id": 7,
-      "name": "Hữu Huy Bùi",
-      "age": 12,
-      "address": "Thái Nguyên",
-      "phone_number": "0123459049"
+      "username": "Hữu Huy Bùi",
+      "email": "email@gmail.com",
+      "password": 123456 
     },
     {
       "id": 8,
-      "name": "Tuyến Quỳnh Ngo",
-      "age": 53,
-      "address": "Hà Giang",
-      "phone_number": "01238346789"
+      "username": "Tuyến Quỳnh Ngo",
+      "email": "email@gmail.com",
+      "password": 123456 
     },
     {
       "id": 9,
-      "name": "Hương Công Hoàng",
-      "age": 46,
-      "address": "Cao Bằng",
-      "phone_number": "0136456789"
+      "username": "Hương Công Hoàng",
+      "email": "email@gmail.com",
+      "password": 123456 
     },
     {
       "id": 10,
-      "name": "Phạm Thăng Long",
-      "age": 22,
-      "address": "Lạng Sơn",
-      "phone_number": "0123432789"
+      "username": "Phạm Thăng Long",
+      "email": "email@gmail.com",
+      "password": 123456 
     },
     {
       "id": 11,
-      "name": "Bích Yên Nguyen",
-      "age": 22,
-      "address": "Bắc Ninh",
-      "phone_number": "0129376789"
+      "username": "Bích Yên Nguyen",
+      "email": "email@gmail.com"
     },
     {
       "id": 12,
-      "name": "Nam Lành Văn",
-      "age": 37,
-      "address": "Ninh bình",
-      "phone_number": "0749456789"
-    }
-  ], 
-
-  "search": [
-    {
-      "id": 1,
-      "name": "Clutch Bag",
-      "url": "/store/clutch-bag/1",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-1.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "bags"
-    }, 
-    {
-      "id": 2,
-      "name": "Orange Airsuit",
-      "url": "/store/orange-airsuit/2",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-2.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "clothes"
-    }, 
-    {
-      "id": 3,
-      "name": "Orange Sandals",
-      "url": "/store/orange-sandals/3",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-3.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "clothes"
-    }, 
-    {
-      "id": 4,
-      "name": "Blue Suit",
-      "url": "/store/blue-suit/4",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-4.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "clothes"
-    }, 
-    {
-      "id": 5,
-      "name": "Orange Weil",
-      "url": "/store/orange-weil/5",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-5.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "clothes"
-    }, 
-    {
-      "id": 6,
-      "name": "White Purse",
-      "url": "/store/white-purse/6",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-6.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "wallet"
-    }, 
-    {
-      "id": 7,
-      "name": "Red Suit",
-      "url": "/store/red-suit/7",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-7.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "clothes"
-    }, 
-    {
-      "id": 8,
-      "name": "Golden Sandals",
-      "url": "/store/golden-sandals/8",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-list-product-8.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "high heels"
-    }, 
-    {
-      "id": 9,
-      "name": "Mision Bag",
-      "url": "/store/mission-bag/9",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-1.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "bags"
-    }, 
-    {
-      "id": 10,
-      "name": "City Mini Bag",
-      "url": "/store/city-mini-bag/10",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-2.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "bags"
-    }, 
-    {
-      "id": 11,
-      "name": "Shoulder Bag",
-      "url": "/store/shoulder-bag/11",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-3.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "bags"
-    }, 
-    {
-      "id": 12,
-      "name": "Drawstring Bag",
-      "url": "/store/drawstring-bag/12",
-      "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/h-1-prod-4-2.jpg", 
-      "description": "Lorem ipsum dolor", 
-      "category": "bags"
+      "username": "Nam Lành Văn",
+      "email": "email@gmail.com",
+      "password": 123456 
     }
   ]
 }

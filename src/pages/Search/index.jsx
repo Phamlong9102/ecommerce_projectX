@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useSearchParams } from 'react-router-dom';
 
 import ProductSearch from '~/components/ChildrenLayout/ProductSearch/ProductSearch';
-import NewSearch from './NewSearch';
+import NewSearch from '~/components/ChildrenLayout/NewSearch/NewSearch';
 
 function Search() {
    const [searchParams, setSearchParams] = useSearchParams();

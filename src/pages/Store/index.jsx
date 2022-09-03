@@ -1,24 +1,10 @@
 import { Link } from 'react-router-dom';
 
-import Sorting from './Sorting';
-import PriceFilterAndCategory from './PriceFilterAndCategory';
-
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-
-import ProductDemo from '../../components/ChildrenLayout/HomeProductChildren/HomeProduct';
+import Sorting from '~/components/ChildrenLayout/ChildrenStore/Sorting';
+import Categories from '~/components/ChildrenLayout/ChildrenStore/Categories'
 
 function Store() {
-   const [data, setData] = useState([]);
 
-   useEffect(() => {
-      const fetchData = async () => {
-         const result = await axios('https://630ed147379256341881df89.mockapi.io/products');
-         setData(result.data);
-      };
-
-      fetchData();
-   }, []);
    return (
       <>
          {/* Điều hướng */}
@@ -40,21 +26,10 @@ function Store() {
          <div className="flex">
             <div className="">
                <Sorting />
-
-               {/* Shopping everyday products  */}
-               <div className="mt-[18px] select-none flex justify-center selection-default ml-[80px]">
-                  <div>
-                     <div className="grid grid-cols-3 gap-3">
-                        {data.slice(0, 12).map((product) => (
-                           <ProductDemo key={product.id} product={product} />
-                        ))}
-                     </div>
-                  </div>
-               </div>
             </div>
 
             <div className="mt-[120px]">
-               <PriceFilterAndCategory />
+               <Categories />
             </div>
          </div>
       </>

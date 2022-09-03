@@ -67,7 +67,6 @@ function Home() {
          setData(result.data);
       };
       fetchData();
-      // localStorage.setItem('cart', []);
    }, []);
 
 

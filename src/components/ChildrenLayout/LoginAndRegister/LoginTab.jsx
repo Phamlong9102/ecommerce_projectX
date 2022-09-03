@@ -1,4 +1,3 @@
-import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -6,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 import { Link } from 'react-router-dom';
+import { useState } from 'react'
 
 function LoginTab(props) {
    const { children, value, index, ...other } = props;
@@ -41,11 +41,15 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
-   const [value, setValue] = React.useState(0);
+   const [value, setValue] = useState(0);
 
    const handleChange = (event, newValue) => {
       setValue(newValue);
    };
+
+   const handleChangeValue1 = (e) => {
+      console.log(e.target.value)
+   }
 
    return (
       <Box sx={{ width: '100%', height: '100%' }}>
@@ -82,6 +86,7 @@ export default function BasicTabs() {
             <div className="mx-[35px] ">
                <div className="">
                   <input
+                     onChange={handleChangeValue1}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase placeholder:mt-[8px]"
                      placeholder="User Name"
                      type="text"
@@ -89,6 +94,7 @@ export default function BasicTabs() {
                </div>
                <div className="mt-[16px]">
                   <input
+                     onChange={handleChangeValue1}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="PassWord"
                      type="text"

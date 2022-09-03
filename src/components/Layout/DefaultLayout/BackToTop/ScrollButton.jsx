@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 const ScrollButton = () => {
-   // eslint-disable-next-line no-unused-vars
    const [isVisible, setIsVisible] = useState(false);
   
    const scrollToTop = () => {
@@ -12,7 +11,6 @@ const ScrollButton = () => {
     };
 
     useEffect(() => {
-      // Button is displayed after scrolling for 500 pixels
       const toggleVisibility = () => {
         if (window.pageYOffset > 500) {
           setIsVisible(true);
