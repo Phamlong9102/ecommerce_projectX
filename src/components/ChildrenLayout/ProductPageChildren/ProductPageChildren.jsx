@@ -6,18 +6,19 @@ import { Link } from 'react-router-dom';
 
 import { useState, useContext } from 'react';
 
-
 import { AppContext } from '~/contexts/AppContext';
 
 function ProductPageChildren({ product }) {
    const [count, setCount] = useState(0);
 
    const { cartItems } = useContext(AppContext);
+
    const {setCartItems} = useContext(AppContext);
    
-
    const handleClick = (e) => {
-      setCartItems([product]);
+      setCartItems((prevState) => {
+         return [...prevState, product] 
+      });
    } 
 
    return (

@@ -18,7 +18,6 @@
       "star": 5,
       "sku": 34,
       "category": "bags",
-      "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 1
     },
@@ -38,7 +37,6 @@
       "classify": "skirt",
       "sku": 33,
       "category": "clothes",
-      "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 4
     },
@@ -60,7 +58,6 @@
       "classify": "skirt",
       "sku": 31,
       "category": "clothes",
-      "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 8
     },
@@ -80,7 +77,6 @@
       "classify": "clothes",
       "sku": 30,
       "category": "clothes",
-      "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 12
     },
@@ -100,7 +96,6 @@
       "classify": "clothes",
       "sku": 29,
       "category": "clothes",
-      "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 2
     },
@@ -120,7 +115,6 @@
       "classify": "Bag and Backpack",
       "sku": 28,
       "category": "wallet",
-      "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 7
     },
@@ -141,7 +135,6 @@
       "classify": "clothes",
       "sku": 27,
       "category": "clothes",
-      "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 9
     },
@@ -161,7 +154,6 @@
       "classify": "high heels",
       "sku": 26,
       "category": "high heels",
-      "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 16
     },
@@ -181,7 +173,6 @@
       "classify": "Bag and Backpack",
       "sku": 38,
       "category": "bags",
-      "tag": "clothes, lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 8
     },
@@ -201,7 +192,6 @@
       "classify": "Bag and Backpack",
       "sku": 37,
       "category": "bags",
-      "tag": "modern, stylish",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 0
     },
@@ -221,7 +211,6 @@
       "classify": "Bag and Backpack",
       "sku": 36,
       "category": "bags",
-      "tag": "lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity": 12
     },
@@ -241,7 +230,6 @@
       "classify": "Bag and Backpack",
       "sku": 35,
       "category": "bags",
-      "tag": "lifestyle",
       "description_product": "Lorem ipsum dolor", 
       "popularity":  10
     }

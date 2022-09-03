@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 import SearchForm from '~/components/ChildrenLayout/SearchForm/SearchForm';
 
-import { AppContext } from '~/contexts/AppContext';
 import ProductPopper from '~/components/ChildrenLayout/ProductPopper/ProductPopper';
 
 function Menu() {

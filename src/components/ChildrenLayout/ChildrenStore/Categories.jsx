@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 
 function Categories() {
-   
    return (
       <>
          {/* Category */}
@@ -9,17 +9,10 @@ function Categories() {
                <span className="text-[18px] font-semibold font-['Poppins'] text-black">Categories</span>
             </div>
             <div className="text-[13px] font-normal text-black ">
-               <div className="mt-[18px] ">
-                  <span>Clothes {}</span>
-               </div>
-               <div className="mt-[18px] ">
-                  <span>Bags {}</span>
-               </div>
-               <div className="mt-[18px] ">
-                  <span>High Heels {}</span>
-               </div>
-               <div className="mt-[18px] ">
-                  <span>Wallet {}</span>
+               <div>
+                  <Link to="/store/category/clothes" className="mt-[18px] ">
+                     <span>Clothes</span>
+                  </Link>
                </div>
             </div>
          </div>
@@ -27,4 +20,4 @@ function Categories() {
    );
 }
 
-export default Categories; 
+export default Categories;

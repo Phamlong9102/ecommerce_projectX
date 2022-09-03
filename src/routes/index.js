@@ -7,7 +7,6 @@ import Home from '~/pages/Home';
 import Store from '~/pages/Store';
 import Cart from '~/pages/Cart';
 
-
 import Search from '~/pages/Search';
 import ClutchBag from '~/pages/ProductPage/ClutchBag';
 import OrangeAirsuit from '~/pages/ProductPage/OrangeAirsuit'; 
@@ -24,6 +23,12 @@ import DrawstringBag from '~/pages/ProductPage/DrawstringBag';
 
 import AdministratorProducts from '~/pages/Administrartor/AdministratorProducts'; 
 import AdministratorUsers from '~/pages/Administrartor/AdministratorUsers'; 
+
+import Clothes from '~/pages/Categories/Clothes'
+import Bags from '~/pages/Categories/Bags'
+import HighHeels from '~/pages/Categories/HighHeels'
+import Wallet from '~/pages/Categories/Wallet'
+
 
 const publicRoutes = [
   { path: config.routes.home, component: Home },
@@ -45,8 +50,11 @@ const publicRoutes = [
   { path: config.routes.admin_products, component: AdministratorProducts, layout : null },
   { path: config.routes.admin_users, component: AdministratorUsers, layout : null },
 
-  
   { path: config.routes.store, component: Store },
+  { path: config.routes.category_clothes, component: Clothes }, 
+  { path: config.routes.category_bags, component: Bags }, 
+  { path: config.routes.category_highheels, component: HighHeels }, 
+  { path: config.routes.category_wallet, component: Wallet }
 
 ];
 
