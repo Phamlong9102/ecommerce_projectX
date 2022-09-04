@@ -11,8 +11,9 @@ import { GridRowModes, GridToolbarContainer, GridActionsCellItem } from '@mui/x-
 import { DataGrid } from '@mui/x-data-grid';
 import { randomId } from '@mui/x-data-grid-generator';
 
-import { useEffect } from 'react'; 
+import { useState, useEffect } from 'react'; 
 import axios from 'axios';
+
 
 function EditToolbar(props) {
 
@@ -54,6 +55,7 @@ export default function FullFeaturedCrudGrid() {
                   "id": product.id,
                   "name": product.name, 
                   "price": product.price, 
+                  "imageURL": product.imageURL, 
                   "classify": product.classify,
                   "category": product.category
                }
@@ -112,6 +114,7 @@ export default function FullFeaturedCrudGrid() {
       },
       { field: 'name', headerName: 'Name', width: 180, editable: true },
       { field: 'price', headerName: 'Price', type: 'number', editable: true },
+      { field: 'imageURL', headerName: 'ImageURL', width: 300, editable: true },
       {
          field: 'classify',
          headerName: 'Classify',
@@ -123,7 +126,7 @@ export default function FullFeaturedCrudGrid() {
          field: 'category',
          headerName: 'Category',
          type: 'text',
-         width: 220,
+         width: 120,
          editable: true,
       },
       {

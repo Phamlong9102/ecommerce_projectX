@@ -237,72 +237,73 @@
   "users": [
     {
       "id": 1,
-      "username": "Chí Anh Tran",
+      "username": "chianhtran",
       "email": "email@gmail.com",
       "password": 123456123456 
     },
     {
       "id": 2,
-      "username": "Diệp Lan Trần",
+      "username": "dieplantran",
       "email": "email@gmail.com",
       "password": 123456 
     },
     {
       "id": 3,
-      "username": "Tuân Bích Phạm",
+      "username": "tuanbichpham",
       "email": "email@gmail.com",
       "password": 123456 
     },
     {
       "id": 4,
-      "username": "Trí Tú Ngô",
+      "username": "tritungo",
       "email": "email@gmail.com",
       "password": 123456 
     },
     {
       "id": 5,
-      "username": "Ngọc Minh Phạm",
+      "username": "ngocminhpham",
       "email": "email@gmail.com",
       "password": 123456 
     },
     {
       "id": 6,
-      "username": "Bích Yên Nguyen",
+      "username": "bichyennguyen",
       "email": "email@gmail.com",
       "password": 123456 
     },
     {
       "id": 7,
-      "username": "Hữu Huy Bùi",
+      "username": "huuhuybui",
       "email": "email@gmail.com",
       "password": 123456 
     },
     {
       "id": 8,
-      "username": "Tuyến Quỳnh Ngo",
+      "username": "tuyenquynhngo",
       "email": "email@gmail.com",
       "password": 123456 
     },
     {
       "id": 9,
-      "username": "Hương Công Hoàng",
+      "username": "huongconghoang",
       "email": "email@gmail.com",
       "password": 123456 
     },
     {
       "id": 10,
-      "username": "Phạm Thăng Long",
+      "username": "levandowki",
       "email": "email@gmail.com",
       "password": 123456 
     },
     {
       "id": 11,
-      "username": "Bích Yên Nguyen",
-      "email": "email@gmail.com"
+      "username": "bichyennguyen",
+      "email": "email@gmail.com", 
+      "password": 123456 
     },
     {
       "id": 12,
-      "username": "Nam Lành Văn",
+      "username": "namnuyendung",
       "email": "email@gmail.com",
       "password": 123456 
     }

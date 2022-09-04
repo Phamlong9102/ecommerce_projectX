@@ -51,10 +51,9 @@ export default function FullFeaturedCrudGrid() {
             const data = res.data.map((user) => {
                return {
                   "id": user.id,
-                  "name": user.name, 
-                  "age": user.age, 
-                  "address": user.address,
-                  "phone_number": user.phone_number
+                  "username": user.username, 
+                  "email": user.email, 
+                  "password": user.password,
                }
             })
             setRows(data)
@@ -108,20 +107,13 @@ export default function FullFeaturedCrudGrid() {
          width: 80,
          editable: true,
       },
-      { field: 'name', headerName: 'Name', width: 180, editable: true },
-      { field: 'age', headerName: 'Age', type: 'number', editable: true },
+      { field: 'username', headerName: 'Username', width: 180, editable: true },
+      { field: 'email', headerName: 'Email', width: 200, editable: true },
       {
-         field: 'address',
-         headerName: 'Address',
+         field: 'password',
+         headerName: 'Password',
          type: 'text',
          width: 180,
-         editable: true,
-      },
-      {
-         field: 'phone_number',
-         headerName: 'Phone Number',
-         type: 'number',
-         width: 220,
          editable: true,
       },
       {

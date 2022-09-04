@@ -5,7 +5,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 import { Link } from 'react-router-dom';
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 
 function LoginTab(props) {
    const { children, value, index, ...other } = props;
@@ -47,8 +48,31 @@ export default function BasicTabs() {
       setValue(newValue);
    };
 
-   const handleChangeValue1 = (e) => {
-      console.log(e.target.value)
+   const [username, setUserName] = useState();
+
+   const getUserName = (e) => {
+      setUserName(e.target.value);
+   };
+
+   const [password, setPassWord] = useState('');
+
+   const getPassWord = (e) => {
+      setPassWord(e.target.value);
+   };
+
+   const handleKeyDown = (e) => {
+      if (e.key === ' ') {
+         e.preventDefault();
+      }
+   };
+
+   const inputRefUserName = useRef(null); 
+
+   const inputRefPassWord = useRef(null)
+
+   const handleClickGetInfoSignIn = (e) => {
+      console.log("UserName is: ", inputRefUserName.current.value)
+      console.log("Password is: ", inputRefPassWord.current.value)
    }
 
    return (
@@ -82,19 +106,30 @@ export default function BasicTabs() {
                />
             </Tabs>
          </Box>
+
+         {/* Sign in */}
          <LoginTab value={value} index={0}>
             <div className="mx-[35px] ">
+               {/* User name */}
                <div className="">
                   <input
-                     onChange={handleChangeValue1}
+                     ref={inputRefUserName}
+                     value={username}
+                     onKeyDown={handleKeyDown}
+                     onChange={getUserName}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase placeholder:mt-[8px]"
                      placeholder="User Name"
                      type="text"
                   />
                </div>
+
+               {/* Password */}
                <div className="mt-[16px]">
                   <input
-                     onChange={handleChangeValue1}
+                     ref={inputRefPassWord}
+                     value={password}
+                     onChange={getPassWord}
+                     onKeyDown={handleKeyDown}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="PassWord"
                      type="text"
@@ -112,19 +147,22 @@ export default function BasicTabs() {
                   <span className="text-[13px] font-light font-['Poppins']">Lost your password?</span>
                </div>
                <div className="mt-[20px]">
-                  <Link to="/admin-products" className="">
+                  <div to="" className="">
                      <div className="under-00"></div>
-                     <button className="w-full h-[40px]  bg-black text-white text-['Poppins'] text-[13px] font-semibold">
+                     <button onClick={handleClickGetInfoSignIn} className="w-full h-[40px]  bg-black text-white text-['Poppins'] text-[13px] font-semibold">
                         Login
                      </button>
-                  </Link>
+                  </div>
                </div>
             </div>
          </LoginTab>
+
+         {/* Register */}
          <LoginTab value={value} index={1}>
             <div className="mx-[35px] ">
                <div className="">
                   <input
+                     onKeyDown={handleKeyDown}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase placeholder:mt-[8px]"
                      placeholder="User Name"
                      type="text"
@@ -132,6 +170,7 @@ export default function BasicTabs() {
                </div>
                <div className="mt-[18px] ">
                   <input
+                     onKeyDown={handleKeyDown}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="Email"
                      type="text"
@@ -139,6 +178,7 @@ export default function BasicTabs() {
                </div>
                <div className="mt-[18px] ">
                   <input
+                     onKeyDown={handleKeyDown}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="PassWord"
                      type="text"
@@ -146,6 +186,7 @@ export default function BasicTabs() {
                </div>
                <div className="mt-[18px] ">
                   <input
+                     onKeyDown={handleKeyDown}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="Repeat PassWord"
                      type="text"
