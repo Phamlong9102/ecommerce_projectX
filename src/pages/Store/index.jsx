@@ -27,7 +27,6 @@ function Store() {
             <div className="">
                <Sorting />
             </div>
-
             <div className="mt-[120px]">
                <Categories />
             </div>
