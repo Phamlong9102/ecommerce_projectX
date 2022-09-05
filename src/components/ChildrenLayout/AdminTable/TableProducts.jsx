@@ -14,7 +14,6 @@ import { randomId } from '@mui/x-data-grid-generator';
 import { useState, useEffect } from 'react'; 
 import axios from 'axios';
 
-
 function EditToolbar(props) {
 
    const { setRows, setRowModesModel } = props;

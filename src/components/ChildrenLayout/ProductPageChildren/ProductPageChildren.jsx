@@ -17,6 +17,7 @@ function ProductPageChildren({ product }) {
    
    const handleClick = (e) => {
       setCartItems((prevState) => {
+         console.log(prevState)
          return [...prevState, product] 
       });
    } 

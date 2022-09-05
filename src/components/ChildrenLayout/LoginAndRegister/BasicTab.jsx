@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
+import { useNavigate } from 'react-router-dom';
+
 function LoginTab(props) {
    const { children, value, index, ...other } = props;
 
@@ -41,7 +43,7 @@ function a11yProps(index) {
    };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs(handleClose) {
    const [value, setValue] = useState(0);
 
    const handleChange = (event, newValue) => {
@@ -66,14 +68,33 @@ export default function BasicTabs() {
       }
    };
 
-   const inputRefUserName = useRef(null); 
+   const [data, setData] = useState([]);
 
-   const inputRefPassWord = useRef(null)
+   const inputRefUserName = useRef(null);
 
-   const handleClickGetInfoSignIn = (e) => {
-      console.log("UserName is: ", inputRefUserName.current.value)
-      console.log("Password is: ", inputRefPassWord.current.value)
-   }
+   const inputRefPassWord = useRef(null);
+
+   const [isLogin, setIsLogin] = useState(false);
+
+   const handleClickGetInfoSignIn = async (e) => {
+      // lay username and password
+      console.log('UserName is: ', inputRefUserName.current.value);
+      console.log('Password is: ', inputRefPassWord.current.value);
+      // call api check
+      const result = await axios(
+         `https://630ed147379256341881df89.mockapi.io/users?filter&username=${inputRefUserName.current.value}&password=${inputRefPassWord.current.value}`,
+      );
+      setData(result.data);
+      console.log(result.data);
+
+      // check mang data res
+      if (result.data.length === 1) {
+         setIsLogin(true);
+      }
+
+   };
+
+   const navigate = useNavigate();
 
    return (
       <Box sx={{ width: '100%', height: '100%' }}>
@@ -132,7 +153,7 @@ export default function BasicTabs() {
                      onKeyDown={handleKeyDown}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="PassWord"
-                     type="text"
+                     type="password"
                   />
                </div>
                <div className="mt-[18px] flex items-center">
@@ -149,9 +170,18 @@ export default function BasicTabs() {
                <div className="mt-[20px]">
                   <div to="" className="">
                      <div className="under-00"></div>
-                     <button onClick={handleClickGetInfoSignIn} className="w-full h-[40px]  bg-black text-white text-['Poppins'] text-[13px] font-semibold">
-                        Login
-                     </button>
+                     {!isLogin ? (
+                        <button
+                           onClick={handleClickGetInfoSignIn}
+                           className="w-full h-[40px]  bg-black text-white text-['Poppins'] text-[13px] font-semibold"
+                        >
+                           Login
+                        </button>
+                     ) : (
+                        {handleClose}, 
+                        navigate(`/loged_in`)
+                        // window.location.reload()
+                     )}
                   </div>
                </div>
             </div>
@@ -181,7 +211,7 @@ export default function BasicTabs() {
                      onKeyDown={handleKeyDown}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="PassWord"
-                     type="text"
+                     type="password"
                   />
                </div>
                <div className="mt-[18px] ">
@@ -189,12 +219,15 @@ export default function BasicTabs() {
                      onKeyDown={handleKeyDown}
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="Repeat PassWord"
-                     type="text"
+                     type="password"
                   />
                </div>
                <div className="relative mt-[18px] underline underline-offset-8	">
                   <div className="under-00"></div>
-                  <button className="w-full h-[40px]  bg-black text-white text-['Poppins'] text-[13px] font-semibold">
+                  <button
+                     type="button"
+                     className="w-full h-[40px]  bg-black text-white text-['Poppins'] text-[13px] font-semibold"
+                  >
                      Register
                   </button>
                </div>

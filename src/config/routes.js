@@ -1,7 +1,8 @@
 // Config route liên quan đến config tức là cấu hình. Còn routes ở thư mục gốc sẽ chứa 
 // những tuyến đường 
 const routes = {
-    home: '/',
+    home_login: '/',
+    home_logout: "/loged_in", 
     admin_products: '/admin-products',
     admin_users: '/admin-users',  
     cart: '/cart',

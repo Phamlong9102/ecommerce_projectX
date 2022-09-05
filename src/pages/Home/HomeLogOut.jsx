@@ -58,7 +58,7 @@ import axios from 'axios';
 import HomeProduct from '../../components/ChildrenLayout/HomeProductChildren/HomeProduct';
 import BagAndBackpacks from '../../components/ChildrenLayout/HomeProductChildren/BagAndBackpacks';
 
-function Home() {
+function HomeLogOut() {
    const [data, setData] = useState([]);
 
    useEffect(() => {
@@ -523,4 +523,4 @@ function Home() {
    );
 }
 
-export default Home;
+export default HomeLogOut;

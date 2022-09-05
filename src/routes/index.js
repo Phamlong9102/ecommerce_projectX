@@ -3,7 +3,8 @@ import config from '~/config';
 // File này dùng để Route (điều hướng) các web con trong dự án
 import { DefaultLayout2 } from '~/components/Layout'; 
 
-import Home from '~/pages/Home';
+import HomeLogIn from '~/pages/Home/HomeLogIn';
+import HomeLogOut from '~/pages/Home/HomeLogOut';
 import Store from '~/pages/Store';
 import Cart from '~/pages/Cart';
 
@@ -31,7 +32,8 @@ import Wallet from '~/pages/Categories/Wallet'
 
 
 const publicRoutes = [
-  { path: config.routes.home, component: Home },
+  { path: config.routes.home_login, component: HomeLogIn },
+  { path: config.routes.home_logout, component: HomeLogOut },
   { path: config.routes.cart, component: Cart },
   { path: config.routes.search, component: Search },
   { path: config.routes.clutch_bag, component: ClutchBag },
