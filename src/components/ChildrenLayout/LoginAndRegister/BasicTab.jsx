@@ -5,10 +5,12 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 import { Link } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
+
+import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
 
 function LoginTab(props) {
    const { children, value, index, ...other } = props;
@@ -43,7 +45,7 @@ function a11yProps(index) {
    };
 }
 
-export default function BasicTabs(handleClose) {
+export default function BasicTabs({handleClose,setOpen}) {
    const [value, setValue] = useState(0);
 
    const handleChange = (event, newValue) => {
@@ -71,31 +73,38 @@ export default function BasicTabs(handleClose) {
    const [data, setData] = useState([]);
 
    const inputRefUserName = useRef(null);
-
    const inputRefPassWord = useRef(null);
 
    const [isLogin, setIsLogin] = useState(false);
+   
+   // useContext
+   const { dataContext, setDataContext } = useContext(ClickGetDataContext);
 
    const handleClickGetInfoSignIn = async (e) => {
-      // lay username and password
-      console.log('UserName is: ', inputRefUserName.current.value);
-      console.log('Password is: ', inputRefPassWord.current.value);
-      // call api check
+      // Call api check
       const result = await axios(
          `https://630ed147379256341881df89.mockapi.io/users?filter&username=${inputRefUserName.current.value}&password=${inputRefPassWord.current.value}`,
       );
       setData(result.data);
       console.log(result.data);
-
+      
       // check mang data res
       if (result.data.length === 1) {
          setIsLogin(true);
+         setDataContext(result.data); 
+         console.log(typeof{dataContext}); 
+         setOpen(false); 
+      } else if (result.data.length === 0) {
+         setIsLogin(false); 
+         alert('Username or password wrong. Please enter username or password')
+      } else if (result.data.length === 12) {   
+         setIsLogin(false); 
+         alert('Please enter your username and password ')
       }
-
    };
-
+   
    const navigate = useNavigate();
-
+   
    return (
       <Box sx={{ width: '100%', height: '100%' }}>
          <Box sx={{}}>
@@ -178,10 +187,8 @@ export default function BasicTabs(handleClose) {
                            Login
                         </button>
                      ) : (
-                        {handleClose}, 
-                        navigate(`/loged_in`)
-                        // window.location.reload()
-                     )}
+                        navigate(`/loged_in`))
+                     }
                   </div>
                </div>
             </div>

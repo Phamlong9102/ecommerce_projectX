@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 const ScrollButton = () => {
-   // eslint-disable-next-line no-unused-vars
    const [isVisible, setIsVisible] = useState(false);
   
    const scrollToTop = () => {

@@ -2,7 +2,6 @@
 // những tuyến đường 
 const routes = {
     home_login: '/',
-    home_logout: "/loged_in", 
     admin_products: '/admin-products',
     admin_users: '/admin-users',  
     cart: '/cart',

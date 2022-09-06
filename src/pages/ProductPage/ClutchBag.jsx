@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 function ClutchBag() {
    const [data, setData] = useState([]);
 
@@ -18,6 +17,10 @@ function ClutchBag() {
       };
 
       fetchData();
+   }, []);
+
+   useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
    }, []);
 
    return (
@@ -44,7 +47,7 @@ function ClutchBag() {
 
          {/* Render UI */}
          {data.slice(0, 1).map((product) => (
-            <ProductPageChildren key={product.id} product={product}/>
+            <ProductPageChildren key={product.id} product={product} />
          ))}
 
          <div className="mx-[128px] mt-[70px]">

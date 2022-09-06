@@ -8,9 +8,7 @@ import { AppContext } from '~/contexts/AppContext';
 import { useContext, useEffect, useState } from 'react';
 
 function ProductPopper() {
-   const { cartItems } = useContext(AppContext);
-
-   const { setCartItems } = useContext(AppContext);
+   const { cartItems, setCartItems } = useContext(AppContext);
 
    const deleteButton = (e) => {
       setCartItems([])

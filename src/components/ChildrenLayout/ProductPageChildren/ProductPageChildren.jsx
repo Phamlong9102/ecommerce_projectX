@@ -7,20 +7,25 @@ import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
 
 import { AppContext } from '~/contexts/AppContext';
+import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
 
 function ProductPageChildren({ product }) {
-   const [count, setCount] = useState(0);
+   const [count, setCount] = useState(1);
 
-   const { cartItems } = useContext(AppContext);
+   const { cartItems, setCartItems } = useContext(AppContext);
 
-   const {setCartItems} = useContext(AppContext);
-   
+   const { dataContext, setDataContext } = useContext(ClickGetDataContext);
+
    const handleClick = (e) => {
-      setCartItems((prevState) => {
-         console.log(prevState)
-         return [...prevState, product] 
-      });
-   } 
+      if (dataContext.length === 1) {
+         setCartItems((prevState) => {
+            console.log(prevState);
+            return [...prevState, product];
+         });
+      } else {
+         alert('Please log in to add product in your cart'); 
+      }
+   };
 
    return (
       <div className="mt-[80px] flex justify-center selection-default">
@@ -99,19 +104,22 @@ function ProductPageChildren({ product }) {
                      <span className="font-semibold text-[15px] leading-[26px] font-['Montserrat']">{count}</span>
                   </div>
                   <button
-                     onClick={() => setCount(count + 1)}
+                     onClick={() => setCount(count + 1)} 
                      className="absolute left-[101%] top-[-1px] w-[24px] h-[24px] text-center border-[#d3d3d3] border outline-1"
                   >
                      <FontAwesomeIcon className="text-[10px]" icon={faAngleUp} />
                   </button>
                   <button
-                     onClick={() => setCount(Math.max(count - 1, 0))}
+                     onClick={() => setCount(Math.max(count - 1, 1))}
                      className="absolute top-[49%] left-[101%] w-[24px] h-[24px] text-center border-[#d3d3d3] border outline-1"
                   >
                      <FontAwesomeIcon className="text-[10px]" icon={faAngleDown} />
                   </button>
                </div>
-               <button onClick={handleClick} className="ml-[43px] w-[170px] h-[46px] bg-black  button:underline button:underline-offset-8">
+               <button
+                  onClick={handleClick}
+                  className="ml-[43px] w-[170px] h-[46px] bg-black  button:underline button:underline-offset-8"
+               >
                   <span className="text-[13px] font-['Poppins'] font-semibold text-white">Add To Cart</span>
                </button>
             </div>

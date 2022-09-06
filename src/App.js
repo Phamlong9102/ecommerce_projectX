@@ -1,6 +1,6 @@
 // Tải cơ định tuyến (Router) cho trang web
 import '~/index.css';
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
 import { DefaultLayout } from '~/components/Layout';
@@ -8,7 +8,10 @@ import { DefaultLayout } from '~/components/Layout';
 import { AppContextProvider } from './contexts/AppContext';
 import { ClickGetDataContextProvider } from './contexts/ClickGetDataContext';
 
+
+
 function App() {
+
    return (
       <ClickGetDataContextProvider>
          <AppContextProvider>

@@ -19,6 +19,10 @@ function DrawstringBag() {
       fetchData();
    }, []);
 
+   useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+   }, []);
+
    return (
       <>
          {/* Điều hướng */}

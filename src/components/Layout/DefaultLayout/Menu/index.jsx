@@ -10,7 +10,6 @@ import ProductPopper from '~/components/ChildrenLayout/ProductPopper/ProductPopp
 
 function Menu() {
 
-
    return (
       <div className="flex justify-between mx-12 text-menu-color select-none">
          <div className="flex mt-9 cursor-pointer">
