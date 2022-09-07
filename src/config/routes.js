@@ -25,6 +25,9 @@ const routes = {
     city_mini_bag: '/store/city-mini-bag/10',
     shoulder_bag: '/store/shoulder-bag/11',
     drawstring_bag: '/store/drawstring-bag/12',
+
+
+    fire_base: '/firebase'
 };
 
 export default routes;

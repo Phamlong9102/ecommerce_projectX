@@ -29,6 +29,8 @@ import Bags from '~/pages/Categories/Bags'
 import HighHeels from '~/pages/Categories/HighHeels'
 import Wallet from '~/pages/Categories/Wallet'
 
+import FireBaseExample from '~/pages/Firebase/FirebaseExample'
+
 
 const publicRoutes = [
   { path: config.routes.home_login, component: HomeLogIn },
@@ -54,7 +56,10 @@ const publicRoutes = [
   { path: config.routes.category_clothes, component: Clothes }, 
   { path: config.routes.category_bags, component: Bags }, 
   { path: config.routes.category_highheels, component: HighHeels }, 
-  { path: config.routes.category_wallet, component: Wallet }
+  { path: config.routes.category_wallet, component: Wallet }, 
+
+
+  {path: config.routes.fire_base, component: FireBaseExample}
 
 ];
 
