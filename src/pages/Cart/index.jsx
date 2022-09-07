@@ -153,7 +153,7 @@ function Cart() {
                   </div>
                   <div className="relative mt-[6px] underline underline-offset-8	ml-[26px] before:absolute before:top-[110%] before:left-0 before:right-0 before:w-[92%] before:bg-black before:h-[1px]">
                      <button className="w-[374px] h-[50px] bg-black text-white font-['Montserrat'] font-bold text-[14px] text-center">
-                        Proceed To Checkout
+                           Checkout
                      </button>
                   </div>
                </div>

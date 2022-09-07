@@ -6,7 +6,7 @@ import Modal from '@mui/material/Modal';
 import BasicTab from './BasicTab';
 import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
 
-import { useState , useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 const style = {
    position: 'absolute',
@@ -20,30 +20,33 @@ const style = {
 
 export default function LoginModal() {
    const [open, setOpen] = React.useState(false);
-   
+
    const [isLogin, setIsLogin] = useState(false);
-
-   const handleLogin = () => setOpen(true);
-
+   
    const handleClose = () => {
       setOpen(false);
    };
-
+   
+   // Context
+   const { dataContext, setDataContext } = useContext(ClickGetDataContext);
+   
+   const handleLogin = () => setOpen(true);
+   
+   // Login
+   useEffect(() => {
+      const isAuth = localStorage.getItem('dataContext')
+      console.log("isAuth = " , isAuth)
+      if (isAuth) {
+         setIsLogin(true);
+      }
+   });
+   
+   // Logout function
    const handleLogout = () => {
+      localStorage.removeItem("dataContext");
       setDataContext([]);
       setIsLogin(false);
    };
-
-   const { dataContext, setDataContext } = useContext(ClickGetDataContext);
-
-   useEffect(() => {
-      if (dataContext.length > 0) {
-         setIsLogin(true);
-         console.log(dataContext)
-        const account = localStorage.setItem('dataContext', JSON.stringify(dataContext));
-        
-      }
-   });
 
    return (
       <div className="hover-header">

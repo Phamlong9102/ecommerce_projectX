@@ -45,8 +45,10 @@ function a11yProps(index) {
    };
 }
 
-export default function BasicTabs({handleClose,setOpen}) {
+export default function BasicTabs({ handleClose, setOpen }) {
    const [value, setValue] = useState(0);
+
+   const [registerForm, setRegisterForm] = useState({ username: '', email: '', password: '' });
 
    const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -76,35 +78,61 @@ export default function BasicTabs({handleClose,setOpen}) {
    const inputRefPassWord = useRef(null);
 
    const [isLogin, setIsLogin] = useState(false);
-   
+
    // useContext
    const { dataContext, setDataContext } = useContext(ClickGetDataContext);
 
    const handleClickGetInfoSignIn = async (e) => {
-      // Call api check
+      // Call api check username and account
       const result = await axios(
          `https://630ed147379256341881df89.mockapi.io/users?filter&username=${inputRefUserName.current.value}&password=${inputRefPassWord.current.value}`,
       );
       setData(result.data);
       console.log(result.data);
-      
+
       // check mang data res
       if (result.data.length === 1) {
          setIsLogin(true);
-         setDataContext(result.data); 
-         console.log(typeof{dataContext}); 
-         setOpen(false); 
+         setDataContext(result.data);
+         localStorage.setItem('dataContext', JSON.stringify(result.data));
+         setOpen(false);
       } else if (result.data.length === 0) {
-         setIsLogin(false); 
-         alert('Username or password wrong. Please enter username or password')
-      } else if (result.data.length === 12) {   
-         setIsLogin(false); 
-         alert('Please enter your username and password ')
+         setIsLogin(false);
+         alert('Username or password wrong. Please enter username or password');
+      } else if (result.data.length === 12) {
+         setIsLogin(false);
+         alert('Please enter your username and password ');
       }
    };
-   
+
    const navigate = useNavigate();
-   
+
+   // funtion catch input change 
+   const registerChangeForm = (value, state) => {
+
+      
+      console.log(value);
+      setRegisterForm((oldValue) => {
+         return { ...oldValue, [state]: value };
+      });
+   };
+
+   // function Click register and push data on database
+   const handleClickRegister = (e) => {
+      if (registerForm.username === '' || registerForm.email === '' || registerForm.password === '') {
+         console.log('missing');
+         return;
+      } else
+         axios
+            .post('https://630ed147379256341881df89.mockapi.io/users', { ...registerForm })
+            .then((res) => {
+               console.log(res);
+            })
+            .catch((err) => {
+               console.log('Error =', err);
+            });
+   };
+
    return (
       <Box sx={{ width: '100%', height: '100%' }}>
          <Box sx={{}}>
@@ -187,8 +215,8 @@ export default function BasicTabs({handleClose,setOpen}) {
                            Login
                         </button>
                      ) : (
-                        navigate(`/loged_in`))
-                     }
+                        navigate(`/loged_in`)
+                     )}
                   </div>
                </div>
             </div>
@@ -203,6 +231,9 @@ export default function BasicTabs({handleClose,setOpen}) {
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase placeholder:mt-[8px]"
                      placeholder="User Name"
                      type="text"
+                     onChange={(e) => {
+                        registerChangeForm(e.target.value, 'username');
+                     }}
                   />
                </div>
                <div className="mt-[18px] ">
@@ -211,6 +242,9 @@ export default function BasicTabs({handleClose,setOpen}) {
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="Email"
                      type="text"
+                     onChange={(e) => {
+                        registerChangeForm(e.target.value, 'email');
+                     }}
                   />
                </div>
                <div className="mt-[18px] ">
@@ -219,6 +253,10 @@ export default function BasicTabs({handleClose,setOpen}) {
                      className="w-[230px] h-[22px] bg-white cursor-pointer border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black outline-0 placeholder:text-[10px] placeholder:font-['Montserrat'] placeholder:font-normal placeholder:tracking-[0.16em] placeholder:text-black placeholder:uppercase"
                      placeholder="PassWord"
                      type="password"
+                     s
+                     onChange={(e) => {
+                        registerChangeForm(e.target.value, 'password');
+                     }}
                   />
                </div>
                <div className="mt-[18px] ">
@@ -234,6 +272,9 @@ export default function BasicTabs({handleClose,setOpen}) {
                   <button
                      type="button"
                      className="w-full h-[40px]  bg-black text-white text-['Poppins'] text-[13px] font-semibold"
+                     onClick={() => {
+                        handleClickRegister();
+                     }}
                   >
                      Register
                   </button>

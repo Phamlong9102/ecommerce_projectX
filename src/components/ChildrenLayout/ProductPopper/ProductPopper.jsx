@@ -56,7 +56,7 @@ function ProductPopper() {
                                  </span>
                               </div>
                               <span className="font-['Montserrat'] text-[12px] uppercase tracking-[0.16em] font-normal">
-                                 ${cartItems.length > 0 ? cartItems[0].price : 0}.00
+                                 {cartItems.length > 0 ? cartItems[0].price : 0}.00
                               </span>
                            </div>
                         </div>
@@ -83,8 +83,8 @@ function ProductPopper() {
                            <span className="text-[18px] font-semibold font-['Poppins'] text-black ">Total bag:</span>
                         </div>
                         <div className="flex">
-                           <div className="relative top-[-6px]">
-                              <span className="text-[10px] font-semibold">
+                           <div className="">
+                              <span className="text-[16px] font-semibold">
                                  ${cartItems.length > 0 ? cartItems[0].price : ''}.00
                               </span>
                            </div>
@@ -93,12 +93,12 @@ function ProductPopper() {
                            </div>
                         </div>
                      </div>
-                     <div className="mt-[30px] mx-[30px] flex justify-between pb-[30px]">
-                        <Link to="/cart" className="underline underline-offset-8">
+                     <div className="mt-[30px] mx-[30px] pb-[30px] float-right">
+                        {/* <Link to="/cart" className="underline underline-offset-8">
                            <span className="text-['Poppins'] text-[13px] font-semibold text-black tracking-[0.01em] ">
                               Checkout
                            </span>
-                        </Link>
+                        </Link> */}
                         <Link to="/cart" className="underline underline-offset-8">
                            <span className="text-['Poppins'] text-[13px] font-semibold text-black tracking-[0.01em]">
                               View Cart

@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import Sorting from '~/components/ChildrenLayout/ChildrenStore/Sorting';
 import Categories from '~/components/ChildrenLayout/ChildrenStore/Categories'
 
+import { useNavigate } from 'react-router-dom';
+
 function Store() {
+
+   const handleChange = (e) => {
+      console.log(e.target.value)
+
+   }
 
    return (
       <>
@@ -21,6 +28,13 @@ function Store() {
             <div className="absolute top-[48%] left-[4%] mt-[10px]">
                <span className="store-big-title">Store</span>
             </div>
+         </div>
+
+         <div className="">
+            <input type="text"
+               onChange={handleChange}
+            
+            />
          </div>
 
          <div className="flex">

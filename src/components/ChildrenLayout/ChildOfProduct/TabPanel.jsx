@@ -5,9 +5,6 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-import ReviewForClutchBag from './ReviewForClutchBag';
-
-
 function TabPanel(props) {
    const { children, value, index, ...other } = props;
 
