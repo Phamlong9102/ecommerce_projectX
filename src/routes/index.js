@@ -30,6 +30,8 @@ import HighHeels from '~/pages/Categories/HighHeels'
 import Wallet from '~/pages/Categories/Wallet'
 
 import FireBaseExample from '~/pages/Firebase/FirebaseExample'
+import FireBaseAuthentication from '~/pages/Firebase/FireBaseAuthenticaton';
+import FireBaseAuthGoogle from '~/pages/Firebase/FireBaseAuthGoogle'
 
 
 const publicRoutes = [
@@ -59,7 +61,11 @@ const publicRoutes = [
   { path: config.routes.category_wallet, component: Wallet }, 
 
 
-  {path: config.routes.fire_base, component: FireBaseExample}
+  {path: config.routes.fire_base, component: FireBaseExample}, 
+  {path: config.routes.fire_base_auth, component: FireBaseAuthentication}, 
+  {path: config.routes.fire_base_auth_googles, component: FireBaseAuthGoogle}
+
+
 
 ];
 

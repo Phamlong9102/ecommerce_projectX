@@ -48,53 +48,72 @@ function a11yProps(index) {
 export default function BasicTabs({ handleClose, setOpen }) {
    const [value, setValue] = useState(0);
 
+   // Giá trị mặc định của 3 thằng username, email, password
    const [registerForm, setRegisterForm] = useState({ username: '', email: '', password: '' });
+
+   const [username, setUserName] = useState();
+
+   const [password, setPassWord] = useState('');
+
+   // Thằng này để gọi API
+   const [data, setData] = useState([]);
+
+   // Lấy DOM của thằng username
+   const inputRefUserName = useRef(null);
+
+   // Lấy DOM của thằng password
+   const inputRefPassWord = useRef(null);
+
+   // Check Login state
+   const [isLogin, setIsLogin] = useState(false);
+
+   // data được lấy từ useContext
+   const { dataContext, setDataContext } = useContext(ClickGetDataContext);
+
+   const navigate = useNavigate();
 
    const handleChange = (event, newValue) => {
       setValue(newValue);
    };
 
-   const [username, setUserName] = useState();
-
+   // Lấy giá trị username người dùng nhập vào
    const getUserName = (e) => {
       setUserName(e.target.value);
    };
 
-   const [password, setPassWord] = useState('');
-
+   // Lấy giá trị password người dùng nhập vào
    const getPassWord = (e) => {
       setPassWord(e.target.value);
    };
 
+   // Chặn người dùng nhấn enter khi nhập các field
    const handleKeyDown = (e) => {
       if (e.key === ' ') {
          e.preventDefault();
       }
    };
 
-   const [data, setData] = useState([]);
-
-   const inputRefUserName = useRef(null);
-   const inputRefPassWord = useRef(null);
-
-   const [isLogin, setIsLogin] = useState(false);
-
-   // useContext
-   const { dataContext, setDataContext } = useContext(ClickGetDataContext);
-
+   // Hàm Click lấy thông tin người dùng
    const handleClickGetInfoSignIn = async (e) => {
       // Call api check username and account
       const result = await axios(
+         // Call lên API bằng cách gán current.value với DOM đã được lấy
          `https://630ed147379256341881df89.mockapi.io/users?filter&username=${inputRefUserName.current.value}&password=${inputRefPassWord.current.value}`,
       );
+      // setData = result.data trả về
       setData(result.data);
       console.log(result.data);
 
-      // check mang data res
+      // Check data trả về từ API
+      // Nếu data.length === 1 thì
       if (result.data.length === 1) {
+         // Đăng nhập thành công
          setIsLogin(true);
+         // setDataContext trong useContext = data user được API trả về
          setDataContext(result.data);
+         // Và add dữ liệu user trả về lên localStorage
          localStorage.setItem('dataContext', JSON.stringify(result.data));
+         // Và đóng thằng Login modal lại
          setOpen(false);
       } else if (result.data.length === 0) {
          setIsLogin(false);
@@ -105,19 +124,15 @@ export default function BasicTabs({ handleClose, setOpen }) {
       }
    };
 
-   const navigate = useNavigate();
-
-   // funtion catch input change 
+   // Hàm bắt dữ liệu người dùng truyền vào
    const registerChangeForm = (value, state) => {
-
-      
       console.log(value);
       setRegisterForm((oldValue) => {
          return { ...oldValue, [state]: value };
       });
    };
 
-   // function Click register and push data on database
+   // Hàm Click vào Register và add dữ liệu user vào database
    const handleClickRegister = (e) => {
       if (registerForm.username === '' || registerForm.email === '' || registerForm.password === '') {
          console.log('missing');

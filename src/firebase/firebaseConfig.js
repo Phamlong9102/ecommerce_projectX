@@ -2,6 +2,8 @@ import { initializeApp } from 'firebase/app';
 
 import { getFirestore } from '@firebase/firestore';
 
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+
 const firebaseConfig = {
    apiKey: 'AIzaSyCoRSap_WWoPDnfzOlDbM236yPMB4jmido',
    authDomain: 'trent-alexander-arnold-ef59d.firebaseapp.com',
@@ -15,5 +17,16 @@ const firebaseConfig = {
 
 const fireBase = initializeApp(firebaseConfig);
 
+// Database to render
 export const dataBase = getFirestore(fireBase);
+
+// Authentication for log in
+export const auth = getAuth(fireBase) 
+
+// Authen by googles
+export const provider = new GoogleAuthProvider()
+
+const signInWithGoogle = () => {
+
+}
 

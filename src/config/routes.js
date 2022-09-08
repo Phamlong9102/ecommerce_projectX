@@ -27,7 +27,9 @@ const routes = {
     drawstring_bag: '/store/drawstring-bag/12',
 
 
-    fire_base: '/firebase'
+    fire_base: '/firebase', 
+    fire_base_auth: '/firebase/auth', 
+    fire_base_auth_googles: '/firebase/auth/googles'
 };
 
 export default routes;

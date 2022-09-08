@@ -28,33 +28,40 @@ export default function LoginModal() {
    };
    
    // Context
-   const { dataContext, setDataContext } = useContext(ClickGetDataContext);
+   const { dataContext, setDataContext, isAuth } = useContext(ClickGetDataContext);
    
    const handleLogin = () => setOpen(true);
    
    // Login
    useEffect(() => {
-      const isAuth = localStorage.getItem('dataContext')
       console.log("isAuth = " , isAuth)
+      // Nếu isAuth = true thì
       if (isAuth) {
+         // Đăng nhập thành công
          setIsLogin(true);
       }
-   });
+   },[isAuth]);
    
-   // Logout function
+   // Hàm đăng xuất
    const handleLogout = () => {
+      // Xóa data trong localStorage
       localStorage.removeItem("dataContext");
+      // setDataContext= []
       setDataContext([]);
+      // setIsLogin = false
       setIsLogin(false);
    };
 
    return (
       <div className="hover-header">
+         {/* Nếu mà Login = true */}
          {isLogin ? (
+            // thì hiện Log out
             <Button className="css-1e6y48t-MuiButtonBase-root-MuiButton-root" onClick={handleLogout}>
                Log out
             </Button>
          ) : (
+            // Còn không thì hiện Log in
             <Button className="css-1e6y48t-MuiButtonBase-root-MuiButton-root" onClick={handleLogin}>
                Log in
             </Button>

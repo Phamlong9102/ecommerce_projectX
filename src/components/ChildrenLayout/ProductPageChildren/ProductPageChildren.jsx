@@ -14,17 +14,28 @@ function ProductPageChildren({ product }) {
 
    const { cartItems, setCartItems } = useContext(AppContext);
 
-   const { dataContext, setDataContext } = useContext(ClickGetDataContext);
+   const { dataContext, setDataContext, isAuth } = useContext(ClickGetDataContext);
 
    const handleClick = (e) => {
-      if (dataContext.length === 1) {
-         setCartItems((prevState) => {
-            console.log(prevState);
-            return [...prevState, product];
-         });
-      } else {
-         alert('Please log in to add product in your cart'); 
+      // Nếu mà trong thằng isAuth không có data trong loccalStorage  
+      if (!isAuth) {
+         alert('Please log in to add product in your cart');
+         return;
       }
+      // Bắt sự kiện tăng giảm trong phần product detail và render lên thằng product popper 
+      let newListItem = [];
+      // Bắt được sự kiện tăng hay giảm của thằng count 
+      for (let i = 1; i <= count; i++) {
+         // thì push product vào 1 mảng mới 
+         newListItem.push(product);
+      }
+      // setCartItems = prevState cũ 
+      setCartItems((prevState) => {
+         // Trả ra prevState cũ và thằng newListItem mới vào thằng product Popper
+         return [...prevState, ...newListItem];
+      });
+      // và setCount trở về 1
+      setCount(1);
    };
 
    return (
@@ -104,7 +115,7 @@ function ProductPageChildren({ product }) {
                      <span className="font-semibold text-[15px] leading-[26px] font-['Montserrat']">{count}</span>
                   </div>
                   <button
-                     onClick={() => setCount(count + 1)} 
+                     onClick={() => setCount(count + 1)}
                      className="absolute left-[101%] top-[-1px] w-[24px] h-[24px] text-center border-[#d3d3d3] border outline-1"
                   >
                      <FontAwesomeIcon className="text-[10px]" icon={faAngleUp} />
