@@ -29,7 +29,10 @@ const routes = {
 
     fire_base: '/firebase', 
     fire_base_auth: '/firebase/auth', 
-    fire_base_auth_googles: '/firebase/auth/googles'
+    fire_base_auth_googles: '/firebase/auth/googles', 
+
+    form_validation: '/form/validation', 
+    form_validate_no_library: '/form/no/library', 
 };
 
 export default routes;

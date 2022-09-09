@@ -9,32 +9,50 @@ import { useContext, useEffect, useState } from 'react';
 import _ from 'lodash';
 
 function ProductPopper() {
+   // Dùng để lấy dữ liệu khi add to cart vào State
    const { cartItems, setCartItems } = useContext(AppContext);
+   // Thằng này dùng để nhóm những thằng có id chung vào 1 nhóm
    const [groupedItems, setGroupedItem] = useState();
+   // Hàm tính giá sản phẩm
    const [totalPrice, setTotalPrice] = useState(0);
 
+   // Hàm xóa sản phẩm 
    const deleteButton = (e) => {
       setCartItems([]);
    };
+
+   // Hàm useEffect
    useEffect(() => {
+      // Dùng để nhóm những thằng có id chung được lấy từ thằng cartItems useContext
       const groupById = _.groupBy(cartItems, 'id');
+      // newCartItems = [] dùng để gán lại data đã được sắp xếp
       let newCartItems = [];
+      // Lặp qua key của sản phẩm
       for (const key in groupById) {
+         // push những thằng mới đã được map qua vào thằng newCartItems
          newCartItems.push(groupById[key]);
       }
       console.log(newCartItems, 'newCartItems');
+      // setGroupItem() trả ra thằng newCartItems
       setGroupedItem(() => newCartItems);
    }, [cartItems]);
+
+   // Hàm useEffect dùng để tính tổng các items trong giỏ hàng
    useEffect(() => {
       let total = 0;
+      // Nếu groupedItems.length > 0 
       if (groupedItems?.length > 0) {
+         // thì lặp qua từng thằng item trong giỏ hàng
          groupedItems.forEach((item) => {
+            // và tính tổng số tiền phải trả
             total += item.length * item[0].price;
          });
          console.log(total, 'total');
          setTotalPrice(total);
       }
+      // Dùng để so sánh xem thằng groupedItems có thay đổi hay không
    }, [groupedItems]);
+
    return (
       <>
          <div to="/cart" className="relative cart-00 flex mr-9">
@@ -49,6 +67,7 @@ function ProductPopper() {
             </div>
 
             <div className="cursor-default children-cart-00 absolute flex flex-col w-[297px] h-fit bg-white top-[calc(222%+4px)] right-0 z-[1000] shadow-2xl]">
+               {/* Map qua từng thằng trong groupItem nó đã được nhóm lại theo id sản phẩm*/}
                {groupedItems?.map((groupItem, i) => {
                   return (
                      <div className="flex mx-[30px] mt-[30px]">

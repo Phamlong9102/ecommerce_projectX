@@ -33,6 +33,9 @@ import FireBaseExample from '~/pages/Firebase/FirebaseExample'
 import FireBaseAuthentication from '~/pages/Firebase/FireBaseAuthenticaton';
 import FireBaseAuthGoogle from '~/pages/Firebase/FireBaseAuthGoogle'
 
+import FormValidation from '~/pages/FormValidation/FormValidationWithYup';
+import ValidateNoLibraby from '~/pages/FormValidation/ValidateNoLibrary';
+
 
 const publicRoutes = [
   { path: config.routes.home_login, component: HomeLogIn },
@@ -63,7 +66,10 @@ const publicRoutes = [
 
   {path: config.routes.fire_base, component: FireBaseExample}, 
   {path: config.routes.fire_base_auth, component: FireBaseAuthentication}, 
-  {path: config.routes.fire_base_auth_googles, component: FireBaseAuthGoogle}
+  {path: config.routes.fire_base_auth_googles, component: FireBaseAuthGoogle}, 
+
+  {path: config.routes.form_validation, component: FormValidation}, 
+  {path: config.routes.form_validate_no_library, component: ValidateNoLibraby}
 
 
 

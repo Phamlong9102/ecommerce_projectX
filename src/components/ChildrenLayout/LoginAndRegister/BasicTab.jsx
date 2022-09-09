@@ -48,23 +48,18 @@ function a11yProps(index) {
 export default function BasicTabs({ handleClose, setOpen }) {
    const [value, setValue] = useState(0);
 
-   // Giá trị mặc định của 3 thằng username, email, password
    const [registerForm, setRegisterForm] = useState({ username: '', email: '', password: '' });
 
    const [username, setUserName] = useState();
 
    const [password, setPassWord] = useState('');
 
-   // Thằng này để gọi API
    const [data, setData] = useState([]);
 
-   // Lấy DOM của thằng username
    const inputRefUserName = useRef(null);
 
-   // Lấy DOM của thằng password
    const inputRefPassWord = useRef(null);
 
-   // Check Login state
    const [isLogin, setIsLogin] = useState(false);
 
    // data được lấy từ useContext
@@ -86,7 +81,6 @@ export default function BasicTabs({ handleClose, setOpen }) {
       setPassWord(e.target.value);
    };
 
-   // Chặn người dùng nhấn enter khi nhập các field
    const handleKeyDown = (e) => {
       if (e.key === ' ') {
          e.preventDefault();
@@ -95,25 +89,17 @@ export default function BasicTabs({ handleClose, setOpen }) {
 
    // Hàm Click lấy thông tin người dùng
    const handleClickGetInfoSignIn = async (e) => {
-      // Call api check username and account
       const result = await axios(
-         // Call lên API bằng cách gán current.value với DOM đã được lấy
          `https://630ed147379256341881df89.mockapi.io/users?filter&username=${inputRefUserName.current.value}&password=${inputRefPassWord.current.value}`,
       );
-      // setData = result.data trả về
       setData(result.data);
       console.log(result.data);
 
       // Check data trả về từ API
-      // Nếu data.length === 1 thì
       if (result.data.length === 1) {
-         // Đăng nhập thành công
          setIsLogin(true);
-         // setDataContext trong useContext = data user được API trả về
          setDataContext(result.data);
-         // Và add dữ liệu user trả về lên localStorage
          localStorage.setItem('dataContext', JSON.stringify(result.data));
-         // Và đóng thằng Login modal lại
          setOpen(false);
       } else if (result.data.length === 0) {
          setIsLogin(false);
@@ -180,7 +166,7 @@ export default function BasicTabs({ handleClose, setOpen }) {
             </Tabs>
          </Box>
 
-         {/* Sign in */}
+         {/* Login */}
          <LoginTab value={value} index={0}>
             <div className="mx-[35px] ">
                {/* User name */}
