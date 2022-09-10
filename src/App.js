@@ -8,10 +8,7 @@ import { DefaultLayout } from '~/components/Layout';
 import { AppContextProvider } from './contexts/AppContext';
 import { ClickGetDataContextProvider } from './contexts/ClickGetDataContext';
 
-
-
 function App() {
-
    return (
       <ClickGetDataContextProvider>
          <AppContextProvider>

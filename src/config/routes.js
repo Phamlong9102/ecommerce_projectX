@@ -31,8 +31,8 @@ const routes = {
     fire_base_auth: '/firebase/auth', 
     fire_base_auth_googles: '/firebase/auth/googles', 
 
-    form_validation: '/form/validation', 
-    form_validate_no_library: '/form/no/library', 
+    login: '/login', 
+    register: '/register'
 };
 
 export default routes;

@@ -33,8 +33,9 @@ import FireBaseExample from '~/pages/Firebase/FirebaseExample'
 import FireBaseAuthentication from '~/pages/Firebase/FireBaseAuthenticaton';
 import FireBaseAuthGoogle from '~/pages/Firebase/FireBaseAuthGoogle'
 
-import FormValidation from '~/pages/FormValidation/FormValidationWithYup';
-import ValidateNoLibraby from '~/pages/FormValidation/ValidateNoLibrary';
+import Login from '~/pages/Login/Login';
+import Register from '~/pages/Register/Register';
+
 
 
 const publicRoutes = [
@@ -68,8 +69,9 @@ const publicRoutes = [
   {path: config.routes.fire_base_auth, component: FireBaseAuthentication}, 
   {path: config.routes.fire_base_auth_googles, component: FireBaseAuthGoogle}, 
 
-  {path: config.routes.form_validation, component: FormValidation}, 
-  {path: config.routes.form_validate_no_library, component: ValidateNoLibraby}
+  {path: config.routes.login, component: Login, layout: null}, 
+  {path: config.routes.register, component: Register, layout: null}
+
 
 
 

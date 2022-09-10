@@ -9,24 +9,23 @@ import { useContext, useEffect, useState } from 'react';
 import _ from 'lodash';
 
 function ProductPopper() {
-   // Dùng để lấy dữ liệu khi add to cart vào State
+   // Dùng để lấy data product khi add sản phẩm vào giỏ hàng
    const { cartItems, setCartItems } = useContext(AppContext);
+
    // Thằng này dùng để nhóm những thằng có id chung vào 1 nhóm
    const [groupedItems, setGroupedItem] = useState();
+
    // Hàm tính giá sản phẩm
    const [totalPrice, setTotalPrice] = useState(0);
-
-   // Hàm xóa sản phẩm 
-   const deleteButton = (e) => {
-      setCartItems([]);
-   };
 
    // Hàm useEffect
    useEffect(() => {
       // Dùng để nhóm những thằng có id chung được lấy từ thằng cartItems useContext
       const groupById = _.groupBy(cartItems, 'id');
+
       // newCartItems = [] dùng để gán lại data đã được sắp xếp
       let newCartItems = [];
+
       // Lặp qua key của sản phẩm
       for (const key in groupById) {
          // push những thằng mới đã được map qua vào thằng newCartItems
@@ -52,6 +51,12 @@ function ProductPopper() {
       }
       // Dùng để so sánh xem thằng groupedItems có thay đổi hay không
    }, [groupedItems]);
+
+   // Hàm xóa sản phẩm 
+   const deleteButton = (e) => {
+      setCartItems([]);
+   };
+
 
    return (
       <>
@@ -129,7 +134,7 @@ function ProductPopper() {
                               <span className="text-[16px] font-semibold">${totalPrice}.00</span>
                            </div>
                            <div>
-                              <span className="text-[16px] text-black font-semibold">{}</span>
+                              <span className="text-[16px] text-black font-semibold">{ }</span>
                            </div>
                         </div>
                      </div>
