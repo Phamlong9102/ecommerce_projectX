@@ -5,7 +5,6 @@ const routes = {
     admin_products: '/admin-products',
     admin_users: '/admin-users',  
     cart: '/cart',
-    checkout: '/checkout',
     search: '/search',
     store: '/store',
     category_clothes: '/store/category/clothes', 
@@ -32,7 +31,8 @@ const routes = {
     fire_base_auth_googles: '/firebase/auth/googles', 
 
     login: '/login', 
-    register: '/register'
+    register: '/register', 
+    checkout: '/checkout'
 };
 
 export default routes;

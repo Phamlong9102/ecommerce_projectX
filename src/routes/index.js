@@ -5,7 +5,7 @@ import { DefaultLayout2 } from '~/components/Layout';
 
 import HomeLogIn from '~/pages/Home/Home';
 import Store from '~/pages/Store';
-import Cart from '~/pages/Cart';
+import Cart from '~/pages/Cart/Cart';
 
 import Search from '~/pages/Search';
 import ClutchBag from '~/pages/ProductPage/ClutchBag';
@@ -31,10 +31,10 @@ import Wallet from '~/pages/Categories/Wallet'
 
 import FireBaseExample from '~/pages/Firebase/FirebaseExample'
 import FireBaseAuthentication from '~/pages/Firebase/FireBaseAuthenticaton';
-import FireBaseAuthGoogle from '~/pages/Firebase/FireBaseAuthGoogle'
 
 import Login from '~/pages/Login/Login';
 import Register from '~/pages/Register/Register';
+import Checkout from '~/pages/Checkout/Checkout';
 
 
 
@@ -67,11 +67,10 @@ const publicRoutes = [
 
   {path: config.routes.fire_base, component: FireBaseExample}, 
   {path: config.routes.fire_base_auth, component: FireBaseAuthentication}, 
-  {path: config.routes.fire_base_auth_googles, component: FireBaseAuthGoogle}, 
+  {path: config.routes.checkout, component: Checkout}, 
 
   {path: config.routes.login, component: Login, layout: null}, 
-  {path: config.routes.register, component: Register, layout: null}
-
+  {path: config.routes.register, component: Register, layout: null}, 
 
 
 

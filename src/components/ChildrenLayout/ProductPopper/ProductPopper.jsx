@@ -112,6 +112,7 @@ function ProductPopper() {
                      </div>
                   );
                })}
+               
                {groupedItems?.length > 0 ? (
                   <div></div>
                ) : (
@@ -141,7 +142,7 @@ function ProductPopper() {
                      <div className="mt-[30px] mx-[30px] pb-[30px] float-right">
                         <Link to="/cart" className="underline underline-offset-8">
                            <span className="text-['Poppins'] text-[13px] font-semibold text-black tracking-[0.01em]">
-                              View Cart
+                              Check out
                            </span>
                         </Link>
                      </div>
