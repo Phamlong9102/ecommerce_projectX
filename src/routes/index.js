@@ -1,7 +1,6 @@
 import config from '~/config';
 
 // File này dùng để Route (điều hướng) các web con trong dự án
-import { DefaultLayout2 } from '~/components/Layout'; 
 
 import HomeLogIn from '~/pages/Home/Home';
 import Store from '~/pages/Store';
@@ -29,8 +28,6 @@ import Bags from '~/pages/Categories/Bags'
 import HighHeels from '~/pages/Categories/HighHeels'
 import Wallet from '~/pages/Categories/Wallet'
 
-import FireBaseExample from '~/pages/Firebase/FirebaseExample'
-import FireBaseAuthentication from '~/pages/Firebase/FireBaseAuthenticaton';
 
 import Login from '~/pages/Login/Login';
 import Register from '~/pages/Register/Register';
@@ -64,9 +61,6 @@ const publicRoutes = [
   { path: config.routes.category_highheels, component: HighHeels }, 
   { path: config.routes.category_wallet, component: Wallet }, 
 
-
-  {path: config.routes.fire_base, component: FireBaseExample}, 
-  {path: config.routes.fire_base_auth, component: FireBaseAuthentication}, 
   {path: config.routes.checkout, component: Checkout}, 
 
   {path: config.routes.login, component: Login, layout: null}, 

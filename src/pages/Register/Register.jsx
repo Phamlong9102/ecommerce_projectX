@@ -139,8 +139,12 @@ function Register() {
                                     Register
                                 </button>
                             </div>
-
                         </form>
+                    </div>
+                    <div className="text-center mt-[26px]">
+                        <Link className="text-[16px] font-semibold font-['Poppins']" to="/">
+                            Home
+                        </Link>
                     </div>
 
                 </div>
