@@ -58,37 +58,43 @@ export default function BasicTabs() {
                <Tab className="" label="Review(0)" {...a11yProps(2)} />
             </Tabs>
          </Box>
-         <TabPanel className="css-19kzrtu" value={value} index={0}>
-            <div className="css-ahj2mt-MuiTypography-root">
-               <span className="css-ahj2mt-MuiTypography-root">
-                  Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere
-                  legere incorrupte. Eum an vocent commodo
-               </span>
-               <span className="css-ahj2mt-MuiTypography-root">
-                  referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu
-                  quot virtute usu, nonumy eruditi suscipit
-               </span>
-               <span className="css-ahj2mt-MuiTypography-root">
-                  duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne.
-                  Nam ex posse argumentum eloquentiam,
-               </span>
-               <span className="css-ahj2mt-MuiTypography-root">
-                  saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel.
-               </span>
-            </div>
-         </TabPanel>
-         <TabPanel value={value} index={1}>
-            <div className="additional-infomation flex flex-col">
-               <div>
-                  <span>Weigth: &nbsp;&nbsp;&nbsp;&nbsp;  2kg</span>
+         <div>
+            <TabPanel className="css-19kzrtu" value={value} index={0}>
+               <div className="css-ahj2mt-MuiTypography-root">
+                  <span className="css-ahj2mt-MuiTypography-root">
+                     Lorem ipsum dolor sit amet, saepe vitae gubergren pro cu, sit eros animal invidunt ei, ex nec munere
+                     legere incorrupte. Eum an vocent commodo
+                  </span>
+                  <span className="css-ahj2mt-MuiTypography-root">
+                     referrentur, no veniam maiestatis vim. Est verear nusquam delicata id, mea natum movet eripuit at. Eu
+                     quot virtute usu, nonumy eruditi suscipit
+                  </span>
+                  <span className="css-ahj2mt-MuiTypography-root">
+                     duo et. Nam eu dicta tamquam apeirian, has ei verear periculis vituperatoribus. Est summo nemore ne.
+                     Nam ex posse argumentum eloquentiam,
+                  </span>
+                  <span className="css-ahj2mt-MuiTypography-root">
+                     saepe similique interpretaris nec ex, ridens suscipit scriptorem ex mel.
+                  </span>
                </div>
-               <div>
-                  <span>Dimension 20 x 10 x 5</span>
+            </TabPanel>
+         </div>
+         <div>
+            <TabPanel value={value} index={1}>
+               <div className="additional-infomation flex flex-col">
+                  <div>
+                     <span>Weigth: &nbsp;&nbsp;&nbsp;&nbsp;  2kg</span>
+                  </div>
+                  <div>
+                     <span>Dimension 20 x 10 x 5</span>
+                  </div>
                </div>
-            </div>
-         </TabPanel>
-         <TabPanel value={value} index={2}>
-         </TabPanel>
+            </TabPanel>
+         </div>
+         <div>
+            <TabPanel value={value} index={2}>
+            </TabPanel>
+         </div>
       </Box>
    );
 }

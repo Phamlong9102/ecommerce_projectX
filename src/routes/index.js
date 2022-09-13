@@ -28,6 +28,10 @@ import Bags from '~/pages/Categories/Bags'
 import HighHeels from '~/pages/Categories/HighHeels'
 import Wallet from '~/pages/Categories/Wallet'
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4db43eab3b11eb4833eeccbb86ea80827d93ca8c
 import Login from '~/pages/Login/Login';
 import Register from '~/pages/Register/Register';
 import Checkout from '~/pages/Checkout/Checkout';

@@ -10,6 +10,7 @@ import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
 import { AppContext } from '~/contexts/AppContext';
 
 
+
 function Login() {
 
    const initialValues = { username: "", password: "" }
@@ -81,7 +82,6 @@ function Login() {
          <div className="flex justify-center selection-default">
             <div className="w-[448px] h-[532px] p-[48px] mt-[48px] border-black border-[1px] border-solid">
                <div className="">
-
                   <form onSubmit={handleLogin}>
                      <h3 className="mb-5 text-center text-[30px] font-normal text-[#111] font-['Monserrat'] ">Sign in</h3>
                      <div className="flex flex-col mb-[1.5rem]">
@@ -115,6 +115,11 @@ function Login() {
                         </button>
                      </div>
                   </form>
+               </div>
+               <div className="text-center mt-[26px]">
+                  <Link className="text-[16px] font-semibold font-['Poppins']"  to="/">
+                     Home
+                  </Link>
                </div>
 
             </div>
