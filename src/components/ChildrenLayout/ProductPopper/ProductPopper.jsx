@@ -31,10 +31,10 @@ function ProductPopper() {
          // push những thằng mới đã được map qua vào thằng newCartItems
          newCartItems.push(groupById[key]);
       }
-      console.log(newCartItems, 'newCartItems');
       // setGroupItem() trả ra thằng newCartItems
       setGroupedItem(() => newCartItems);
    }, [cartItems]);
+
 
    // Hàm useEffect dùng để tính tổng các items trong giỏ hàng
    useEffect(() => {
@@ -46,7 +46,6 @@ function ProductPopper() {
             // và tính tổng số tiền phải trả
             total += item.length * item[0].price;
          });
-         console.log(total, 'total');
          setTotalPrice(total);
       }
       // Dùng để so sánh xem thằng groupedItems có thay đổi hay không
@@ -67,7 +66,7 @@ function ProductPopper() {
             <div className="absolute top-[71%] bg-[transparent] right-0 w-[86px] h-[56px]"></div>
             <div className="">
                <span>
-                  {cartItems.length} / ${groupedItems?.length > 0 ? totalPrice : 0}.00
+                  {cartItems?.length} / ${groupedItems?.length > 0 ? totalPrice : 0}.00
                </span>
             </div>
 
@@ -75,7 +74,7 @@ function ProductPopper() {
                {/* Map qua từng thằng trong groupItem nó đã được nhóm lại theo id sản phẩm*/}
                {groupedItems?.map((groupItem, i) => {
                   return (
-                     <div className="flex mx-[30px] mt-[30px]">
+                     <div className="flex mx-[30px] mt-[30px]" key={groupedItems.index}>
                         <div className="absolute w-[100px] cursor-pointer h-[40px] bg-transparent top-[-10%] left-[66%]"></div>
 
                         <Link to="/store/golden-sandals/8" className="">
@@ -112,7 +111,7 @@ function ProductPopper() {
                      </div>
                   );
                })}
-               
+
                {groupedItems?.length > 0 ? (
                   <div></div>
                ) : (

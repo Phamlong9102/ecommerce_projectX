@@ -144,8 +144,8 @@ function Footer() {
                </div>
             </div>
          </div>
-         <div class="mt-9 relative flex py-5 justify-center">
-            <div class="absolute border-t border-gray-600 w-10/12"></div>
+         <div className="mt-9 relative flex py-5 justify-center">
+            <div className="absolute border-t border-gray-600 w-10/12"></div>
          </div>
          <div className='flex justify-center mt-2.5 font-size-content-footer font-family-content-footer'>
             <div className="">

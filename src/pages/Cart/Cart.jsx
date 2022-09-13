@@ -18,6 +18,8 @@ import _ from 'lodash';
 
 import { useNavigate } from 'react-router-dom';
 
+import axios from 'axios';
+
 function Cart() {
 
    // useContext get data from user click add to cart
@@ -27,54 +29,57 @@ function Cart() {
 
    const [demoPrice, setDemoPrice] = useState(0);
 
-   const [totalPrice, setTotalPrice] = useState(0); 
+   const [totalPrice, setTotalPrice] = useState(0);
 
    const navigate = useNavigate();
 
    // Hàm useEffect
    useEffect(() => {
-      // Dùng để nhóm những thằng có id chung được lấy từ thằng cartItems useContext
       const groupById = _.groupBy(cartItems, 'id');
-
-      console.log(groupById)
 
       let newCartItems = [];
 
-      // Lặp qua key của sản phẩm
       for (const key in groupById) {
-         // push những thằng mới đã được map qua vào thằng newCartItems
          newCartItems.push(groupById[key]);
       }
-      console.log(newCartItems);
 
-      // setGroupItem() trả ra thằng newCartItems
       setGroupedItem(() => newCartItems);
    }, [cartItems]);
 
-   // Hàm useEffect dùng để tính tổng các items trong giỏ hàng
    useEffect(() => {
       let total = 0;
-      // Nếu groupedItems.length > 0 
       if (groupedItems?.length > 0) {
-         // thì lặp qua từng thằng item trong giỏ hàng
          groupedItems.forEach((item) => {
-            // và tính tổng số tiền phải trả
             total += item.length * item[0].price;
          });
          setDemoPrice(total);
          setTotalPrice(total + 120)
       }
-      // Dùng để so sánh xem thằng groupedItems có thay đổi hay không
    }, [groupedItems]);
 
    const handleCheckout = (e) => {
       if (groupedItems.length > 0) {
+         const currentUser = JSON.parse(localStorage.getItem('dataContext'))[0]
+         const getCartItem = currentUser.cartItems;
+         const userId = currentUser.id;
+         
+         if (getCartItem.length > 0) {
+            axios
+               .delete(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...currentUser, cartItems: getCartItem })
+               .then((res) => {
+                  console.log(res);
+               })
+               .catch((err) => {
+                  console.log('Error =', err);
+               });
+         }
+         
          navigate(`/checkout`)
          setCartItems([])
+         
+
       }
    }
-
-
 
 
    return (

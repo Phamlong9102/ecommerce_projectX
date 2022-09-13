@@ -30,7 +30,6 @@ export default function SelectTextFields() {
    const handleChange = (event) => {
       setCountry(event.target.value);
    };
-
    return (
       <>
          <Box
@@ -40,21 +39,23 @@ export default function SelectTextFields() {
             noValidate
             autoComplete="on"
          >
-            <div>
-               <TextField className="outline-0 border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc]" id="outlined-select-currency" select value={country} onChange={handleChange}>
-                  {currencies.map((option) => (
-                     <MenuItem key={option.value} value={option.value}>
-                        {option.label}
-                     </MenuItem>
-                  ))}
-               </TextField>
-            </div>
+            <TextField className="outline-0 border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc]" id="outlined-select-currency" select value={country} onChange={handleChange}>
+               {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                     {option.label}
+                  </MenuItem>
+               ))}
+            </TextField>
          </Box>
-         <div className="mt-[12px] cursor-pointer">
+
+         <div className="cursor-pointer">
+            <input className="placeholder:text-[10px] bg-[#f4f4f4] placeholder:font-normal placeholder:uppercase placeholder:tracking-[0.16em] outline-0 border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black cursor:pointer" placeholder="Country" type="text" />
+         </div>
+         <div className="mt-[22px] cursor-pointer">
             <input className="placeholder:text-[10px] bg-[#f4f4f4] placeholder:font-normal placeholder:uppercase placeholder:tracking-[0.16em] outline-0 border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black cursor:pointer" placeholder="Town / City" type="text" />
          </div>
          <div className="mt-[22px] cursor-pointer">
-            <input className="placeholder:text-[10px] bg-[#f4f4f4] placeholder:font-normal placeholder:uppercase placeholder:tracking-[0.16em] outline-0 border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black cursor:pointer" placeholder="Postcost / Zip" type="text" />
+            <input className="placeholder:text-[10px] bg-[#f4f4f4] placeholder:font-normal placeholder:uppercase placeholder:tracking-[0.16em] outline-0 border-t-0 border-l-0 border-r-0 border-b-[1px] border-b-[#ccc] focus:border-b-black cursor:pointer" placeholder="Home / Number" type="text" />
          </div>
       </>
    );

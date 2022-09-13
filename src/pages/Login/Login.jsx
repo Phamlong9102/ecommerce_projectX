@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
+import { AppContext } from '~/contexts/AppContext';
 
 
 function Login() {
@@ -21,7 +22,9 @@ function Login() {
 
    const [data, setData] = useState([])
 
-   const { dataContext, setDataContext } = useContext(ClickGetDataContext);
+   const {  setDataContext } = useContext(ClickGetDataContext);
+
+   const { setCartItems } = useContext(AppContext);
 
    const navigate = useNavigate();
 
@@ -39,11 +42,11 @@ function Login() {
          `https://630ed147379256341881df89.mockapi.io/users?filter&username=${formValues.username}&password=${formValues.password}`,
       )
       setData(result.data)
-      console.log(result.data)
 
       if (result.data.length === 1) {
          setIsLogin(true);
          setDataContext(result.data);
+         setCartItems(result.data[0].cartItems)
          localStorage.setItem('dataContext', JSON.stringify(result.data));
          navigate(`/`)
       } else if (result.data.length === 0) {

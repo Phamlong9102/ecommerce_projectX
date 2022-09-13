@@ -28,50 +28,62 @@ function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormErrors(validate(formValues));
+        const isValid = validate(formValues)
+        if(!isValid) return;
+        const newFormValues = {
+            username: formValues.username,
+            email: formValues.email,
+            password: formValues.password
+        }
         setIsSubmit(true)
         axios
-            .post('https://630ed147379256341881df89.mockapi.io/users', { ...formValues })
+            .post('https://630ed147379256341881df89.mockapi.io/users', { ...newFormValues })
             .then((res) => {
                 console.log(res);
             })
             .catch((err) => {
                 console.log('Error =', err);
             });
+        navigate(`/login`)
     }
 
-    useEffect(() => {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-        }
-    }, [formErrors]);
 
     const validate = (values) => {
         const errors = {}
+        let isValid = true
         const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         if (!values.username) {
             errors.username = "User name is required!";
+            isValid = false
+
         } else if (values.username.length < 4) {
             errors.username = "User name must be more than 6 characters"
+            isValid = false
         }
 
         if (!values.email) {
             errors.email = "Email is required!";
+            isValid = false
         } else if (!regex.test(values.email)) {
             errors.email = "This is not a valid email format!"
+            isValid = false
         }
 
         if (!values.password) {
             errors.password = "Password is required!";
+            isValid = false
         }
 
         if (!values.confirmPassword) {
             errors.confirmPassword = "Confirm password is required!";
+            isValid = false
         } else if (values.password !== values.confirmPassword) {
             errors.confirmPassword = "Password is not the same"
+            isValid = false
         }
-        return errors;
+        setFormErrors(errors);  
+        return isValid
     }
 
     return (

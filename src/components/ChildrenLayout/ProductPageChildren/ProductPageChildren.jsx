@@ -14,29 +14,29 @@ function ProductPageChildren({ product }) {
 
    const { cartItems, setCartItems } = useContext(AppContext);
 
-   const { dataContext, setDataContext, isAuth } = useContext(ClickGetDataContext);
+   const { isAuth } = useContext(ClickGetDataContext);
 
    const handleClick = (e) => {
-      // Nếu mà trong thằng isAuth không có data trong loccalStorage  
       if (!isAuth) {
          alert('Please log in to add product in your cart');
          return;
       }
-      // Bắt sự kiện tăng giảm trong phần product detail và render lên thằng product popper 
       let newListItem = [];
-      // Bắt được sự kiện tăng hay giảm của thằng count 
+
       for (let i = 1; i <= count; i++) {
-         // thì push product vào 1 mảng mới 
          newListItem.push(product);
       }
-      // setCartItems = prevState cũ 
+
       setCartItems((prevState) => {
-         // Trả ra prevState cũ và thằng newListItem mới vào thằng product Popper
          return [...prevState, ...newListItem];
       });
-      // và setCount trở về 1
+      
+      let dataContext = localStorage.getItem('dataContext')
+      dataContext = [{ ...JSON.parse(dataContext)[0], cartItems: [...cartItems, ...newListItem] }]
+      localStorage.setItem('dataContext', JSON.stringify(dataContext))
       setCount(1);
    };
+
 
    return (
       <div className="mt-[80px] flex justify-center selection-default">
