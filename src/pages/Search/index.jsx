@@ -1,11 +1,12 @@
+import ProductSearch from '~/components/ChildrenLayout/ProductSearch/ProductSearch';
+import NewSearch from '~/components/ChildrenLayout/NewSearch/NewSearch';
+
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import { useSearchParams } from 'react-router-dom';
 
-import ProductSearch from '~/components/ChildrenLayout/ProductSearch/ProductSearch';
-import NewSearch from '~/components/ChildrenLayout/NewSearch/NewSearch';
+
 
 function Search() {
    const [searchParams, setSearchParams] = useSearchParams();

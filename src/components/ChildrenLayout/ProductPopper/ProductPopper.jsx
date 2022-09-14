@@ -1,42 +1,28 @@
-import { Link } from 'react-router-dom';
-
 import CloseIcon from '@mui/icons-material/Close';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { AppContext } from '~/contexts/AppContext';
+
+import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import _ from 'lodash';
 
 function ProductPopper() {
-   // Dùng để lấy data product khi add sản phẩm vào giỏ hàng
    const { cartItems, setCartItems } = useContext(AppContext);
-
-   // Thằng này dùng để nhóm những thằng có id chung vào 1 nhóm
    const [groupedItems, setGroupedItem] = useState();
-
-   // Hàm tính giá sản phẩm
    const [totalPrice, setTotalPrice] = useState(0);
 
-   // Hàm useEffect
    useEffect(() => {
-      // Dùng để nhóm những thằng có id chung được lấy từ thằng cartItems useContext
       const groupById = _.groupBy(cartItems, 'id');
-
-      // newCartItems = [] dùng để gán lại data đã được sắp xếp
       let newCartItems = [];
-
-      // Lặp qua key của sản phẩm
       for (const key in groupById) {
-         // push những thằng mới đã được map qua vào thằng newCartItems
          newCartItems.push(groupById[key]);
       }
       // setGroupItem() trả ra thằng newCartItems
       setGroupedItem(() => newCartItems);
    }, [cartItems]);
 
-
-   // Hàm useEffect dùng để tính tổng các items trong giỏ hàng
    useEffect(() => {
       let total = 0;
       // Nếu groupedItems.length > 0 
@@ -48,14 +34,11 @@ function ProductPopper() {
          });
          setTotalPrice(total);
       }
-      // Dùng để so sánh xem thằng groupedItems có thay đổi hay không
    }, [groupedItems]);
 
-   // Hàm xóa sản phẩm 
    const deleteButton = (e) => {
       setCartItems([]);
    };
-
 
    return (
       <>

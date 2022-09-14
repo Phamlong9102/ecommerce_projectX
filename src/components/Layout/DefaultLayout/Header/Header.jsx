@@ -1,10 +1,8 @@
-import { Link } from 'react-router-dom';
-
-import { useState, useEffect, useContext } from 'react';
-
 import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
 import { AppContext } from '~/contexts/AppContext';
 
+import { Link } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 
@@ -19,7 +17,6 @@ function Header() {
          setIsLogin(true);
       }
    }, [isAuth]);
-
 
    // Log out function
    const handleLogout = () => {
@@ -44,7 +41,6 @@ function Header() {
       setIsLogin(false);
    };
 
-
    return (
       <header className="hidden lg:flex xl:flex 2xl:flex text-color-header header-color header-height items-center justify-between select-none">
          <div className="ml-12">
@@ -60,8 +56,6 @@ function Header() {
                      <span className="tracking-[0.2em] hover:text-zinc-400 ease-in duration-200 uppercase">Log out</span>
                   </button>
                </div>)}
-
-
             <div className="mr-6 tracking-[0.2em] hover:text-zinc-400 ease-in duration-200">Contact us</div>
             <div className="tracking-[0.2em] hover:text-zinc-400 ease-in duration-200">Faq</div>
          </div>

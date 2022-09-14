@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
-
-import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'; 
-
-import { useState, useEffect } from 'react'; 
-import axios from 'axios'; 
-
 import RelatedProduct from '~/components/ChildrenLayout/ProductPageChildren/RelatedProduct';
 import ProductPageChildren from '~/components/ChildrenLayout/ProductPageChildren/ProductPageChildren';
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'; 
+
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react'; 
+import axios from 'axios'; 
 
 function BlueSuit() {
    const [data, setData] = useState([]);

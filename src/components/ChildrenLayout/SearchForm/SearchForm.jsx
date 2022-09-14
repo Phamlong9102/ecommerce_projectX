@@ -9,9 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function SearchForm() {
-
    const [open, setOpen] = React.useState(false);
-   
    const [searchInput, setSearchInput] = useState("")
 
    const handleClickOpen = () => {

@@ -1,27 +1,12 @@
-import Cart03 from '~/images/Cart/Cart03.jpg';
-
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import CloseIcon from '@mui/icons-material/Close';
-import { faRightLong } from '@fortawesome/free-solid-svg-icons';
-import { faGift } from '@fortawesome/free-solid-svg-icons';
-
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { useState, useEffect, useContext } from 'react';
-
 import { AppContext } from '~/contexts/AppContext';
 
-import _ from 'lodash';
-
+import { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
+import _ from 'lodash';
 import axios from 'axios';
 
 function Cart() {
-
-   // useContext get data from user click add to cart
    const { cartItems, setCartItems } = useContext(AppContext);
    const [groupedItems, setGroupedItem] = useState();
    const [demoPrice, setDemoPrice] = useState(0);

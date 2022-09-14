@@ -12,19 +12,12 @@ import { AppContext } from '~/contexts/AppContext';
 
 
 function Login() {
-
    const initialValues = { username: "", password: "" }
-
    const [formValues, setFormValues] = useState(initialValues)
-
    const [formErrors, setFormErrors] = useState({})
-
    const [isLogin, setIsLogin] = useState(false)
-
    const [data, setData] = useState([])
-
    const {  setDataContext } = useContext(ClickGetDataContext);
-
    const { setCartItems } = useContext(AppContext);
 
    const navigate = useNavigate();

@@ -7,7 +7,6 @@ import Box from '@mui/material/Box';
 
 import ReviewForClutchBag from './ReviewForClutchBag';
 
-
 function TabPanelForClutchBag(props) {
    const { children, value, index, ...other } = props;
 

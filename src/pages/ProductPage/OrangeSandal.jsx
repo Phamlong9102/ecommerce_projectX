@@ -7,16 +7,13 @@ import  { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function OrangeSandal() {
-   
    const [data, setData] = useState([]);
 
    useEffect(() => {
       const fetchData = async () => {
          const result = await axios('https://630ed147379256341881df89.mockapi.io/products');
-
          setData(result.data);
       };
-
       fetchData();
    }, []);
 

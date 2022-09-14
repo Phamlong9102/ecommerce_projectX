@@ -11,11 +11,10 @@ import { GridRowModes, GridToolbarContainer, GridActionsCellItem } from '@mui/x-
 import { DataGrid } from '@mui/x-data-grid';
 import { randomId } from '@mui/x-data-grid-generator';
 
-import { useState, useEffect } from 'react'; 
+import { useEffect } from 'react'; 
 import axios from 'axios';
 
 function EditToolbar(props) {
-
    const { setRows, setRowModesModel } = props;
 
    const handleClick = () => {
@@ -42,7 +41,6 @@ EditToolbar.propTypes = {
 };
 
 export default function FullFeaturedCrudGrid() {
-   
    const [rows, setRows] = React.useState([]);
    const [rowModesModel, setRowModesModel] = React.useState({});
 
@@ -64,7 +62,6 @@ export default function FullFeaturedCrudGrid() {
          .catch(err => { console.log('Error:', err ) })
       }, [])
 
-      
    const handleRowEditStart = (params, event) => {
       event.defaultMuiPrevented = true;
    };
@@ -90,7 +87,6 @@ export default function FullFeaturedCrudGrid() {
          ...rowModesModel,
          [id]: { mode: GridRowModes.View, ignoreModifications: true },
       });
-
       const editedRow = rows.find((row) => row.id === id);
       if (editedRow.isNew) {
          setRows(rows.filter((row) => row.id !== id));
@@ -136,7 +132,6 @@ export default function FullFeaturedCrudGrid() {
          cellClassName: 'actions',
          getActions: ({ id }) => {
             const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit;
-
             if (isInEditMode) {
                return [
                   <GridActionsCellItem icon={<SaveIcon />} label="Save" onClick={handleSaveClick(id)} />,

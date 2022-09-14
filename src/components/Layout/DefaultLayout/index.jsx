@@ -3,7 +3,6 @@ import Menu from './Menu';
 import Footer from './Footer';
 import BackToTop from './BackToTop/ScrollButton'
 
-
 function DefaultLayout({ children }) { 
    return (
       <div className="">

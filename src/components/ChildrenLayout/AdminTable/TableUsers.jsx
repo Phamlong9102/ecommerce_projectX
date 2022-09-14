@@ -41,7 +41,6 @@ EditToolbar.propTypes = {
 };
 
 export default function FullFeaturedCrudGrid() {
-   
    const [rows, setRows] = React.useState([]);
    const [rowModesModel, setRowModesModel] = React.useState({});
 
@@ -86,7 +85,6 @@ export default function FullFeaturedCrudGrid() {
          ...rowModesModel,
          [id]: { mode: GridRowModes.View, ignoreModifications: true },
       });
-
       const editedRow = rows.find((row) => row.id === id);
       if (editedRow.isNew) {
          setRows(rows.filter((row) => row.id !== id));

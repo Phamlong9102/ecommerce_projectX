@@ -1,24 +1,15 @@
 import { Link } from "react-router-dom";
-
 import { useState } from 'react';
-
 import { useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
 
-
 function Register() {
-
     const initialValues = { username: "", email: "", password: "", confirmPassword: "" }
-
     const [formValues, setFormValues] = useState(initialValues)
-
     const [formErrors, setFormErrors] = useState({})
-
     const [isSubmit, setIsSubmit] = useState(false)
 
     const navigate = useNavigate();
-
 
     // Get values of 4 field
     const handleChange = (e) => {
@@ -47,21 +38,17 @@ function Register() {
         navigate(`/login`)
     }
 
-
     const validate = (values) => {
         const errors = {}
         let isValid = true
         const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
         if (!values.username) {
             errors.username = "User name is required!";
             isValid = false
-
         } else if (values.username.length < 4) {
             errors.username = "User name must be more than 6 characters"
             isValid = false
         }
-
         if (!values.email) {
             errors.email = "Email is required!";
             isValid = false
@@ -69,12 +56,10 @@ function Register() {
             errors.email = "This is not a valid email format!"
             isValid = false
         }
-
         if (!values.password) {
             errors.password = "Password is required!";
             isValid = false
         }
-
         if (!values.confirmPassword) {
             errors.confirmPassword = "Confirm password is required!";
             isValid = false

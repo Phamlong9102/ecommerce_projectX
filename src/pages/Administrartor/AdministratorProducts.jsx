@@ -1,8 +1,6 @@
 import TableProducts from '~/components/ChildrenLayout/AdminTable/TableProducts';
 
-
 import { Link } from 'react-router-dom';
-
 
 function AdministratorProducts() {
    return (

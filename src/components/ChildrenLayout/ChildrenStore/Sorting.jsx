@@ -17,28 +17,24 @@ function Sorting() {
          const fetchData = async () => {
             const result = await axios(`https://630ed147379256341881df89.mockapi.io/products`);
             setData(result.data);
-            console.log(result);
          };
          fetchData();
       } if (sortValue === "1") {
          const fetchData = async () => {
             const result = await axios(`https://630ed147379256341881df89.mockapi.io/products?sortBy=popularity`);
             setData(result.data);
-            console.log(result);
          };
          fetchData(); 
       } if (sortValue === "2") {
          const fetchData = async () => {
             const result = await axios(`https://630ed147379256341881df89.mockapi.io/products?sortBy=price`);
             setData(result.data);
-            console.log(result);
          };
          fetchData(); 
       } if (sortValue === "3") {
          const fetchData = async () => {
             const result = await axios(`https://630ed147379256341881df89.mockapi.io/products?sortBy=price&order=desc`);
             setData(result.data);
-            console.log(result);
          };
          fetchData(); 
       } 

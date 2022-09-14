@@ -11,9 +11,7 @@ import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
 
 function ProductPageChildren({ product }) {
    const [count, setCount] = useState(1);
-
    const { cartItems, setCartItems } = useContext(AppContext);
-
    const { isAuth } = useContext(ClickGetDataContext);
 
    const handleClick = (e) => {
@@ -36,7 +34,6 @@ function ProductPageChildren({ product }) {
       localStorage.setItem('dataContext', JSON.stringify(dataContext))
       setCount(1);
    };
-
 
    return (
       <div className="mt-[80px] flex justify-center selection-default">

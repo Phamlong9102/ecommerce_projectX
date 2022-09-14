@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 function NewSearch() {
    const [searchInput, setSearchInput] = useState('');
-
    const navigate = useNavigate();
 
    const navigateToSearch = (e) => {
