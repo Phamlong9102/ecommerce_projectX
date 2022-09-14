@@ -6,7 +6,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import { faRightLong } from '@fortawesome/free-solid-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
 
-import ChangeAdress from '~/components/ChildrenLayout/ChangeAdress/ChangeAdress';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -24,11 +23,8 @@ function Cart() {
 
    // useContext get data from user click add to cart
    const { cartItems, setCartItems } = useContext(AppContext);
-
    const [groupedItems, setGroupedItem] = useState();
-
    const [demoPrice, setDemoPrice] = useState(0);
-
    const [totalPrice, setTotalPrice] = useState(0);
 
    const navigate = useNavigate();
@@ -36,13 +32,10 @@ function Cart() {
    // Hàm useEffect
    useEffect(() => {
       const groupById = _.groupBy(cartItems, 'id');
-
       let newCartItems = [];
-
       for (const key in groupById) {
          newCartItems.push(groupById[key]);
       }
-
       setGroupedItem(() => newCartItems);
    }, [cartItems]);
 
@@ -62,7 +55,7 @@ function Cart() {
          const currentUser = JSON.parse(localStorage.getItem('dataContext'))[0]
          const getCartItem = currentUser.cartItems;
          const userId = currentUser.id;
-         
+
          if (getCartItem.length > 0) {
             axios
                .delete(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...currentUser, cartItems: getCartItem })
@@ -73,14 +66,10 @@ function Cart() {
                   console.log('Error =', err);
                });
          }
-         
          navigate(`/checkout`)
          setCartItems([])
-         
-
       }
    }
-
 
    return (
       <>
@@ -141,35 +130,35 @@ function Cart() {
             </div>
 
             <div className="ml-[72px] basis-1/2">
-               <div className="flex flex-col">
+               <div className="flex">
                   <span className="text-[25px] font-semibold font-['Poppins']">Cart Total</span>
                </div>
-               <div className="bg-[#f4f4f4] w-[432px] h-[600px] mt-[36px] ">
+
+               <div className="bg-[#f4f4f4] w-[432px] h-[500px] mt-[36px] ">
                   <div className="pt-[24px] px-[28px] pb-[20px]">
-                     <div className="flex">
+                     <div className="flex justify-between">
                         <span className=" text-black text-[18px] font-['Poppins'] font-semibold">Subtotal</span>
-                        <span className="ml-[34px] leading-[29px] text-[15px] font-['Montserrat'] font-normal text-black  ">
+                        <span className="leading-[29px] text-[15px] font-['Montserrat'] font-normal text-black  ">
                            ${demoPrice}.00
                         </span>
                      </div>
                   </div>
+
                   <div className="px-[28px]">
-                     <div className="flex">
+                     <div className="flex justify-between">
                         <div className="">
                            <span className=" text-black text-[18px] font-['Poppins'] font-semibold">Shipping</span>
                         </div>
-                        <div className="ml-[34px] flex flex-col ">
+                        <div className="flex ">
                            <div>
                               <span className="text-[14px] font-normal text-black leading-[30px]">
                                  Free
                               </span>
                            </div>
-                           <div>
-                              <ChangeAdress />
-                           </div>
                         </div>
                      </div>
                   </div>
+
                   <div>
                      <div className="pt-[24px] px-[28px] pb-[20px]">
                         <div className="flex justify-between">
@@ -180,11 +169,28 @@ function Cart() {
                         </div>
                      </div>
                   </div>
-                  <div className="relative mt-[6px] ml-[26px]">
-                     <button onClick={handleCheckout} className="w-[374px] h-[50px] bg-black text-white font-['Montserrat'] font-bold text-[14px] text-center">
-                        Checkout
-                     </button>
-                  </div>
+
+                  <form className="px-[28px]">
+                     <div>
+                        <label className="text-black text-[18px] font-['Poppins'] font-semibold">Name</label>
+                        <input className="w-full border-0 outline-0 bg-[#f4f4f4]" type="text" placeholder="Name" />
+                     </div>
+                     <div className="mt-[24px]">
+                        <label className="text-black text-[18px] font-['Poppins'] font-semibold">Address</label>
+                        <input className="w-full border-0 outline-0 bg-[#f4f4f4]" type="text" placeholder="Address" />
+                     </div>
+                     <div className="mt-[24px]">
+                        <label className="text-black text-[18px] font-['Poppins'] font-semibold">Phone Number</label>
+                        <input className="w-full border-0 outline-0 bg-[#f4f4f4]" type="text" placeholder="Phone Number" />
+                     </div>
+                     <div className="mt-[24px]">
+                        <button onClick={handleCheckout} className="w-[374px] h-[50px] bg-black text-white font-['Montserrat'] font-bold text-[14px] text-center">
+                           Checkout
+                        </button>
+                     </div>
+                  </form>
+
+
                </div>
             </div>
          </div>
