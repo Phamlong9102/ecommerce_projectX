@@ -9,15 +9,13 @@ import axios from 'axios';
 import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
 import { AppContext } from '~/contexts/AppContext';
 
-
-
 function Login() {
    const initialValues = { username: "", password: "" }
    const [formValues, setFormValues] = useState(initialValues)
    const [formErrors, setFormErrors] = useState({})
    const [isLogin, setIsLogin] = useState(false)
    const [data, setData] = useState([])
-   const {  setDataContext } = useContext(ClickGetDataContext);
+   const { setDataContext } = useContext(ClickGetDataContext);
    const { setCartItems } = useContext(AppContext);
 
    const navigate = useNavigate();
@@ -28,10 +26,23 @@ function Login() {
       setFormValues({ ...formValues, [name]: value })
    }
 
+   // Validate Login
+   const validate = (values) => {
+      const errors = {}
+      if (!values.username) {
+         errors.username = "User name is required!";
+      } else if (values.username.length < 4) {
+         errors.username = "User name must be more than 4 characters"
+      }
+      if (!values.password) {
+         errors.password = "Password is required!";
+      }
+      return errors;
+   }
+
    const handleLogin = async (e) => {
       e.preventDefault();
       setFormErrors(validate(formValues));
-
       const result = await axios(
          `https://630ed147379256341881df89.mockapi.io/users?filter&username=${formValues.username}&password=${formValues.password}`,
       )
@@ -41,7 +52,7 @@ function Login() {
          setIsLogin(true);
          setDataContext(result.data);
          setCartItems(result.data[0].cartItems)
-         localStorage.setItem('dataContext', JSON.stringify(result.data));
+         localStorage.setItem('dataUser', JSON.stringify(result.data));
          navigate(`/`)
       } else if (result.data.length === 0) {
          setIsLogin(false);
@@ -51,24 +62,6 @@ function Login() {
          alert('Please enter your username and password ');
       }
    }
-
-
-   const validate = (values) => {
-      const errors = {}
-
-      if (!values.username) {
-         errors.username = "User name is required!";
-      } else if (values.username.length < 4) {
-         errors.username = "User name must be more than 4 characters"
-      }
-
-      if (!values.password) {
-         errors.password = "Password is required!";
-      }
-
-      return errors;
-   }
-
 
    return (
       <>

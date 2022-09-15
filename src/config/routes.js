@@ -9,7 +9,6 @@ const routes = {
     category_bags: '/store/category/bags', 
     category_highheels: '/store/category/highheels', 
     category_wallet: '/store/category/wallet', 
-
     clutch_bag: '/store/clutch-bag/1',
     orange_airsuit: '/store/orange-airsuit/2',
     orange_sandal: '/store/orange-sandals/3',
@@ -22,12 +21,6 @@ const routes = {
     city_mini_bag: '/store/city-mini-bag/10',
     shoulder_bag: '/store/shoulder-bag/11',
     drawstring_bag: '/store/drawstring-bag/12',
-
-
-    fire_base: '/firebase', 
-    fire_base_auth: '/firebase/auth', 
-    fire_base_auth_googles: '/firebase/auth/googles', 
-
     login: '/login', 
     register: '/register', 
     checkout: '/checkout'

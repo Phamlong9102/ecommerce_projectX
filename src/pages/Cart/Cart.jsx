@@ -1,4 +1,5 @@
 import { AppContext } from '~/contexts/AppContext';
+import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
 
 import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -7,14 +8,23 @@ import _ from 'lodash';
 import axios from 'axios';
 
 function Cart() {
-   const { cartItems, setCartItems } = useContext(AppContext);
+   const { cartItems, setCartItems, getCartItems } = useContext(AppContext);
+   const { dataContext, setDataContext, isAuth } = useContext(ClickGetDataContext);
    const [groupedItems, setGroupedItem] = useState();
-   const [demoPrice, setDemoPrice] = useState(0);
    const [totalPrice, setTotalPrice] = useState(0);
+   const initialValues = { name: "", address: "", phoneNumber: "" }
+   const [formValues, setFormValues] = useState(initialValues)
+   const [formErrors, setFormErrors] = useState({})
+   const [isSubmit, setIsSubmit] = useState(false)
 
    const navigate = useNavigate();
 
-   // Hàm useEffect
+   const getUserInfo = (e) => {
+      const { name, value } = e.target;
+      setFormValues({ ...formValues, [name]: value })
+   }
+
+   // Lodash items have same id
    useEffect(() => {
       const groupById = _.groupBy(cartItems, 'id');
       let newCartItems = [];
@@ -24,26 +34,37 @@ function Cart() {
       setGroupedItem(() => newCartItems);
    }, [cartItems]);
 
+   // Total price
    useEffect(() => {
       let total = 0;
       if (groupedItems?.length > 0) {
          groupedItems.forEach((item) => {
             total += item.length * item[0].price;
          });
-         setDemoPrice(total);
-         setTotalPrice(total + 120)
+         setTotalPrice(total);
       }
    }, [groupedItems]);
 
    const handleCheckout = (e) => {
-      if (groupedItems.length > 0) {
+      e.preventDefault();
+      const isValid = validate(formValues)
+      if (!isValid) return;
+      setIsSubmit(true)
+
+      if (setIsSubmit && groupedItems.length > 0) {
          const currentUser = JSON.parse(localStorage.getItem('dataContext'))[0]
          const getCartItem = currentUser.cartItems;
          const userId = currentUser.id;
 
+         const dataUserOrder = {
+            name: formValues.name,
+            address: formValues.address,
+            phoneNumber: formValues.phoneNumber
+         }
+
          if (getCartItem.length > 0) {
             axios
-               .delete(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...currentUser, cartItems: getCartItem })
+               .put(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { orderSuccess: getCartItem, ...dataUserOrder })
                .then((res) => {
                   console.log(res);
                })
@@ -51,9 +72,36 @@ function Cart() {
                   console.log('Error =', err);
                });
          }
-         navigate(`/checkout`)
+         setDataContext([]);
          setCartItems([])
+         getCartItem({})
+         navigate(`/`)
       }
+   }
+
+   const validate = (values) => {
+      const errors = {}
+      let isValid = true;
+      if (!values.name) {
+         errors.name = "Name is required";
+         isValid = false
+      }
+      if (!values.address) {
+         errors.address = "Address is required!";
+         isValid = false
+      }
+      if (!values.phoneNumber) {
+         errors.phoneNumber = "Phone number is required!";
+         isValid = false
+      } else if (isNaN(values.phoneNumber)) {
+         errors.phoneNumber = "Phone number must be number"
+         isValid = false
+      } else if (values.phoneNumber.length < 10) {
+         errors.phoneNumber = "Phone number must more than 10 number"
+         isValid = false
+      }
+      setFormErrors(errors);
+      return isValid
    }
 
    return (
@@ -103,7 +151,6 @@ function Cart() {
                   )
                })}
 
-
                <div className="mt-[30px]">
                   <Link
                      to="/store"
@@ -119,12 +166,12 @@ function Cart() {
                   <span className="text-[25px] font-semibold font-['Poppins']">Cart Total</span>
                </div>
 
-               <div className="bg-[#f4f4f4] w-[432px] h-[500px] mt-[36px] ">
+               <div className="bg-[#f4f4f4] w-[432px] h-[550px] mt-[36px] ">
                   <div className="pt-[24px] px-[28px] pb-[20px]">
                      <div className="flex justify-between">
                         <span className=" text-black text-[18px] font-['Poppins'] font-semibold">Subtotal</span>
                         <span className="leading-[29px] text-[15px] font-['Montserrat'] font-normal text-black  ">
-                           ${demoPrice}.00
+                           ${totalPrice}.00
                         </span>
                      </div>
                   </div>
@@ -155,21 +202,46 @@ function Cart() {
                      </div>
                   </div>
 
-                  <form className="px-[28px]">
+                  <form onSubmit={handleCheckout} className="px-[28px]">
                      <div>
                         <label className="text-black text-[18px] font-['Poppins'] font-semibold">Name</label>
-                        <input className="w-full border-0 outline-0 bg-[#f4f4f4]" type="text" placeholder="Name" />
+                        <input
+                           name="name"
+                           value={formValues.name}
+                           onChange={getUserInfo}
+                           className="w-full border-0 outline-0 bg-[#f4f4f4]"
+                           type="text"
+                           placeholder="Name"
+                        />
+                        <span className="text-[red] text-[12px] font-normal font-['Poppins']">{formErrors.name}</span>
                      </div>
                      <div className="mt-[24px]">
                         <label className="text-black text-[18px] font-['Poppins'] font-semibold">Address</label>
-                        <input className="w-full border-0 outline-0 bg-[#f4f4f4]" type="text" placeholder="Address" />
+                        <input
+                           name="address"
+                           value={formValues.address}
+                           onChange={getUserInfo}
+                           className="w-full border-0 outline-0 bg-[#f4f4f4]"
+                           type="text"
+                           placeholder="Address"
+                        />
+                        <span className="text-[red] text-[12px] font-normal font-['Poppins']">{formErrors.address}</span>
                      </div>
                      <div className="mt-[24px]">
                         <label className="text-black text-[18px] font-['Poppins'] font-semibold">Phone Number</label>
-                        <input className="w-full border-0 outline-0 bg-[#f4f4f4]" type="text" placeholder="Phone Number" />
+                        <input
+                           name="phoneNumber"
+                           value={formValues.phoneNumber}
+                           onChange={getUserInfo}
+                           className="w-full border-0 outline-0 bg-[#f4f4f4]"
+                           type="text"
+                           placeholder="Phone Number"
+                        />
+                        <span className="text-[red] text-[12px] font-normal font-['Poppins']">{formErrors.phoneNumber}</span>
+
                      </div>
                      <div className="mt-[24px]">
-                        <button onClick={handleCheckout} className="w-[374px] h-[50px] bg-black text-white font-['Montserrat'] font-bold text-[14px] text-center">
+                        <button className="w-[374px] h-[50px] bg-black text-white font-['Montserrat'] font-bold text-[14px] text-center">
                            Checkout
                         </button>
                      </div>

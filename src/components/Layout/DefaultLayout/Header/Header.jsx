@@ -20,7 +20,7 @@ function Header() {
 
    // Log out function
    const handleLogout = () => {
-      const currentUser = JSON.parse(localStorage.getItem('dataContext'))[0]
+      const currentUser = JSON.parse(localStorage.getItem('dataProduct'))[0]
       const getCartItem = currentUser.cartItems; 
       const userId = currentUser.id;
       
@@ -34,10 +34,10 @@ function Header() {
                console.log('Error =', err);
             });
       }
-      localStorage.removeItem("dataContext");
+      localStorage.removeItem("dataUser");
+      localStorage.removeItem("dataProduct");
       setCartItems([])
       setDataContext([]);
-
       setIsLogin(false);
    };
 

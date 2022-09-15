@@ -36,8 +36,16 @@ function ProductPopper() {
       }
    }, [groupedItems]);
 
-   const deleteButton = (e) => {
+   const handleDeleteProduct = (e) => {
       setCartItems([]);
+      setGroupedItem([])
+      console.log(groupedItems.length)
+      console.log(cartItems.length)
+      if (cartItems.length === 0) {
+         let currentDataProductUser = JSON.parse(localStorage.getItem('dataUser'))[0]
+         currentDataProductUser = [{ ...JSON.parse(currentDataProductUser)[0], cartItems: [...cartItems] }]
+         localStorage.setItem('dataUser', JSON.stringify(currentDataProductUser))
+      }
    };
 
    return (
@@ -87,7 +95,7 @@ function ProductPopper() {
                            </div>
                         </div>
                         <div className="ml-[12px]">
-                           <button onClick={deleteButton} className="">
+                           <button onClick={handleDeleteProduct} className="">
                               <CloseIcon className="" />
                            </button>
                         </div>

@@ -6,9 +6,9 @@ export const AppContext = createContext({ cartItems:[] })
 export const AppContextProvider = ({ children }) => { 
     const [cartItems, setCartItems, getCartItems] = useState([]); 
     useEffect(()=>{
-    const getUserData = JSON.parse(localStorage.getItem('dataContext'))
+    const getUserData = JSON.parse(localStorage.getItem('dataUser'))
         if (getUserData){
-            const getCartItems = JSON.parse(localStorage.getItem('dataContext'))[0].cartItems
+            const getCartItems = JSON.parse(localStorage.getItem('dataUser'))[0].cartItems
             setCartItems(getCartItems)
         }
     },[])

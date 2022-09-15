@@ -20,7 +20,7 @@ function ProductPageChildren({ product }) {
          return;
       }
       let newListItem = [];
-
+      
       for (let i = 1; i <= count; i++) {
          newListItem.push(product);
       }
@@ -28,10 +28,14 @@ function ProductPageChildren({ product }) {
       setCartItems((prevState) => {
          return [...prevState, ...newListItem];
       });
+
+      // New
+      // localStorage.setItem('dataProduct', JSON.stringify(cartItems))
       
-      let dataContext = localStorage.getItem('dataContext')
-      dataContext = [{ ...JSON.parse(dataContext)[0], cartItems: [...cartItems, ...newListItem] }]
-      localStorage.setItem('dataContext', JSON.stringify(dataContext))
+      // Old
+      let dataProductUserSelect = localStorage.getItem('dataUser')
+      dataProductUserSelect = [{ ...JSON.parse(dataProductUserSelect)[0], cartItems: [...cartItems, ...newListItem] }]
+      localStorage.setItem('dataProduct', JSON.stringify(dataProductUserSelect))
       setCount(1);
    };
 
