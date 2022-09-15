@@ -23,7 +23,8 @@ const routes = {
     drawstring_bag: '/store/drawstring-bag/12',
     login: '/login', 
     register: '/register', 
-    checkout: '/checkout'
+    checkout: '/checkout', 
+    admin_black: 'admin-black'
 };
 
 export default routes;

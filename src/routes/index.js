@@ -25,6 +25,7 @@ import Wallet from '~/pages/Categories/Wallet'
 import Login from '~/pages/Login/Login';
 import Register from '~/pages/Register/Register';
 import Checkout from '~/pages/Checkout/Checkout';
+import AdminBlack from '~/pages/AdminBlack/AdminBlack';
 
 const publicRoutes = [
   { path: config.routes.home_login, component: HomeLogIn },
@@ -52,6 +53,8 @@ const publicRoutes = [
   {path: config.routes.checkout, component: Checkout}, 
   {path: config.routes.login, component: Login, layout: null}, 
   {path: config.routes.register, component: Register, layout: null}, 
+  {path: config.routes.admin_black, component: AdminBlack, layout: null}, 
+
 ];
 
 const privateRoutes = [];

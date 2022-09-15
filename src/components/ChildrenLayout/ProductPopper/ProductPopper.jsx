@@ -11,6 +11,7 @@ import _ from 'lodash';
 function ProductPopper() {
    const { cartItems, setCartItems } = useContext(AppContext);
    const [groupedItems, setGroupedItem] = useState();
+   const [itemLength, setItemLength] = useState(0);
    const [totalPrice, setTotalPrice] = useState(0);
 
    useEffect(() => {
@@ -25,27 +26,25 @@ function ProductPopper() {
 
    useEffect(() => {
       let total = 0;
+      let count = 0
       // Nếu groupedItems.length > 0 
       if (groupedItems?.length > 0) {
          // thì lặp qua từng thằng item trong giỏ hàng
          groupedItems.forEach((item) => {
             // và tính tổng số tiền phải trả
             total += item.length * item[0].price;
+            count += item.length
          });
+         setItemLength(count)
          setTotalPrice(total);
       }
    }, [groupedItems]);
 
-   const handleDeleteProduct = (e) => {
-      setCartItems([]);
-      setGroupedItem([])
-      console.log(groupedItems.length)
-      console.log(cartItems.length)
-      if (cartItems.length === 0) {
-         let currentDataProductUser = JSON.parse(localStorage.getItem('dataUser'))[0]
-         currentDataProductUser = [{ ...JSON.parse(currentDataProductUser)[0], cartItems: [...cartItems] }]
-         localStorage.setItem('dataUser', JSON.stringify(currentDataProductUser))
-      }
+   const handleDeleteProduct = (index) => {
+      let newGroupeditems = [...groupedItems]
+      newGroupeditems.splice(index, 1)
+      setGroupedItem(newGroupeditems);
+      
    };
 
    return (
@@ -57,7 +56,7 @@ function ProductPopper() {
             <div className="absolute top-[71%] bg-[transparent] right-0 w-[86px] h-[56px]"></div>
             <div className="">
                <span>
-                  {cartItems?.length} / ${groupedItems?.length > 0 ? totalPrice : 0}.00
+                  {groupedItems?.length > 0 ? itemLength : 0 } / ${groupedItems?.length > 0 ? totalPrice : 0}.00
                </span>
             </div>
 
@@ -95,7 +94,7 @@ function ProductPopper() {
                            </div>
                         </div>
                         <div className="ml-[12px]">
-                           <button onClick={handleDeleteProduct} className="">
+                           <button onClick={() => handleDeleteProduct(i)} className="">
                               <CloseIcon className="" />
                            </button>
                         </div>
