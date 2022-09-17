@@ -14,7 +14,7 @@ function ProductPageChildren({ product }) {
    const { cartItems, setCartItems } = useContext(AppContext);
    const { isAuth } = useContext(ClickGetDataContext);
 
-   const handleClick = (e) => {
+   const handleAddToCart = (e) => {
       if (!isAuth) {
          alert('Please log in to add product in your cart');
          return;
@@ -29,10 +29,6 @@ function ProductPageChildren({ product }) {
          return [...prevState, ...newListItem];
       });
 
-      // New
-      // localStorage.setItem('dataProduct', JSON.stringify(cartItems))
-      
-      // Old
       let dataProductUserSelect = localStorage.getItem('dataUser')
       dataProductUserSelect = [{ ...JSON.parse(dataProductUserSelect)[0], cartItems: [...cartItems, ...newListItem] }]
       localStorage.setItem('dataProduct', JSON.stringify(dataProductUserSelect))
@@ -129,7 +125,7 @@ function ProductPageChildren({ product }) {
                   </button>
                </div>
                <button
-                  onClick={handleClick}
+                  onClick={handleAddToCart}
                   className="ml-[43px] w-[170px] h-[46px] bg-black  button:underline button:underline-offset-8"
                >
                   <span className="text-[13px] font-['Poppins'] font-semibold text-white">Add To Cart</span>

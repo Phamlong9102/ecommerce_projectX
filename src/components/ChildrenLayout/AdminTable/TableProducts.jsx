@@ -11,13 +11,13 @@ import { GridRowModes, GridToolbarContainer, GridActionsCellItem } from '@mui/x-
 import { DataGrid } from '@mui/x-data-grid';
 import { randomId } from '@mui/x-data-grid-generator';
 
-import { useEffect } from 'react'; 
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function EditToolbar(props) {
    const { setRows, setRowModesModel } = props;
 
-   const handleClick = () => {
+   const handleAddProduct = () => {
       const id = randomId();
       setRows((oldRows) => [...oldRows, { id, name: '', age: '', isNew: true }]);
       setRowModesModel((oldModel) => ({
@@ -28,7 +28,7 @@ function EditToolbar(props) {
 
    return (
       <GridToolbarContainer>
-         <Button sx={{ color: '#000',  }} startIcon={<AddIcon />} onClick={handleClick}>
+         <Button sx={{ color: '#000', }} startIcon={<AddIcon />} onClick={handleAddProduct}>
             Add Product
          </Button>
       </GridToolbarContainer>
@@ -41,8 +41,10 @@ EditToolbar.propTypes = {
 };
 
 export default function FullFeaturedCrudGrid() {
-   const [rows, setRows] = React.useState([]);
-   const [rowModesModel, setRowModesModel] = React.useState({});
+   const [rows, setRows] = useState([]);
+   const [rowModesModel, setRowModesModel] = useState({});
+
+   const [productId, setProductId] = useState("")
 
    useEffect(() => {
       axios.get('https://630ed147379256341881df89.mockapi.io/products')
@@ -50,17 +52,17 @@ export default function FullFeaturedCrudGrid() {
             const data = res.data.map((product) => {
                return {
                   "id": product.id,
-                  "name": product.name, 
-                  "price": product.price, 
-                  "imageURL": product.imageURL, 
+                  "name": product.name,
+                  "price": product.price,
+                  "imageURL": product.imageURL,
                   "classify": product.classify,
                   "category": product.category
                }
             })
             setRows(data)
          })
-         .catch(err => { console.log('Error:', err ) })
-      }, [])
+         .catch(err => { console.log('Error:', err) })
+   }, [])
 
    const handleRowEditStart = (params, event) => {
       event.defaultMuiPrevented = true;
@@ -79,7 +81,11 @@ export default function FullFeaturedCrudGrid() {
    };
 
    const handleDeleteClick = (id) => () => {
-      setRows(rows.filter((row) => row.id !== id));
+      console.log('Delete successful')
+      setRows(rows.filter((row) => row.id !== id))
+      let curentId = id
+      axios
+         .delete(`https://630ed147379256341881df89.mockapi.io/products/${curentId}`)
    };
 
    const handleCancelClick = (id) => () => {

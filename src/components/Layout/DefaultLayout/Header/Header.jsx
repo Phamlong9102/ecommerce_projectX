@@ -34,8 +34,8 @@ function Header() {
                console.log('Error =', err);
             });
       }
-      localStorage.removeItem("dataUser");
       localStorage.removeItem("dataProduct");
+      localStorage.removeItem("dataUser");
       setCartItems([])
       setDataContext([]);
       setIsLogin(false);

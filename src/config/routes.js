@@ -24,7 +24,6 @@ const routes = {
     login: '/login', 
     register: '/register', 
     checkout: '/checkout', 
-    admin_black: 'admin-black'
 };
 
 export default routes;

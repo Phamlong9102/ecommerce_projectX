@@ -1,45 +1,36 @@
 import ProductDemo from '~/components/ChildrenLayout/HomeProductChildren/HomeProduct';
 
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-function Sorting() {
-   const [data, setData] = useState([]);
-
-   const [sortValue,  SetSortValue] = useState("0")
+function Sorting({ data, setData, defaultData }) {
+   const [sortValue, setSortValue] = useState("Default Sorting")
 
    const handleChange = (e) => {
-      SetSortValue(e.target.value)
-   } 
+      setSortValue(e.target.value)
+      switch (e.target.value) {
+         case 'Default Sorting':
+            setData(() => [...defaultData])
+            break
+         case 'Sort By Popularity':
+            const newArr = [...data]
+            newArr.sort((a, b) => a.popularity - b.popularity)
+            setData(() => [...newArr])
+            break;
+         case 'Sort By Price: Low To High':
+            const LowToHigh = [...data]
+            LowToHigh.sort((a, b) => a.price - b.price)
+            setData(() => [...LowToHigh])
+            break;
+         case 'Sort By Price: High To Low':
+            const HighToLow = [...data]
+            HighToLow.sort((a, b) => b.price - a.price)
+            setData(() => [...HighToLow])
+            break;
+         default:
+            break;
+      }
+   }
 
-   useEffect(() => {
-      if (sortValue === "0") {
-         const fetchData = async () => {
-            const result = await axios(`https://630ed147379256341881df89.mockapi.io/products`);
-            setData(result.data);
-         };
-         fetchData();
-      } if (sortValue === "1") {
-         const fetchData = async () => {
-            const result = await axios(`https://630ed147379256341881df89.mockapi.io/products?sortBy=popularity`);
-            setData(result.data);
-         };
-         fetchData(); 
-      } if (sortValue === "2") {
-         const fetchData = async () => {
-            const result = await axios(`https://630ed147379256341881df89.mockapi.io/products?sortBy=price`);
-            setData(result.data);
-         };
-         fetchData(); 
-      } if (sortValue === "3") {
-         const fetchData = async () => {
-            const result = await axios(`https://630ed147379256341881df89.mockapi.io/products?sortBy=price&order=desc`);
-            setData(result.data);
-         };
-         fetchData(); 
-      } 
-   }, [sortValue]) 
-      
    return (
       <>
          {/* Sorting */}
@@ -57,16 +48,16 @@ function Sorting() {
                      className="w-[250px] cursor-pointer text-[10px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase"
                      size="autoSize"
                   >
-                     <option value={0} className="selection-[#000] cursor-pointer bg-[#f6f6f6] text-[13px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase">
+                     <option value="Default Sorting" className="selection-[#000] cursor-pointer bg-[#f6f6f6] text-[13px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase">
                         Default Sorting
                      </option>
-                     <option value={1} className="cursor-pointer bg-[#f6f6f6] text-[13px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase">
+                     <option value="Sort By Popularity" className="cursor-pointer bg-[#f6f6f6] text-[13px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase">
                         Sort By popularity
                      </option>
-                     <option value={2} className="cursor-pointer bg-[#f6f6f6] text-[13px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase">
+                     <option value="Sort By Price: Low To High" className="cursor-pointer bg-[#f6f6f6] text-[13px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase">
                         Sort By Price: Low To High
                      </option>
-                     <option value={3} className="cursor-pointer bg-[#f6f6f6] text-[13px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase">
+                     <option value="Sort By Price: High To Low" className="cursor-pointer bg-[#f6f6f6] text-[13px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase">
                         Sort By Price: High To Low
                      </option>
                   </select>

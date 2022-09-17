@@ -10,28 +10,26 @@ import _ from 'lodash';
 
 function ProductPopper() {
    const { cartItems, setCartItems } = useContext(AppContext);
-   const [groupedItems, setGroupedItem] = useState();
-   const [itemLength, setItemLength] = useState(0);
-   const [totalPrice, setTotalPrice] = useState(0);
+   const [ groupedItems, setGroupedItem ] = useState();
+   const [ itemLength, setItemLength ] = useState(0);
+   const [ totalPrice, setTotalPrice ] = useState(0);
 
+   // lodash items have the same id
    useEffect(() => {
       const groupById = _.groupBy(cartItems, 'id');
       let newCartItems = [];
       for (const key in groupById) {
          newCartItems.push(groupById[key]);
       }
-      // setGroupItem() trả ra thằng newCartItems
-      setGroupedItem(() => newCartItems);
+      setGroupedItem(newCartItems); 
    }, [cartItems]);
 
+   // Total price
    useEffect(() => {
       let total = 0;
       let count = 0
-      // Nếu groupedItems.length > 0 
       if (groupedItems?.length > 0) {
-         // thì lặp qua từng thằng item trong giỏ hàng
          groupedItems.forEach((item) => {
-            // và tính tổng số tiền phải trả
             total += item.length * item[0].price;
             count += item.length
          });
@@ -40,11 +38,26 @@ function ProductPopper() {
       }
    }, [groupedItems]);
 
+   // Delete product in product popper
    const handleDeleteProduct = (index) => {
       let newGroupeditems = [...groupedItems]
       newGroupeditems.splice(index, 1)
       setGroupedItem(newGroupeditems);
       
+      console.log(newGroupeditems)
+
+      let getCurrentItems = JSON.parse(localStorage.getItem('dataProduct'))
+      let getCurrentItemsUser = JSON.parse(localStorage.getItem('dataUser'))
+console.log(getCurrentItems)
+console.log(getCurrentItemsUser)
+      if (getCurrentItems) {
+         getCurrentItems = [{  ...getCurrentItems[0], cartItems: [...newGroupeditems] }]
+         localStorage.setItem('dataProduct', JSON.stringify(getCurrentItems))
+      } 
+      else if (getCurrentItemsUser) {
+         getCurrentItemsUser = [{ ...getCurrentItemsUser[0], cartItems: [...newGroupeditems] }]
+         localStorage.setItem('dataUser', JSON.stringify(getCurrentItemsUser))
+      }
    };
 
    return (

@@ -2,8 +2,23 @@ import Sorting from '~/components/ChildrenLayout/ChildrenStore/Sorting';
 import Categories from '~/components/ChildrenLayout/ChildrenStore/Categories'
 
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function Store() {
+   const [data, setData] = useState([]);
+   const [defaultData, setDefaultData] = useState([]);
+   
+   const fetchData = async () => {
+      const result = await axios(`https://630ed147379256341881df89.mockapi.io/products`);
+      setData(result.data);
+      setDefaultData(result.data);
+   };
+
+   useEffect(() => {
+      fetchData();
+   }, [])
+
    return (
       <>
          {/* Điều hướng */}
@@ -24,10 +39,10 @@ function Store() {
 
          <div className="flex">
             <div className="">
-               <Sorting />
+               <Sorting setData={setData} data={data} defaultData={defaultData} />
             </div>
             <div className="mt-[120px]">
-               <Categories />
+               <Categories setData={setData} defaultData={defaultData}/>
             </div>
          </div>
       </>

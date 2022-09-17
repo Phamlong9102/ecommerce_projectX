@@ -1,10 +1,15 @@
-import { Link } from 'react-router-dom';
-
 import NewLook from '~/images/NewLook/NewLook.jpg';
-
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
-function Categories() {
+function Categories({ defaultData, setData }) {
+   const handleClick = (value) => {
+      const cloneData = [...defaultData];
+      const newArr = cloneData.filter(item => {
+         return item.category === value
+      })
+      setData(() => [...newArr])
+   }
+
    return (
       <>
          {/* Category */}
@@ -12,25 +17,17 @@ function Categories() {
             <div className="">
                <span className="text-[18px] font-semibold font-['Poppins'] text-black">Categories</span>
             </div>
-            <div className="text-[13px] font-normal text-black mt-[16px]">
-               <Link to="/store/category/clothes" className="mt-[18px] ">
-                  <span>Clothes</span>
-               </Link>
+            <div className="text-[13px] font-normal text-black mt-[16px] cursor-pointer">
+               <span onClick={() => handleClick('clothes')}>Clothes</span>
             </div>
-            <div className="text-[13px] font-normal text-black mt-[16px]">
-               <Link to="/store/category/bags" className="mt-[18px] ">
-                  <span>Bags</span>
-               </Link>
+            <div className="text-[13px] font-normal text-black mt-[16px] cursor-pointer">
+               <span onClick={() => handleClick('bags')}>Bags</span>
             </div>
-            <div className="text-[13px] font-normal text-black mt-[16px]">
-               <Link to="/store/category/highheels" className="mt-[18px] ">
-                  <span>High Heels</span>
-               </Link>
+            <div className="text-[13px] font-normal text-black mt-[16px] cursor-pointer">
+               <span onClick={() => handleClick('high heels')}>High Heels</span>
             </div>
-            <div className="text-[13px] font-normal text-black mt-[16px]">
-               <Link to="/store/category/wallet" className="mt-[18px] ">
-                  <span>Wallet</span>
-               </Link>
+            <div className="text-[13px] font-normal text-black mt-[16px] cursor-pointer">
+               <span onClick={() => handleClick('wallet')}>Wallet</span>
             </div>
             <div className="mt-[36px]">
                <img className="w-[252px] h-[182px]" src={NewLook} alt="" />
