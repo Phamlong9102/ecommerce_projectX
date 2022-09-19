@@ -5,8 +5,8 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 function Footer() {
    return (
-      <footer className="w-full bottom-0 left-0 h-[522px] mt-[400px] bg-black text-white select-none">
-         <div className="flex justify-between mx-32 pt-[132px] pb-[10px]">
+      <div className="w-full min-h-[522px] mt-[400px] bg-black text-white select-none">
+         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 mx-[50px] gap-y-[40px]  pt-[132px] pb-[10px]">
             <div className="">
                <div>
                   <a href="/">
@@ -73,7 +73,7 @@ function Footer() {
                      Discover
                   </span>
                </div>
-               <div className="mt-8 font-size-content-footer font-family-content-footer cursor-pointer	">
+               <div className="mt-8 font-size-content-footer font-family-content-footer cursor-pointer">
                   <div className="flex flex-col hover-styles-content-footer">
                      <span>Men</span>
                   </div>
@@ -97,7 +97,7 @@ function Footer() {
                      Conect
                   </span>
                </div>
-               <div className="mt-8 font-size-content-footer font-family-content-footer cursor-pointer	">
+               <div className="mt-8 font-size-content-footer font-family-content-footer cursor-pointer">
                   <div className="flex flex-col hover-styles-content-footer">
                      <span>Follow us on Instagram</span>
                   </div>
@@ -140,22 +140,22 @@ function Footer() {
                      type="text"
                      placeholder="Your email"
                   />
-                  <MailOutlineIcon sx={{ fontSize: 18 }} className="absolute top-[20%] left-[91%] "/>
+                  {/* <MailOutlineIcon sx={{ fontSize: 18 }} className="absolute top-[20%] left-[85%] "/> */}
                </div>
             </div>
          </div>
          <div className="mt-9 relative flex py-5 justify-center">
             <div className="absolute border-t border-gray-600 w-10/12"></div>
          </div>
-         <div className='flex justify-center mt-2.5 font-size-content-footer font-family-content-footer'>
+         <div className='flex h-fit justify-center mt-2.5 pb-[40px] font-size-content-footer font-family-content-footer'>
             <div className="">
                <span className="">@ 2018 
                   <a className='hover-styles-content-footer ml-[3px]' href={'https://qodeinteractive.com'} target="_blank" rel="noopener noreferrer">Quode Interactive,</a>
-                  All Rights Reserved
+                  &nbsp; All Rights Reserved
                </span>
             </div>
          </div>
-      </footer>
+      </div>
    );
 }
 export default Footer;

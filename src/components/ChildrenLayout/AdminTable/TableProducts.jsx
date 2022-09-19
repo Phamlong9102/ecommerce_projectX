@@ -47,7 +47,7 @@ export default function FullFeaturedCrudGrid() {
    const [productId, setProductId] = useState("")
 
    useEffect(() => {
-      axios.get('https://630ed147379256341881df89.mockapi.io/products')
+      axios.get('https://630ed147379256341881df89.mockapi.io/products/1')
          .then(res => {
             const data = res.data.map((product) => {
                return {
@@ -84,8 +84,12 @@ export default function FullFeaturedCrudGrid() {
       console.log('Delete successful')
       setRows(rows.filter((row) => row.id !== id))
       let curentId = id
+      console.log(curentId)
       axios
          .delete(`https://630ed147379256341881df89.mockapi.io/products/${curentId}`)
+         .then(res => {
+            console.log(res)
+         })
    };
 
    const handleCancelClick = (id) => () => {

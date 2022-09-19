@@ -66,18 +66,17 @@ function HomeLogIn() {
          const result = await axios('https://630ed147379256341881df89.mockapi.io/products');
          setData(result.data);
       };
-      fetchData();
+      fetchData();   
    }, []);
-
 
    return (
       <>
          {/* Carousel carousel */}
-         <div className="select-none mt-9 mx-[52px] selection-default">
+         <div className="hidden xl:block select-none mt-9 mx-[52px] selection-default">
             <div id="carouselExampleControls" className="carousel slide relative" data-bs-ride="carousel">
                <div className="carousel-inner relative w-full overflow-hidden">
                   <div className="carousel-item active relative float-left w-full">
-                     <img className="relative max-h-[522px] block w-full" src={PinkBackGround} alt="Wild Landscape" />
+                     <img className="relative h-fit block w-fit" src={PinkBackGround} alt="Wild Landscape" />
                      <img className="absolute top-[19%] left-[calc(10%)] w-[12%]" src={ElementSlide1} alt="" />
                      <div>
                         <span className="absolute top-[26%] w-[14%] left-[15%] font-bold text-[150px] text-white font-[Poppins]">
@@ -104,7 +103,7 @@ function HomeLogIn() {
                   </div>
                </div>
 
-               <button
+               {/* <button
                   className="w-[62px] h-[62px] bg-black opacity-100 hover:opacity-100 carousel-control-prev absolute top-[44%] right-[calc(5%-1px)] flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline"
                   type="button"
                   data-bs-target="#carouselExampleControls"
@@ -121,7 +120,7 @@ function HomeLogIn() {
                >
                   <span className="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
                   <span className="visually-hidden">Next</span>
-               </button>
+               </button> */}
 
                <div className="absolute bottom-[5%] flex text-[15px] font-[Poppins] ">
                   <div className="ml-8">
@@ -144,7 +143,7 @@ function HomeLogIn() {
          </div>
 
          {/* ProductsDemo */}
-         <div className="flex mt-[86px] justify-center selection-default">
+         <div className="hidden xl:flex mt-[86px] justify-center selection-default">
             <div className="relative max-w-[358px] mr-[90px]">
                <div className="absolute flex flex-col z-[100] top-[27%] left-[-33%]">
                   <div className="">
@@ -192,7 +191,7 @@ function HomeLogIn() {
          </div>
 
          {/* Products Demo 2 */}
-         <div className="flex justify-center selection-default">
+         <div className="hidden xl:flex justify-center selection-default">
             <div className="select-none mr-[90px] mt-[134px] pl-[144px]">
                <img className="h-[282px] " src={ProductsDemo05} alt="" />
             </div>
@@ -258,7 +257,7 @@ function HomeLogIn() {
          {/* Shopping everyday products  */}
          <div className="mt-[60px] select-none flex justify-center selection-default mx-[120px]">
             <div>
-               <div className="grid grid-cols-4 gap-4">
+               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[50px] sm:gap-x-[30px] ">
                   {data.slice(0, 8).map((product) => (
                      <HomeProduct key={product.id} product={product} />
                   ))}
@@ -267,8 +266,8 @@ function HomeLogIn() {
          </div>
 
          {/* Sleeveless top */}
-         <div className="mt-[122px] select-none flex justify-center selection-default">
-            <div className="relative bg-test w-[1347px] h-[700px]">
+         <div className="hidden lg:flex mt-[122px] select-none justify-center selection-default">
+            <div className="relative bg-test min-w-[1347px] min-h-[700px]">
                <div className="absolute right-0">
                   <img className="max-w-[650px] min-h-[690px]" src={banner01} alt="" />
                </div>
@@ -305,7 +304,7 @@ function HomeLogIn() {
          {/* Bag and Backpack Product */}
          <div className="flex justify-center mt-[50px] select-none selection-default">
             <div>
-               <div className="grid grid-cols-4 gap-16">
+               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[50px] sm:gap-x-[30px] ">
                   {data.slice(8, 12).map((product) => (
                      <BagAndBackpacks key={product.id} product={product} />
                   ))}
@@ -314,7 +313,7 @@ function HomeLogIn() {
          </div>
 
          {/* What they're saying*/}
-         <div className="flex justify-center text-center w-full h-[634px] mt-[80px] relative selection-default">
+         <div className="hidden sm:flex justify-center text-center w-full h-[634px] mt-[80px] relative selection-default">
             <div className="absolute flex text-center justify-center flex-col mt-[76px] z-[100]">
                <span className="collection-title">Summer Collection</span>
                <span className="mt-[18px] describe-title">What they're saying</span>
@@ -406,7 +405,7 @@ function HomeLogIn() {
          </div>
 
          {/* Time to shine */}
-         <div className="flex justify-center mt-[200px] selection-default">
+         <div className="hidden xl:flex justify-center mt-[200px] selection-default">
             <div className="bg-test relative w-[1347px] h-[600px]">
                <div className="absolute top-0 left-[4%] bg-[#ecf4fa] w-[684px] h-[500px]">
                   <div className="absolute top-[-14%] left-[9%]">
@@ -432,7 +431,7 @@ function HomeLogIn() {
          </div>
 
          {/* FashionBlog title*/}
-         <div className="selection-default">
+         <div className="mt-[60px] selection-default">
             <div className="flex flex-col text-center justify-center">
                <span className="collection-title">Love Shopping</span>
                <span className="describe-title mt-[18px]">Fashion Blog</span>
@@ -445,7 +444,7 @@ function HomeLogIn() {
 
          {/* Fashion Blog */}
          <div className="mt-[60px] select-none flex justify-center selection-default">
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[50px] sm:gap-x-[30px]">
                <div className="relative cursor-pointer mx-[8px]">
                   <img className="w-full max-h-[342px]" src={FashionBlog01} alt="" />
                   <div className="absolute top-[calc(8%-2px)] left-[-15%] w-[114px] h-[40px] bg-white text-black leading-[40px] text-center rotate-90">

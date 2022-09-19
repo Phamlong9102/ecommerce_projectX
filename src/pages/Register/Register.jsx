@@ -20,7 +20,7 @@ function Register() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const isValid = validate(formValues)
-        if(!isValid) return;
+        if (!isValid) return;
         const newFormValues = {
             username: formValues.username,
             email: formValues.email,
@@ -67,14 +67,14 @@ function Register() {
             errors.confirmPassword = "Password is not the same"
             isValid = false
         }
-        setFormErrors(errors);  
+        setFormErrors(errors);
         return isValid
     }
 
     return (
         <>
             <div className="flex justify-center selection-default">
-                <div className="w-[448px] h-[690px] py-[10px] px-[48px] border-black border-[1px] border-solid">
+                <div className="w-[448px] h-fit py-[10px] px-[48px] border-black border-[1px] border-solid">
                     <div className="">
                         {Object.keys(formErrors).length === 0 && isSubmit ?
                             (<div className="text-[16px] text-[green] font-['Poppins'] font-normal text-center">
@@ -147,12 +147,7 @@ function Register() {
                 </div>
 
             </div>
-
-
         </>
-
-
     )
 }
-
 export default Register;

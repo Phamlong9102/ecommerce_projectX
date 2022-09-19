@@ -21,12 +21,12 @@ function Header() {
    // Log out function
    const handleLogout = () => {
       const currentUser = JSON.parse(localStorage.getItem('dataProduct'))[0]
-      const getCartItem = currentUser.cartItems; 
+      const getCartItem = currentUser.cartItems;
       const userId = currentUser.id;
-      
+
       if (getCartItem.length > 0) {
          axios
-            .put(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...currentUser, cartItems: getCartItem})
+            .put(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...currentUser, cartItems: getCartItem })
             .then((res) => {
                console.log(res);
             })
@@ -36,17 +36,17 @@ function Header() {
       }
       localStorage.removeItem("dataProduct");
       localStorage.removeItem("dataUser");
-      setCartItems([])
+      setCartItems([]);
       setDataContext([]);
       setIsLogin(false);
    };
 
    return (
-      <header className="hidden lg:flex xl:flex 2xl:flex text-color-header header-color header-height items-center justify-between select-none">
-         <div className="ml-12">
+      <div className="flex text-color-header header-color header-height items-center select-none bg-black">
+         <div className="basis-1/2 ml-12 hidden sm:block">
             <span className="text-xs">Free shipping on domestic orders over $150</span>
          </div>
-         <div className="flex uppercase text-[11px] mr-12 tracking-wide cursor-pointer">
+         <div className="flex justify-around sm:justify-end basis-full sm:basis-1/2 ml-[28px] sm:ml-[0px] text-center uppercase text-[11px] mr-12 tracking-wide cursor-pointer">
             {!isAuth ?
                (<div className="mr-6">
                   <Link to="/login" className=" tracking-[0.2em] hover:text-zinc-400 ease-in duration-200">Sign in</Link>
@@ -59,7 +59,7 @@ function Header() {
             <div className="mr-6 tracking-[0.2em] hover:text-zinc-400 ease-in duration-200">Contact us</div>
             <div className="tracking-[0.2em] hover:text-zinc-400 ease-in duration-200">Faq</div>
          </div>
-      </header>
+      </div>
    );
 }
 export default Header;

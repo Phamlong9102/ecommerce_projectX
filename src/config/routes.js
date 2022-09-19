@@ -24,6 +24,7 @@ const routes = {
     login: '/login', 
     register: '/register', 
     checkout: '/checkout', 
+    es6: '/es6'
 };
 
 export default routes;

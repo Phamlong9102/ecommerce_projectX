@@ -66,7 +66,7 @@ function Login() {
    return (
       <>
          <div className="flex justify-center selection-default">
-            <div className="w-[448px] h-[532px] p-[48px] mt-[48px] border-black border-[1px] border-solid">
+            <div className="w-[448px] h-fit p-[48px] mt-[48px] border-black border-[1px] border-solid">
                <div className="">
                   <form onSubmit={handleLogin}>
                      <h3 className="mb-5 text-center text-[30px] font-normal text-[#111] font-['Monserrat'] ">Sign in</h3>

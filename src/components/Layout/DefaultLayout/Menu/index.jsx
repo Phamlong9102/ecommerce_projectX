@@ -5,41 +5,53 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 import SearchForm from '~/components/ChildrenLayout/SearchForm/SearchForm';
-
 import ProductPopper from '~/components/ChildrenLayout/ProductPopper/ProductPopper';
 
 function Menu() {
-
    return (
       <div className="flex justify-between mx-12 text-menu-color select-none">
          <div className="flex mt-9 cursor-pointer">
-            <div>
+            <div className="hidden xs:block">
                <Link to="/">
                   <img className="h-[23px]" src={logoWeb} alt="Logo Web" />
                </Link>
             </div>
-            <div className="flex font text-sm text-center ml-5	font-semibold font-['Poppins']">
-               <Link to="/" className="list-none mx-5">
-                  Home
-               </Link>
-               <Link to="" className="list-none mx-5">
-                  Pages
-               </Link>
-               <Link to="/store" className="list-none mx-5">
-                  Store
-               </Link>
-               <Link to="" className="list-none mx-5">
-                  Shop
-               </Link>
-               <Link to="" className="list-none mx-5">
-                  Blog
-               </Link>
-               <Link to="" className="list-none mx-5">
-                  Porfolio
-               </Link>
-               <Link to="" className="list-none mx-5">
-                  Elements
-               </Link>
+            <div className="flex font text-sm text-center ml-0 lg:ml-5	font-semibold font-['Poppins']">
+               <div className="list-none mx-0 lg:mx-5 hidden lg:block">
+                  <Link to="/" className="">
+                     Home
+                  </Link>
+               </div>
+               <div className="list-none mx-5 hidden lg:block">
+                  <Link to="" className="">
+                     Pages
+                  </Link>
+               </div>
+               <div className="list-none mx-5 hidden xs:block ">
+                  <Link to="/store" className="">
+                     Store
+                  </Link>
+               </div>
+               <div className="list-none mx-5 hidden lg:block">
+                  <Link to="" className="">
+                     Shop
+                  </Link>
+               </div>
+               <div className="list-none mx-5 hidden lg:block">
+                  <Link to="" className="">
+                     Blog
+                  </Link>
+               </div>
+               <div className="list-none mx-5 hidden lg:block">
+                  <Link to="" className="">
+                     Porfolio
+                  </Link>
+               </div>
+               <div className="list-none mx-5 hidden lg:block">
+                  <Link to="" className="">
+                     Elements
+                  </Link>
+               </div>
             </div>
          </div>
 
@@ -49,7 +61,7 @@ function Menu() {
             </div>
 
             {/* Whislist */}
-            <div className="flex mr-9">
+            <div className="hidden lg:flex mr-9">
                <div className="mr-2.5">
                   <FontAwesomeIcon icon={faHeart} />
                </div>
@@ -59,8 +71,8 @@ function Menu() {
             <div className="">
                <ProductPopper />
             </div>
-            
-            <div className="">
+
+            <div className="hidden lg:block">
                <FontAwesomeIcon icon={faBars} />
             </div>
          </div>

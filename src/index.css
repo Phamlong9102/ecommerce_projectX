@@ -437,8 +437,16 @@
          z-index: 10 !important;
       }
    }
-   /* Store Sorting */
+   
+   /* Responsive Header */
    @layer utilities {
+      .justify-sa {
+         justify-content: space-around !important; 
+      }
+      .justify-sb {
+         justify-content: space-between !important; 
+      }
 
    }
+
 }

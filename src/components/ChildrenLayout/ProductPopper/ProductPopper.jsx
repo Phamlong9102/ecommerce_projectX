@@ -62,7 +62,7 @@ console.log(getCurrentItemsUser)
 
    return (
       <>
-         <div to="/cart" className="relative cart-00 flex mr-9">
+         <div to="/cart" className="relative cart-00 flex mr-0 lg:mr-9">
             <div className="mr-2.5">
                <FontAwesomeIcon icon={faBagShopping} />
             </div>
