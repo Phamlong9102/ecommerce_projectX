@@ -12,11 +12,11 @@ function AdministratorUsers() {
                      Administrator
                   </span>
                </div>
-               <Link to="/" className="flex justify-center items-center cursor-pointer  w-full h-[40px] hover:bg-[#216a8a]">
+               {/* <Link to="/" className="flex justify-center items-center cursor-pointer  w-full h-[40px] hover:bg-[#216a8a]">
                   <span className="text-[16px] font-medium text-white ">
                      Home
                   </span>
-               </Link>
+               </Link> */}
                <Link to="/admin-products" className="flex justify-center items-center cursor-pointer  w-full h-[40px] hover:bg-[#216a8a]">
                   <span className="text-[16px] font-medium text-white ">
                      Products

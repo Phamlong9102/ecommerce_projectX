@@ -45,17 +45,47 @@ function Cart() {
       }
    }, [groupedItems]);
 
+   // Checkout function
    const handleCheckout = (e) => {
       e.preventDefault();
       const isValid = validate(formValues)
       if (!isValid) return;
       setIsSubmit(true)
 
-      if (setIsSubmit && groupedItems.length > 0) {
-         const currentUser = JSON.parse(localStorage.getItem('dataContext'))[0]
-         const getCartItem = currentUser.cartItems;
-         const userId = currentUser.id;
+      // Checkout with only dataUser
+      const userHadProduct = JSON.parse(localStorage.getItem('dataUser'))[0]
+      const userHadItem = userHadProduct.cartItems;
+      const userId1 = userHadProduct.id;
+      if (setIsSubmit && userHadItem.length > 0) {
+         const dataUserOrder = {
+            name: formValues.name,
+            address: formValues.address,
+            phoneNumber: formValues.phoneNumber
+         }
+         if (userHadItem.length > 0) {
+            axios
+               .put(`https://630ed147379256341881df89.mockapi.io/users/${userId1}`, { orderSuccess: userHadItem, cartItems: [], ...dataUserOrder })
+               .then((res) => {
+                  console.log(res);
+               })
+               .catch((err) => {
+                  console.log('Error =', err);
+               });
+         }
+         let dataProductUserSelect = localStorage.getItem('dataUser')
+         dataProductUserSelect = [{ ...JSON.parse(dataProductUserSelect)[0], cartItems: [] }]
+         localStorage.setItem('dataUser', JSON.stringify(dataProductUserSelect))
+         setDataContext([]);
+         setCartItems([])
+         navigate(`/checkout`)
+         return;
+      }
 
+      // Checkout with dataProduct
+      const currentUser = JSON.parse(localStorage.getItem('dataProduct'))[0]
+      const getCartItem = currentUser.cartItems;
+      const userId = currentUser.id;
+      if (setIsSubmit && getCartItem.length > 0) {
          const dataUserOrder = {
             name: formValues.name,
             address: formValues.address,
@@ -71,12 +101,18 @@ function Cart() {
                .catch((err) => {
                   console.log('Error =', err);
                });
+            let dataProductUserSelect = localStorage.getItem('dataUser')
+            dataProductUserSelect = [{ ...JSON.parse(dataProductUserSelect)[0], cartItems: [] }]
+            localStorage.setItem('dataUser', JSON.stringify(dataProductUserSelect))
+            localStorage.removeItem('dataProduct')
+            setDataContext([]);
+            setCartItems([])
+            navigate(`/checkout`)
          }
-         setDataContext([]);
-         setCartItems([])
-         getCartItem({})
-         navigate(`/`)
       }
+
+
+
    }
 
    const validate = (values) => {

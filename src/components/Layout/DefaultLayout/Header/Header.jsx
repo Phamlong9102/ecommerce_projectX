@@ -20,25 +20,46 @@ function Header() {
 
    // Log out function
    const handleLogout = () => {
-      const currentUser = JSON.parse(localStorage.getItem('dataProduct'))[0]
-      const getCartItem = currentUser.cartItems;
-      const userId = currentUser.id;
-
-      if (getCartItem.length > 0) {
+      const pastProduct = JSON.parse(localStorage.getItem('dataUser'))[0]
+      const currentUser = JSON.parse(localStorage.getItem('dataProduct'))
+      console.log(currentUser)
+      if (currentUser === null) {
+         const getCartItem = pastProduct.cartItems;
+         const userId = pastProduct.id;
          axios
-            .put(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...currentUser, cartItems: getCartItem })
+            .put(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...pastProduct, cartItems: getCartItem })
             .then((res) => {
                console.log(res);
             })
             .catch((err) => {
                console.log('Error =', err);
             });
+         localStorage.removeItem("dataUser");
+         setCartItems([]);
+         setDataContext([]);
+         setIsLogin(false);
+         return; 
       }
-      localStorage.removeItem("dataProduct");
-      localStorage.removeItem("dataUser");
-      setCartItems([]);
-      setDataContext([]);
-      setIsLogin(false);
+
+      const currentUser1 = JSON.parse(localStorage.getItem('dataProduct'))[0]
+      if (currentUser1) {
+         const getCartItem = currentUser1.cartItems;
+         const userId = currentUser1.id;
+         axios
+            .put(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...currentUser1, cartItems: getCartItem })
+            .then((res) => {
+               console.log(res);
+            })
+            .catch((err) => {
+               console.log('Error =', err);
+            });
+         localStorage.removeItem("dataProduct");
+         localStorage.removeItem("dataUser");
+         setCartItems([]);
+         setDataContext([]);
+         setIsLogin(false);
+      }
+
    };
 
    return (

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
@@ -14,40 +13,15 @@ import { randomId } from '@mui/x-data-grid-generator';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function EditToolbar(props) {
-   const { setRows, setRowModesModel } = props;
-
-   const handleAddProduct = () => {
-      const id = randomId();
-      setRows((oldRows) => [...oldRows, { id, name: '', age: '', isNew: true }]);
-      setRowModesModel((oldModel) => ({
-         ...oldModel,
-         [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
-      }));
-   };
-
-   return (
-      <GridToolbarContainer>
-         <Button sx={{ color: '#000', }} startIcon={<AddIcon />} onClick={handleAddProduct}>
-            Add Product
-         </Button>
-      </GridToolbarContainer>
-   );
-}
-
-EditToolbar.propTypes = {
-   setRowModesModel: PropTypes.func.isRequired,
-   setRows: PropTypes.func.isRequired,
-};
 
 export default function FullFeaturedCrudGrid() {
    const [rows, setRows] = useState([]);
    const [rowModesModel, setRowModesModel] = useState({});
-
-   const [productId, setProductId] = useState("")
+   const initialValues = { id: "", name: "", price: "", imageURL: "", classify: "", category: "" }
+   const [editField, setEditField] = useState(initialValues)
 
    useEffect(() => {
-      axios.get('https://630ed147379256341881df89.mockapi.io/products/1')
+      axios.get('https://630ed147379256341881df89.mockapi.io/products')
          .then(res => {
             const data = res.data.map((product) => {
                return {
@@ -76,20 +50,17 @@ export default function FullFeaturedCrudGrid() {
       setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
    };
 
-   const handleSaveClick = (id) => () => {
-      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
-   };
-
    const handleDeleteClick = (id) => () => {
-      console.log('Delete successful')
-      setRows(rows.filter((row) => row.id !== id))
-      let curentId = id
-      console.log(curentId)
       axios
-         .delete(`https://630ed147379256341881df89.mockapi.io/products/${curentId}`)
+         .delete(`https://630ed147379256341881df89.mockapi.io/products/${id}`)
          .then(res => {
             console.log(res)
+            setRows(rows.filter((row) => row.id !== id))
          })
+         .catch((err) => {
+            console.log('Error =', err);
+            return
+         });
    };
 
    const handleCancelClick = (id) => () => {
@@ -105,36 +76,80 @@ export default function FullFeaturedCrudGrid() {
 
    const processRowUpdate = (newRow) => {
       const updatedRow = { ...newRow, isNew: false };
+      console.log(newRow)
       setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
+      setEditField({...newRow})
+      console.log(editField)
       return updatedRow;
    };
+
+   const handleSaveClick = (id) => () => {
+      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
+      // axios
+      //    .post('https://630ed147379256341881df89.mockapi.io/products', { ... })
+      //    .then(res => {
+      //       console.log(res)
+      //    })
+      //    .catch((err) => {
+      //       console.log('Err', err)
+      //    })
+   };
+
+   const EditToolbar = () => {
+      const handleAddProduct = () => {
+         let id = randomId();
+         setEditField(oldValue => {
+            return {
+               ...initialValues, id: id
+            }
+         })
+         setRows((oldRows) => [...oldRows, {
+            ...initialValues, id: id
+         }]);
+         setRowModesModel((oldModel) => ({
+            ...oldModel,
+            [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
+         }));
+      };
+
+      return (
+         <GridToolbarContainer>
+            <Button sx={{ color: '#000', }} startIcon={<AddIcon />} onClick={handleAddProduct}>
+               Add Product
+            </Button>
+         </GridToolbarContainer>
+      );
+   }
 
    const columns = [
       {
          field: 'id',
          headerName: 'Id',
-         type: 'number',
+         type: 'string',
          width: 80,
          editable: true,
       },
-      { field: 'name', headerName: 'Name', width: 180, editable: true },
+      { field: 'name', headerName: 'Name', type: 'string', width: 180, editable: true },
       { field: 'price', headerName: 'Price', type: 'number', editable: true },
-      { field: 'imageURL', headerName: 'ImageURL', width: 300, editable: true },
+      { field: 'imageURL', headerName: 'ImageURL', type: 'string', width: 300, editable: true },
       {
          field: 'classify',
          headerName: 'Classify',
-         type: 'text',
+         type: 'string',
          width: 180,
          editable: true,
+         onChange: true
       },
       {
          field: 'category',
          headerName: 'Category',
-         type: 'text',
+         type: 'string',
          width: 120,
          editable: true,
+         onChange: true
       },
       {
+         onChange: true,
          field: 'actions',
          type: 'actions',
          headerName: 'Actions',
@@ -151,6 +166,9 @@ export default function FullFeaturedCrudGrid() {
                      className="textPrimary"
                      onClick={handleCancelClick(id)}
                      color="inherit"
+                     onChange={() => {
+                        console.log('kjashd')
+                     }}
                   />,
                ];
             }

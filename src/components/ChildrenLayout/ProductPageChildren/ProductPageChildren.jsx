@@ -19,6 +19,7 @@ function ProductPageChildren({ product }) {
          alert('Please log in to add product in your cart');
          return;
       }
+
       let newListItem = [];
       
       for (let i = 1; i <= count; i++) {
@@ -28,7 +29,7 @@ function ProductPageChildren({ product }) {
       setCartItems((prevState) => {
          return [...prevState, ...newListItem];
       });
-
+      
       let dataProductUserSelect = localStorage.getItem('dataUser')
       dataProductUserSelect = [{ ...JSON.parse(dataProductUserSelect)[0], cartItems: [...cartItems, ...newListItem] }]
       localStorage.setItem('dataProduct', JSON.stringify(dataProductUserSelect))

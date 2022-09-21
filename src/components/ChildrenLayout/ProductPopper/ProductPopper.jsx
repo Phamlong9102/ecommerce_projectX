@@ -10,9 +10,9 @@ import _ from 'lodash';
 
 function ProductPopper() {
    const { cartItems, setCartItems } = useContext(AppContext);
-   const [ groupedItems, setGroupedItem ] = useState();
-   const [ itemLength, setItemLength ] = useState(0);
-   const [ totalPrice, setTotalPrice ] = useState(0);
+   const [groupedItems, setGroupedItem] = useState();
+   const [itemLength, setItemLength] = useState(0);
+   const [totalPrice, setTotalPrice] = useState(0);
 
    // lodash items have the same id
    useEffect(() => {
@@ -21,7 +21,7 @@ function ProductPopper() {
       for (const key in groupById) {
          newCartItems.push(groupById[key]);
       }
-      setGroupedItem(newCartItems); 
+      setGroupedItem(newCartItems);
    }, [cartItems]);
 
    // Total price
@@ -43,17 +43,18 @@ function ProductPopper() {
       let newGroupeditems = [...groupedItems]
       newGroupeditems.splice(index, 1)
       setGroupedItem(newGroupeditems);
-      
-      console.log(newGroupeditems)
+
+      console.log(newGroupeditems)  
 
       let getCurrentItems = JSON.parse(localStorage.getItem('dataProduct'))
       let getCurrentItemsUser = JSON.parse(localStorage.getItem('dataUser'))
-console.log(getCurrentItems)
-console.log(getCurrentItemsUser)
+      console.log(getCurrentItems)
+      console.log(getCurrentItemsUser)
+
       if (getCurrentItems) {
-         getCurrentItems = [{  ...getCurrentItems[0], cartItems: [...newGroupeditems] }]
+         getCurrentItems = [{ ...getCurrentItems[0], cartItems: [...newGroupeditems] }]
          localStorage.setItem('dataProduct', JSON.stringify(getCurrentItems))
-      } 
+      }
       else if (getCurrentItemsUser) {
          getCurrentItemsUser = [{ ...getCurrentItemsUser[0], cartItems: [...newGroupeditems] }]
          localStorage.setItem('dataUser', JSON.stringify(getCurrentItemsUser))
@@ -69,7 +70,7 @@ console.log(getCurrentItemsUser)
             <div className="absolute top-[71%] bg-[transparent] right-0 w-[86px] h-[56px]"></div>
             <div className="">
                <span>
-                  {groupedItems?.length > 0 ? itemLength : 0 } / ${groupedItems?.length > 0 ? totalPrice : 0}.00
+                  {groupedItems?.length > 0 ? itemLength : 0} / ${groupedItems?.length > 0 ? totalPrice : 0}.00
                </span>
             </div>
 
@@ -77,7 +78,7 @@ console.log(getCurrentItemsUser)
                {/* Map qua từng thằng trong groupItem nó đã được nhóm lại theo id sản phẩm*/}
                {groupedItems?.map((groupItem, i) => {
                   return (
-                     <div className="flex mx-[30px] mt-[30px]" key={groupedItems.index}>
+                     <div className="flex mx-[30px] mt-[30px]">
                         <div className="absolute w-[100px] cursor-pointer h-[40px] bg-transparent top-[-10%] left-[66%]"></div>
 
                         <Link to="/store/golden-sandals/8" className="">
