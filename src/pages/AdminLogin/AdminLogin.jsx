@@ -57,7 +57,6 @@ function Login() {
         )
         setData(result.data)
         if (isValid && result.data.length === 1) {
-            console.log('Valid')
             setIsLogin(true)
             localStorage.setItem('dataAdmin', JSON.stringify(result.data));
             setAdminData(result.data)

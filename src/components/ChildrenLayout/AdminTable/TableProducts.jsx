@@ -38,61 +38,6 @@ export default function FullFeaturedCrudGrid() {
          .catch(err => { console.log('Error:', err) })
    }, [])
 
-   const handleRowEditStart = (params, event) => {
-      event.defaultMuiPrevented = true;
-   };
-
-   const handleRowEditStop = (params, event) => {
-      event.defaultMuiPrevented = true;
-   };
-
-   const handleEditClick = (id) => () => {
-      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
-   };
-
-   const handleDeleteClick = (id) => () => {
-      axios
-         .delete(`https://630ed147379256341881df89.mockapi.io/products/${id}`)
-         .then(res => {
-            console.log(res)
-            setRows(rows.filter((row) => row.id !== id))
-         })
-         .catch((err) => {
-            console.log('Error =', err);
-            return
-         });
-   };
-
-   const handleCancelClick = (id) => () => {
-      setRowModesModel({
-         ...rowModesModel,
-         [id]: { mode: GridRowModes.View, ignoreModifications: true },
-      });
-      const editedRow = rows.find((row) => row.id === id);
-      if (editedRow.isNew) {
-         setRows(rows.filter((row) => row.id !== id));
-      }
-   };
-
-   const processRowUpdate = (newRow) => {
-      console.log(newRow)
-      axios
-      .post('https://630ed147379256341881df89.mockapi.io/products', { ...newRow })
-      .then(res => {
-         console.log(res)
-      })
-      .catch((err) => {
-         console.log('Err', err)
-      })
-      setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
-      setEditField({...newRow})
-      return newRow;
-   };
-
-   const handleSaveClick = (id) => () => {
-      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
-   };
-
    const EditToolbar = () => {
       const handleAddProduct = () => {
          let id = randomId();
@@ -118,6 +63,63 @@ export default function FullFeaturedCrudGrid() {
          </GridToolbarContainer>
       );
    }
+
+   const handleRowEditStart = (params, event) => {
+      event.defaultMuiPrevented = true;
+   };
+
+   const handleRowEditStop = (params, event) => {
+      event.defaultMuiPrevented = true;
+   };
+
+   const handleEditClick = (id) => () => {
+      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
+   };
+
+   const handleDeleteClick = (id) => () => {
+      axios
+         .delete(`https://630ed147379256341881df89.mockapi.io/products/${id}`)
+         .then(res => {
+            console.log(res)
+            setRows(rows.filter((row) => row.id !== id))
+         })
+         .catch((err) => {
+            console.log('Error =', err);
+            return
+         });
+   };
+
+
+
+   const handleCancelClick = (id) => () => {
+      setRowModesModel({
+         ...rowModesModel,
+         [id]: { mode: GridRowModes.View, ignoreModifications: true },
+      });
+      const editedRow = rows.find((row) => row.id === id);
+      if (editedRow.isNew) {
+         setRows(rows.filter((row) => row.id !== id));
+      }
+   };
+
+   const processRowUpdate = (newRow) => {
+      console.log(newRow)
+      axios
+         .post('https://630ed147379256341881df89.mockapi.io/products', { ...newRow })
+         .then(res => {
+            console.log(res)
+         })
+         .catch((err) => {
+            console.log('Err', err)
+         })
+      setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
+      setEditField({ ...newRow })
+      return newRow;
+   };
+
+   const handleSaveClick = (id) => () => {
+      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
+   };
 
    const columns = [
       {

@@ -4,12 +4,14 @@ import { AppContext } from '~/contexts/AppContext';
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 function Header() {
    const { dataContext, setDataContext, isAuth } = useContext(ClickGetDataContext);
    const { setCartItems } = useContext(AppContext);
    const [isLogin, setIsLogin] = useState(false)
+   const navigate = useNavigate();
 
    // Check Login
    useEffect(() => {
@@ -39,6 +41,7 @@ function Header() {
          setCartItems([]);
          setDataContext([]);
          setIsLogin(false);
+         navigate(`/`)
          return; 
       }
 
@@ -60,6 +63,7 @@ function Header() {
          setCartItems([]);
          setDataContext([]);
          setIsLogin(false);
+         navigate(`/`)
       }
 
    };
