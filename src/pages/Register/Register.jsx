@@ -79,7 +79,7 @@ function Register() {
                         {Object.keys(formErrors).length === 0 && isSubmit ?
                             (<div className="text-[16px] text-[green] font-['Poppins'] font-normal text-center">
                                 Register Successful
-                            </div>) : ''}
+                            </div>) : ""}
 
                         <form onSubmit={handleSubmit}>
                             <h3 className="mb-5 text-center text-[30px] font-normal text-[#111] font-['Monserrat'] ">Register</h3>

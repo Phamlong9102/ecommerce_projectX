@@ -60,7 +60,7 @@ function SearchForm() {
          </Button>
 
          <Dialog className="css-zw3mfo-MuiModal-root-MuiDialog-root" open={open} onClose={handleClose}>
-            <div className="css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop z-[1000000]">
+            <div className="w-full css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop z-[1000000]">
                <input
                   className="z-[10000] w-[540px] h-[38px] bg-[#f9efec] placeholder:text-[25px] placeholder:text-black placeholder:font-['Poppins'] placeholder:font-semibold cursor-pointer outline-0 border-t-0 border-l-0 border-r-0 border-b-black border-b-[1px]"
                   type="text"

@@ -15,7 +15,7 @@ function RelatedProduct() {
    }, []);
 
    return (
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[50px] sm:gap-x-[30px] ">
          {data.slice(0, 4).map((product) => (
             <HomeProduct key={product.id} product={product} />
          ))}

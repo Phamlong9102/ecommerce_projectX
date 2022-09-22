@@ -75,24 +75,22 @@ export default function FullFeaturedCrudGrid() {
    };
 
    const processRowUpdate = (newRow) => {
-      const updatedRow = { ...newRow, isNew: false };
       console.log(newRow)
-      setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
+      axios
+      .post('https://630ed147379256341881df89.mockapi.io/products', { ...newRow })
+      .then(res => {
+         console.log(res)
+      })
+      .catch((err) => {
+         console.log('Err', err)
+      })
+      setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
       setEditField({...newRow})
-      console.log(editField)
-      return updatedRow;
+      return newRow;
    };
 
    const handleSaveClick = (id) => () => {
       setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
-      // axios
-      //    .post('https://630ed147379256341881df89.mockapi.io/products', { ... })
-      //    .then(res => {
-      //       console.log(res)
-      //    })
-      //    .catch((err) => {
-      //       console.log('Err', err)
-      //    })
    };
 
    const EditToolbar = () => {

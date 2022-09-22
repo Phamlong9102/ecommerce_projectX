@@ -50,7 +50,7 @@ function Search() {
          {/* New Search */}
          <NewSearch />
 
-         <div className="mx-[122px] mt-[8px] selection-default">
+         <div className="mx-[30px] lg:mx-[122px] mt-[8px] selection-default">
             <span className="text-[13px] font-normal text-black font-[Montserrat]">
                If you are not happy with the results below please do another search
             </span>

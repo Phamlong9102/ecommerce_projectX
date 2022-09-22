@@ -22,7 +22,7 @@ function Store() {
    return (
       <>
          {/* Điều hướng */}
-         <div className="w-[1347px] h-[140px] relative bg-[#f6f6f6] mt-[32px] selection-default">
+         <div className="w-full h-[140px] relative bg-[#f6f6f6] mt-[32px] selection-default">
             <div className="absolute top-[40%] left-[4%] store-menu-route">
                <Link className="" to="/">
                   <span className="">Home</span>
@@ -37,11 +37,11 @@ function Store() {
             </div>
          </div>
 
-         <div className="flex">
+         <div className="block md:flex">
             <div className="">
                <Sorting setData={setData} data={data} defaultData={defaultData} />
             </div>
-            <div className="mt-[120px]">
+            <div className="flex justify-center mt-[60px] md:mt-[120px]">
                <Categories setData={setData} defaultData={defaultData}/>
             </div>
          </div>

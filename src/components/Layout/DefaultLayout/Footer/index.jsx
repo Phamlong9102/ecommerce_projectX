@@ -1,11 +1,9 @@
 import whiteLogoWeb from '~/images/FooterImages/whiteLogoWeb.png';
 import visaCard from '~/images/FooterImages/visaCard.png';
 
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-
 function Footer() {
    return (
-      <div className="w-full min-h-[522px] mt-[400px] bg-black text-white select-none">
+      <div className="w-full min-h-[522px] mt-[150px] bg-black text-white select-none">
          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 mx-[50px] gap-y-[40px]  pt-[132px] pb-[10px]">
             <div className="">
                <div>
@@ -54,7 +52,7 @@ function Footer() {
                      <span>About us</span>
                   </div>
                   <div className="mt-[18px] hover-styles-content-footer">
-                     <span> FAQ Page</span>
+                     <span> FAQ </span>
                   </div>
                   <div className="mt-[18px] hover-styles-content-footer">
                      <span>Contact us</span>
@@ -99,16 +97,16 @@ function Footer() {
                </div>
                <div className="mt-8 font-size-content-footer font-family-content-footer cursor-pointer">
                   <div className="flex flex-col hover-styles-content-footer">
-                     <span>Follow us on Instagram</span>
+                     <span>Instagram</span>
                   </div>
                   <div className="mt-[18px] hover-styles-content-footer">
-                     <span>Add to Facebook</span>
+                     <span>Facebook</span>
                   </div>
                   <div className="mt-[18px] hover-styles-content-footer">
                      <span>Pinterest</span>
                   </div>
                   <div className="mt-[18px] hover-styles-content-footer">
-                     <span>Follow us on Twitter</span>
+                     <span>Twitter</span>
                   </div>
                   <div className="mt-[18px] hover-styles-content-footer">
                      <span>Google</span>
@@ -140,7 +138,6 @@ function Footer() {
                      type="text"
                      placeholder="Your email"
                   />
-                  {/* <MailOutlineIcon sx={{ fontSize: 18 }} className="absolute top-[20%] left-[85%] "/> */}
                </div>
             </div>
          </div>

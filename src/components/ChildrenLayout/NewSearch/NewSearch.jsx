@@ -20,14 +20,14 @@ function NewSearch() {
 
    return (
       <div>
-         <div className="mt-[78px] mx-[122px] selection-default">
+         <div className="mt-[78px] mx-[30px] lg:mx-[122px] selection-default">
             <div className="mb-[20px]">
                <span className="font-semibold font-['Poppins'] text-[38px] leading-[1.1em] text-black">
                   New search:
                </span>
             </div>
          </div>
-         <div className="mx-[122px] selection-default">
+         <div className="mx-[30px] lg:mx-[122px] selection-default">
             <input
                onChange={(e) => setSearchInput(e.target.value)}
                onKeyPress={navigateToSearch}
@@ -35,9 +35,11 @@ function NewSearch() {
                placeholder="Type here"
                type="text"
             />
-            <button onClick={handleClick} onKeyPress={navigateToSearch} className="absolute right-[9%]">
-               <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
+            <div className="hidden xl:absolute right-0 xl:right-[9%]">
+               <button onClick={handleClick} onKeyPress={navigateToSearch}>
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
+               </button>
+            </div>
          </div>
       </div>
    );

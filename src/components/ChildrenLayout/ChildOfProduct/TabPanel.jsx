@@ -81,7 +81,7 @@ export default function BasicTabs() {
          </div>
          <div>
             <TabPanel value={value} index={1}>
-               <div className="additional-infomation flex flex-col">
+               <div className="additional-infomation">
                   <div>
                      <span>Weigth: &nbsp;&nbsp;&nbsp;&nbsp;  2kg</span>
                   </div>
@@ -92,8 +92,7 @@ export default function BasicTabs() {
             </TabPanel>
          </div>
          <div>
-            <TabPanel value={value} index={2}>
-            </TabPanel>
+            <TabPanel value={value} index={2}></TabPanel>
          </div>
       </Box>
    );

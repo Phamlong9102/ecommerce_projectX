@@ -25,6 +25,7 @@ function Header() {
       console.log(currentUser)
       if (currentUser === null) {
          const getCartItem = pastProduct.cartItems;
+         console.log({getCartItem});
          const userId = pastProduct.id;
          axios
             .put(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...pastProduct, cartItems: getCartItem })
@@ -44,6 +45,7 @@ function Header() {
       const currentUser1 = JSON.parse(localStorage.getItem('dataProduct'))[0]
       if (currentUser1) {
          const getCartItem = currentUser1.cartItems;
+         console.log({getCartItem},'asdasdasdasd');
          const userId = currentUser1.id;
          axios
             .put(`https://630ed147379256341881df89.mockapi.io/users/${userId}`, { ...currentUser1, cartItems: getCartItem })
@@ -67,7 +69,7 @@ function Header() {
          <div className="basis-1/2 ml-12 hidden sm:block">
             <span className="text-xs">Free shipping on domestic orders over $150</span>
          </div>
-         <div className="flex justify-around sm:justify-end basis-full sm:basis-1/2 ml-[28px] sm:ml-[0px] text-center uppercase text-[11px] mr-12 tracking-wide cursor-pointer">
+         <div className="flex justify-around sm:justify-end basis-full sm:basis-1/2 ml-0 sm:ml-[28px] text-center uppercase text-[11px] mr-0 md:mr-12 tracking-wide cursor-pointer">
             {!isAuth ?
                (<div className="mr-6">
                   <Link to="/login" className=" tracking-[0.2em] hover:text-zinc-400 ease-in duration-200">Sign in</Link>

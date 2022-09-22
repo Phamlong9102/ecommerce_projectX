@@ -9,6 +9,7 @@ import axios from 'axios';
 import { ClickGetDataContext } from '~/contexts/ClickGetDataContext';
 import { AppContext } from '~/contexts/AppContext';
 import { AdminContext } from '~/contexts/AdminContext';
+import { faListNumeric } from '@fortawesome/free-solid-svg-icons';
 
 function Login() {
     const initialValues = { adminName: "", password: "" }
@@ -16,7 +17,7 @@ function Login() {
     const [formErrors, setFormErrors] = useState({})
     const [isLogin, setIsLogin] = useState(false)
     const [data, setData] = useState([])
-    const { isAuthAdmin } = useContext(AdminContext)
+    const { adminData, isAuthAdmin, setAdminData } = useContext(AdminContext)
     const navigate = useNavigate();
 
     // Get values of 2 field
@@ -28,37 +29,43 @@ function Login() {
     // Validate Admin Login
     const validate = (values) => {
         const errors = {}
+        let isValid = true
         if (!values.adminName) {
             errors.adminName = "Admin name is required!";
-        } else if (values.adminName.length < 4) {
+            isValid = false
+        } 
+        if (values.adminName.length < 4) {
             errors.adminName = "Admin name must be more than 4 characters"
+            isValid = false
         }
         if (!values.password) {
             errors.password = "Password is required!";
+            isValid = false
         }
-        return errors;
+        setFormErrors(errors);
+        return isValid;
     }
 
     // Handle Login Function
     const handleLogin = async (e) => {
         e.preventDefault();
-        setFormErrors(validate(adminValues));
+        let isValid = validate(adminValues)
+        if (!isValid) return; 
+        
         const result = await axios(
             `https://630ed147379256341881df89.mockapi.io/admin?filter&adminName=${adminValues.adminName}&password=${adminValues.password}`,
         )
         setData(result.data)
-        console.log(result.data)
-
-        if (result.data.length === 1) {
-            setIsLogin(true);
+        if (isValid && result.data.length === 1) {
+            console.log('Valid')
+            setIsLogin(true)
             localStorage.setItem('dataAdmin', JSON.stringify(result.data));
+            setAdminData(result.data)
             navigate(`/admin-products`)
-        } else if (result.data.length === 0) {
-            setIsLogin(false);
-            alert('Username or password wrong. Please check your adminName or password');
         } else {
-            setIsLogin(false);
-            alert('Username or password wrong. Please check your adminName or password');
+            console.log('No Valid')
+            alert('Please check your Admin name and password')
+            setIsLogin(false)
         }
     }
 
@@ -68,7 +75,7 @@ function Login() {
                 <div className="w-[448px] h-fit p-[48px] mt-[48px] border-black border-[1px] border-solid">
                     <div className="">
                         <form onSubmit={handleLogin}>
-                            <h3 className="mb-5 text-center text-[30px] font-normal text-[#111] font-['Monserrat'] ">Administrator</h3>
+                            <h3 className="mb-5 text-center text-[30px] font-normal text-[#111] font-['Monserrat'] ">Administrator Login</h3>
                             <div className="flex flex-col mb-[1.5rem]">
                                 <label className="mb-[0.5rem] text-[16px] text-black font-['Poppins'] font-light">Admin name</label>
                                 <input

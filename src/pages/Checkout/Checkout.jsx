@@ -1,14 +1,13 @@
-import { useEffect } from 'react'; 
+import { useEffect } from 'react';
 
 function Checkout() {
-
     useEffect(() => {
-        window.scrollTo({ top: 0});    
+        window.scrollTo({ top: 0 });
     }, []);
 
     return (
         <>
-            <div className="mt-[15%] text-[green] text-['Monserrat'] font-medium text-[28px]">
+            <div className="mt-[15%] text-[green] text-['Monserrat'] font-medium text-[20px] md:text-[28px]">
                 <div className="flex justify-center">
                     <span>Your order is successfully</span>
                 </div>

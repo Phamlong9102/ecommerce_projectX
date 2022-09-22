@@ -34,14 +34,9 @@ function Sorting({ data, setData, defaultData }) {
    return (
       <>
          {/* Sorting */}
-         <div className="">
-            <div className="flex justify-between mt-[86px]">
-               <div className="ml-[88px]">
-                  <span className="text-[10px] font-['Montserrat'] selection-default tracking-[0.16em] font-normal uppercase">
-                     Showing 1-12 of 12 results
-                  </span>
-               </div>
-               <div className="mr-[8px]">
+         <div className="mt-[86px]">
+            <div className="flex md:block justify-center mr-[40px] md:ml-[84px]">
+               <div className="">
                   <select
                      value={sortValue}
                      onChange={handleChange}
@@ -64,9 +59,9 @@ function Sorting({ data, setData, defaultData }) {
                </div>
             </div>
 
-            <div className="mt-[18px] select-none flex justify-center selection-default ml-[80px]">
+            <div className="mt-[18px] select-none flex justify-center selection-default ml-0 md:ml-[80px]">
                <div>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-[40px] sm:gap-x-[20px] ">
                      {data.slice(0, 12).map((product) => (
                         <ProductDemo key={product.id} product={product} />
                      ))}

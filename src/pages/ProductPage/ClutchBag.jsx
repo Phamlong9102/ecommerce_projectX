@@ -1,6 +1,7 @@
 import TabPanelForClutchBag from '~/components/ChildrenLayout/ChildOfProduct/TabPanelForClutchBag';
 import RelatedProduct from '~/components/ChildrenLayout/ProductPageChildren/RelatedProduct';
 import ProductPageChildren from '~/components/ChildrenLayout/ProductPageChildren/ProductPageChildren';
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'
 
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -51,7 +52,7 @@ function ClutchBag() {
          ))}
 
          <div className="mx-[128px] mt-[70px]">
-            <TabPanelForClutchBag />
+            <TabPanel />
          </div>
 
          <div className="mx-[128px] mt-[76px] mb-[53px] selection-default">

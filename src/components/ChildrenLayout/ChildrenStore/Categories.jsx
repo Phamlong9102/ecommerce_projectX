@@ -13,7 +13,7 @@ function Categories({ defaultData, setData }) {
    return (
       <>
          {/* Category */}
-         <div className="ml-[30px] mb-[12px] selection-default">
+         <div className="mr-[32px] md:mr-0 ml-0 md:ml-[30px] mb-[12px] selection-default">
             <div className="">
                <span className="text-[18px] font-semibold font-['Poppins'] text-black">Categories</span>
             </div>
@@ -42,9 +42,6 @@ function Categories({ defaultData, setData }) {
                      type="text"
                      placeholder="Your Email"
                   />
-               </div>
-               <div className="absolute top-0 right-0 cursor-pointer">
-                  <MailOutlineIcon />
                </div>
             </div>
          </div>

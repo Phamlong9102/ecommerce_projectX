@@ -110,9 +110,6 @@ function Cart() {
             navigate(`/checkout`)
          }
       }
-
-
-
    }
 
    const validate = (values) => {
@@ -142,22 +139,25 @@ function Cart() {
 
    return (
       <>
-         <div className="mt-[40px]">
+         {/* Background Cart */}
+         <div className="hidden lg:block mt-[40px]">
             <div className="background-cart" alt="Cart" />
             <div className="absolute selection-default top-[50%] left-[42%]">
                <span className="text-[48px] font-semibold font-['Poppins'] leading-[1.3em] text-white">Check out</span>
             </div>
          </div>
-         <div className="mt-[80px] mx-[126px] flex justify-between selection-default">
+
+         {/* Cart */}
+         <div className="mt-[80px] mx-0 lg:mx-[126px] block lg:flex lg:justify-between selection-default">
             <div className="basis-1/2">
-               <div className="">
+               <div className="ml-[50px] lg:ml-0">
                   <span className="text-[25px] font-semibold font-['Poppins']">Shopping Cart</span>
                </div>
 
                {groupedItems?.map((groupItem, i) => {
                   return (
-                     <div className="flex border-b-[1px] border-[#ccc] pb-[24px]">
-                        <div className="flex mt-[44px]">
+                     <div className="flex mx-[50px] lg:mx-0 border-b-[1px] border-[#ccc] pb-[24px]">
+                        <div className="flex mt-[12px] lg:mt-[44px]">
                            <Link to="/store/clutch-bag/1">
                               <img className="w-[116px] h-[155px]" src={groupItem[0].imageURL} alt="" />
                            </Link>
@@ -186,8 +186,7 @@ function Cart() {
                      </div>
                   )
                })}
-
-               <div className="mt-[30px]">
+               <div className="ml-[50px] lg:ml-0 mt-[12px] lg:mt-[30px]">
                   <Link
                      to="/store"
                      className="text-black font-['Poppins'] text-[13px] underline underline-offset-[5px] font-semibold"
@@ -197,94 +196,96 @@ function Cart() {
                </div>
             </div>
 
-            <div className="ml-[72px] basis-1/2">
-               <div className="flex">
+            {/* Cart total */}
+            <div className="ml-0 lg:ml-[72px] basis-1/2">
+               <div className="ml-[50px] lg:ml-0 mt-[40px] lg:mt-0">
                   <span className="text-[25px] font-semibold font-['Poppins']">Cart Total</span>
                </div>
 
-               <div className="bg-[#f4f4f4] w-[432px] h-[550px] mt-[36px] ">
-                  <div className="pt-[24px] px-[28px] pb-[20px]">
-                     <div className="flex justify-between">
-                        <span className=" text-black text-[18px] font-['Poppins'] font-semibold">Subtotal</span>
-                        <span className="leading-[29px] text-[15px] font-['Montserrat'] font-normal text-black  ">
-                           ${totalPrice}.00
-                        </span>
-                     </div>
-                  </div>
-
-                  <div className="px-[28px]">
-                     <div className="flex justify-between">
-                        <div className="">
-                           <span className=" text-black text-[18px] font-['Poppins'] font-semibold">Shipping</span>
-                        </div>
-                        <div className="flex ">
-                           <div>
-                              <span className="text-[14px] font-normal text-black leading-[30px]">
-                                 Free
-                              </span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div>
-                     <div className="pt-[24px] px-[28px] pb-[20px]">
+               <div className="mx-[50px] lg:mx-0">
+                  <div className="bg-[#f4f4f4] w-full h-[550px] mt-[12px] lg:mt-[36px] ">
+                     <div className="pt-[24px] px-0 lg:px-[28px] pb-[20px]">
                         <div className="flex justify-between">
-                           <span className=" text-black text-[18px] font-['Poppins'] font-semibold">Total</span>
-                           <span className="leading-[29px] text-[18px] font-['Poppins'] font-semibold text-black">
+                           <span className=" text-black text-[18px] font-['Poppins'] font-semibold">Subtotal</span>
+                           <span className="leading-[29px] text-[15px] font-['Montserrat'] font-normal text-black  ">
                               ${totalPrice}.00
                            </span>
                         </div>
                      </div>
-                  </div>
 
-                  <form onSubmit={handleCheckout} className="px-[28px]">
+                     <div className="px-0 lg:px-[28px]">
+                        <div className="flex justify-between">
+                           <div className="">
+                              <span className=" text-black text-[18px] font-['Poppins'] font-semibold">Shipping</span>
+                           </div>
+                           <div className="flex ">
+                              <div>
+                                 <span className="text-[14px] font-normal text-black leading-[30px]">
+                                    Free
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
                      <div>
-                        <label className="text-black text-[18px] font-['Poppins'] font-semibold">Name</label>
-                        <input
-                           name="name"
-                           value={formValues.name}
-                           onChange={getUserInfo}
-                           className="w-full border-0 outline-0 bg-[#f4f4f4]"
-                           type="text"
-                           placeholder="Name"
-                        />
-                        <span className="text-[red] text-[12px] font-normal font-['Poppins']">{formErrors.name}</span>
+                        <div className="pt-[24px] px-0 lg:px-[28px] pb-[20px]">
+                           <div className="flex justify-between">
+                              <span className=" text-black text-[18px] font-['Poppins'] font-semibold">Total</span>
+                              <span className="leading-[29px] text-[18px] font-['Poppins'] font-semibold text-black">
+                                 ${totalPrice}.00
+                              </span>
+                           </div>
+                        </div>
                      </div>
-                     <div className="mt-[24px]">
-                        <label className="text-black text-[18px] font-['Poppins'] font-semibold">Address</label>
-                        <input
-                           name="address"
-                           value={formValues.address}
-                           onChange={getUserInfo}
-                           className="w-full border-0 outline-0 bg-[#f4f4f4]"
-                           type="text"
-                           placeholder="Address"
-                        />
-                        <span className="text-[red] text-[12px] font-normal font-['Poppins']">{formErrors.address}</span>
-                     </div>
-                     <div className="mt-[24px]">
-                        <label className="text-black text-[18px] font-['Poppins'] font-semibold">Phone Number</label>
-                        <input
-                           name="phoneNumber"
-                           value={formValues.phoneNumber}
-                           onChange={getUserInfo}
-                           className="w-full border-0 outline-0 bg-[#f4f4f4]"
-                           type="text"
-                           placeholder="Phone Number"
-                        />
-                        <span className="text-[red] text-[12px] font-normal font-['Poppins']">{formErrors.phoneNumber}</span>
 
-                     </div>
-                     <div className="mt-[24px]">
-                        <button className="w-[374px] h-[50px] bg-black text-white font-['Montserrat'] font-bold text-[14px] text-center">
-                           Checkout
-                        </button>
-                     </div>
-                  </form>
+                     <form onSubmit={handleCheckout} className="px-0 lg:px-[28px]">
+                        <div>
+                           <label className="text-black text-[18px] font-['Poppins'] font-semibold">Name</label>
+                           <input
+                              name="name"
+                              value={formValues.name}
+                              onChange={getUserInfo}
+                              className="w-full border-0 outline-0 bg-[#f4f4f4]"
+                              type="text"
+                              placeholder="Name"
+                           />
+                           <span className="text-[red] text-[12px] font-normal font-['Poppins']">{formErrors.name}</span>
+                        </div>
+                        <div className="mt-[24px]">
+                           <label className="text-black text-[18px] font-['Poppins'] font-semibold">Address</label>
+                           <input
+                              name="address"
+                              value={formValues.address}
+                              onChange={getUserInfo}
+                              className="w-full border-0 outline-0 bg-[#f4f4f4]"
+                              type="text"
+                              placeholder="Address"
+                           />
+                           <span className="text-[red] text-[12px] font-normal font-['Poppins']">{formErrors.address}</span>
+                        </div>
+                        <div className="mt-[24px]">
+                           <label className="text-black text-[18px] font-['Poppins'] font-semibold">Phone Number</label>
+                           <input
+                              name="phoneNumber"
+                              value={formValues.phoneNumber}
+                              onChange={getUserInfo}
+                              className="w-full border-0 outline-0 bg-[#f4f4f4]"
+                              type="text"
+                              placeholder="Phone Number"
+                           />
+                           <span className="text-[red] text-[12px] font-normal font-['Poppins']">{formErrors.phoneNumber}</span>
 
-
+                        </div>
+                        <div className="mt-[24px]">
+                           <button className="w-full h-[50px] bg-black text-white font-['Montserrat'] font-bold text-[14px] text-center">
+                              Checkout
+                           </button>
+                        </div>
+                     </form>
+                  </div>
                </div>
+
             </div>
          </div>
       </>

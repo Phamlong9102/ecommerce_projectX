@@ -255,7 +255,7 @@ function HomeLogIn() {
          </div>
 
          {/* Shopping everyday products  */}
-         <div className="mt-[60px] select-none flex justify-center selection-default mx-[120px]">
+         <div className="mt-[60px] select-none flex justify-center selection-default mx-0 md:mx-[120px]">
             <div>
                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[50px] sm:gap-x-[30px] ">
                   {data.slice(0, 8).map((product) => (
@@ -304,7 +304,7 @@ function HomeLogIn() {
          {/* Bag and Backpack Product */}
          <div className="flex justify-center mt-[50px] select-none selection-default">
             <div>
-               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[50px] sm:gap-x-[30px] ">
+               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[50px] sm:gap-x-[30px]">
                   {data.slice(8, 12).map((product) => (
                      <BagAndBackpacks key={product.id} product={product} />
                   ))}
@@ -504,20 +504,6 @@ function HomeLogIn() {
             </div>
          </div>
 
-         {/* Join our Newletter */}
-         <div className="flex relative justify-center mt-[100px] mx-[48px] selection-default">
-            <div className="absolute bg-[#f7f8fa] w-[1248px] min-h-[320px] mx-[48px]">
-               <div className="absolute top-[-7%] left-[36%]">
-                  <span className="describe-title">Join our Newsletter</span>
-               </div>
-               <div className="absolute mt-[70px] left-[26%] text-center underline underline-offset-[14px]">
-                  <input className="your-email" type="text" placeholder="Your email" />
-               </div>
-               <div className="absolute cursor-pointer w-[128px] h-[46px] bg-black top-[45%] left-[45%] text-center leading-[46px]">
-                  <button className="button-newsletter">Send</button>
-               </div>
-            </div>
-         </div>
       </>
    );
 }

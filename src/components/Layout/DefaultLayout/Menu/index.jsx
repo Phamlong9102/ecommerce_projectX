@@ -9,9 +9,9 @@ import ProductPopper from '~/components/ChildrenLayout/ProductPopper/ProductPopp
 
 function Menu() {
    return (
-      <div className="flex justify-between mx-12 text-menu-color select-none">
-         <div className="flex mt-9 cursor-pointer">
-            <div className="hidden xs:block">
+      <div className="flex justify-between mx-0 xs:mx-12 text-menu-color select-none">
+         <div className="flex justify-around mt-9 cursor-pointer">
+            <div className="block">
                <Link to="/">
                   <img className="h-[23px]" src={logoWeb} alt="Logo Web" />
                </Link>
@@ -27,7 +27,7 @@ function Menu() {
                      Pages
                   </Link>
                </div>
-               <div className="list-none mx-5 hidden xs:block ">
+               <div className="list-none mx-5 block ">
                   <Link to="/store" className="">
                      Store
                   </Link>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function ProductSearch({ product }) {
    return (
-      <div className="mx-[122px] mt-[66px] selection-default">
+      <div className="mx-[30px] lg:mx-[122px] mt-[66px] selection-default">
          <div className="flex pb-[30px] border-b-[1px] border-[#ccc]">
             <Link to={product.url} className="">
                <img className="w-[130px] h-[130px]" src={product.imageURLSearch} alt="" />

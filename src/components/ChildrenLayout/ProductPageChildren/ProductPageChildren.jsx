@@ -37,9 +37,10 @@ function ProductPageChildren({ product }) {
    };
 
    return (
-      <div className="mt-[80px] flex justify-center selection-default">
+      <div className="mt-[80px] block xl:flex justify-center selection-default">
+         {/* 6 Image of product */}
          <div className="flex justify-center">
-            <div className="flex flex-col ">
+            <div className="hidden sm:flex flex-col ">
                <div className="">
                   <img className="w-[112px] h-[136px]" src={product.imageURL00} alt="" />
                </div>
@@ -67,14 +68,16 @@ function ProductPageChildren({ product }) {
                      <span className="uppercase text-[11px] tracking-[1px]">Sale</span>
                   </div>
                )}
-               <img className="relative w-532px h-[721px] " src={product.imageURL05} alt="" />
+               <img className="relative w-[420px] sm:w-[532px] h-[570px] sm:h-[721px] " src={product.imageURL05} alt="" />
             </div>
          </div>
-         <div className="ml-[54px] flex flex-col">
+
+         {/* Description product */}
+         <div className="ml-0 xl:ml-[54px] mt-[30px] xl:mt-0 block text-center xl:text-left lg:flex lg:flex-col">
             <div className="mb-[4px]">
-               <span className="font-['Poppins'] font-semibold	text-[36px]">{product.name}</span>
+               <span className="font-['Poppins'] font-semibold	text-[36px] leading-[30px]">{product.name}</span>
             </div>
-            <div className="flex">
+            <div className="flex justify-center xl:justify-start">
                {product.sale && (
                   <div className="mr-[12px]">
                      <span className="line-through	text-[15px] font-['Poppins'] text-black font-medium leading-[30px]">
@@ -87,7 +90,7 @@ function ProductPageChildren({ product }) {
                </div>
             </div>
             {product.star && (
-               <div className="flex mt-[16px]">
+               <div className="flex justify-center xl:justify-start mt-[16px]">
                   <div>
                      <FontAwesomeIcon icon={faStar} />
                      <FontAwesomeIcon icon={faStar} />
@@ -102,12 +105,12 @@ function ProductPageChildren({ product }) {
                   </div>
                </div>
             )}
-            <div className="mt-[47px] flex flex-col text-[16px] text-[#2d2d2d] font-normal font-['Montserrat'] leading-[26px]">
+            <div className="mt-[16px] xl:mt-[47px] flex flex-col text-[16px] text-[#2d2d2d] font-normal font-['Montserrat'] leading-[26px]">
                <span>Lorem proin gravida nibh enean sonauris hime</span>
                <span>sollicitudin enean, lom himenaeos lorem ean</span>
                <span>consertquat estruda cono pero.</span>
             </div>
-            <div className="mt-[57px] flex">
+            <div className="mt-[16px] xl:mt-[57px] flex justify-center xl:justify-start">
                <div className="relative w-[48px] h-[48px] border-[#d3d3d3] border outline-1">
                   <div className="absolute top-[27%] left-[42%]">
                      <span className="font-semibold text-[15px] leading-[26px] font-['Montserrat']">{count}</span>
@@ -132,13 +135,13 @@ function ProductPageChildren({ product }) {
                   <span className="text-[13px] font-['Poppins'] font-semibold text-white">Add To Cart</span>
                </button>
             </div>
-            <div className="flex mt-[26px] text-center">
+            <div className="flex justify-center xl:justify-start mt-[26px] text-center">
                <FontAwesomeIcon className="mt-[3px]" icon={faHeart} />
                <Link to="" className="ml-[4px] text-[14px] font-['Poppins'] font-medium">
                   add to whishlist
                </Link>
             </div>
-            <div className="flex flex-col mt-[64px] text-[10px] uppercase font-medium tracking-[0.29em] text-[##3d3d3d] font-['Montserrat'] leading-[26px]">
+            <div className="flex flex-col mt-[20px] xl:mt-[64px] text-[10px] uppercase font-medium tracking-[0.29em] text-[##3d3d3d] font-['Montserrat'] leading-[26px]">
                <div>
                   <span className="">Sku: {product.sku}</span>
                </div>

@@ -30,14 +30,16 @@ function ProductPopper() {
       let count = 0
       if (groupedItems?.length > 0) {
          groupedItems.forEach((item) => {
+            console.log(item[0]);
             total += item.length * item[0].price;
             count += item.length
          });
          setItemLength(count)
-         setTotalPrice(total);
+         console.log({total})
+         setTotalPrice(()=> total);
       }
    }, [groupedItems]);
-
+console.log({totalPrice})
    // Delete product in product popper
    const handleDeleteProduct = (index) => {
       let newGroupeditems = [...groupedItems]
