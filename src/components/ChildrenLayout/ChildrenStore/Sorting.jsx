@@ -62,9 +62,9 @@ function Sorting({ data, setData, defaultData }) {
             <div className="mt-[18px] select-none flex justify-center selection-default ml-0 md:ml-[80px]">
                <div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-[40px] sm:gap-x-[20px] ">
-                     {data.slice(0, 12).map((product) => (
+                     {data.map((product) => (
                         <ProductDemo key={product.id} product={product} />
-                     ))}
+                     ))}   
                   </div>
                </div>
             </div>

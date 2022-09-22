@@ -33,7 +33,7 @@ function Login() {
         if (!values.adminName) {
             errors.adminName = "Admin name is required!";
             isValid = false
-        } 
+        }
         if (values.adminName.length < 4) {
             errors.adminName = "Admin name must be more than 4 characters"
             isValid = false
@@ -50,21 +50,24 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         let isValid = validate(adminValues)
-        if (!isValid) return; 
-        
-        const result = await axios(
-            `https://630ed147379256341881df89.mockapi.io/admin?filter&adminName=${adminValues.adminName}&password=${adminValues.password}`,
-        )
-        setData(result.data)
-        if (isValid && result.data.length === 1) {
-            setIsLogin(true)
-            localStorage.setItem('dataAdmin', JSON.stringify(result.data));
-            setAdminData(result.data)
-            navigate(`/admin-products`)
-        } else {
-            console.log('No Valid')
-            alert('Please check your Admin name and password')
-            setIsLogin(false)
+        if (!isValid) return;
+
+        if (isValid) {
+            const result = await 
+            axios.get(
+                `https://630ed147379256341881df89.mockapi.io/admin?filter&adminName=${adminValues.adminName}&password=${adminValues.password}`,
+            )
+            setData(result.data)
+            if (isValid && result.data.length === 1) {
+                setIsLogin(true)
+                localStorage.setItem('dataAdmin', JSON.stringify(result.data));
+                setAdminData(result.data)
+                navigate(`/admin-products`)
+            } else {
+                console.log('No Valid')
+                alert('Please check your Admin name and password')
+                setIsLogin(false)
+            }
         }
     }
 

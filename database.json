@@ -388,5 +388,15 @@
          "adminName": "trentaa66",
          "password": "123456"
       }
+   ], 
+   "newProduct": [
+      {
+         "id": "13", 
+         "name": "Earthy Dress", 
+         "price": 260,
+         "imageURL": "https://onea.qodeinteractive.com/wp-content/uploads/2018/08/shop-single-img-9-600x800.jpg", 
+         "classify": "life style", 
+         "category": "clothes"
+      }
    ]
 }
