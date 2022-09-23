@@ -13,17 +13,13 @@ import { randomId } from '@mui/x-data-grid-generator';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
-import { AdminAddProductContext } from '~/contexts/AdminAddProductContext';
-import { AdminEditProductContext } from '~/contexts/AdminEditProductContext';
+
 
 
 export default function FullFeaturedCrudGrid() {
    const [rows, setRows] = useState([]);
    const [rowModesModel, setRowModesModel] = useState({});
    const initialValues = { id: "", name: "", price: "", imageURL: "", classify: "", category: "" }
-   const [editField, setEditField] = useState(initialValues)
-   const { adminAdd, setAdminAdd, isAuthAdminAdd } = useContext(AdminAddProductContext)
-   const { isAuthAdminEdit } = useContext(AdminEditProductContext)
 
    useEffect(() => {
       axios.get('https://630ed147379256341881df89.mockapi.io/products')
@@ -42,17 +38,11 @@ export default function FullFeaturedCrudGrid() {
          })
          .catch(err => { console.log('Error:', err) })
    }, [])
-
+   const [action, setAction] = useState('');
    const EditToolbar = () => {
       const handleAddProduct = () => {
-         localStorage.setItem('adminAdd', [true])
-         console.log('admin add')
+         setAction('add')
          let id = randomId();
-         setEditField(oldValue => {
-            return {
-               ...initialValues, id: id
-            }
-         })
          setRows((oldRows) => [...oldRows, {
             ...initialValues, id: id
          }]);
@@ -72,8 +62,7 @@ export default function FullFeaturedCrudGrid() {
    }
 
    const handleEditClick = (id) => () => {
-      localStorage.setItem('adminEdit', true)
-      console.log('admin edit')
+      setAction('edit')
       setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
    };
 
@@ -91,7 +80,6 @@ export default function FullFeaturedCrudGrid() {
    };
 
    const handleCancelClick = (id) => () => {
-      console.log('Cancel click')
       localStorage.removeItem('adminEdit')
       setRowModesModel({
          ...rowModesModel,
@@ -104,38 +92,38 @@ export default function FullFeaturedCrudGrid() {
    };
 
    const handleSaveClick = (id) => () => {
-      console.log('save click')
-      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
+      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } })
    };
 
    const processRowUpdate = (newRow) => {
       console.log(newRow)
-      setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
-      if (isAuthAdminAdd) {
-         console.log('post oke')
+      console.log({ action })
+      if (action === 'add') {
          axios
             .post('https://630ed147379256341881df89.mockapi.io/products', { ...newRow })
             .then(res => {
                console.log(res)
+               setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
+               setAction('')
             })
             .catch((err) => {
                console.log('Err', err)
             })
-         localStorage.removeItem('adminAdd')
          return newRow;
-      } else if (isAuthAdminEdit) {
-         setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
+      }
+      if (action === 'edit') {
          let id = newRow.id
-         console.log('put oke')
          axios
             .put(`https://630ed147379256341881df89.mockapi.io/products/${id}`, { ...newRow })
             .then(res => {
                console.log(res)
+               setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
+               setAction('')
             })
             .catch((err) => {
                console.log('Err', err)
             })
-         localStorage.removeItem('adminEdit')
+
          return newRow;
       }
    };

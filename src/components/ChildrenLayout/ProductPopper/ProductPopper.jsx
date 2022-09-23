@@ -34,7 +34,6 @@ function ProductPopper() {
             count += item.length
          });
          setItemLength(count)
-         console.log({total})
          setTotalPrice(()=> total);
       }
    }, [groupedItems]);
