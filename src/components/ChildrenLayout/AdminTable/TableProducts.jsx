@@ -22,7 +22,7 @@ export default function FullFeaturedCrudGrid() {
    const [rowModesModel, setRowModesModel] = useState({});
    const initialValues = { id: "", name: "", price: "", imageURL: "", classify: "", category: "" }
    const [editField, setEditField] = useState(initialValues)
-   const { isAuthAdminAdd } = useContext(AdminAddProductContext)
+   const { adminAdd, setAdminAdd, isAuthAdminAdd } = useContext(AdminAddProductContext)
    const { isAuthAdminEdit } = useContext(AdminEditProductContext)
 
    useEffect(() => {
@@ -91,6 +91,8 @@ export default function FullFeaturedCrudGrid() {
    };
 
    const handleCancelClick = (id) => () => {
+      console.log('Cancel click')
+      localStorage.removeItem('adminEdit')
       setRowModesModel({
          ...rowModesModel,
          [id]: { mode: GridRowModes.View, ignoreModifications: true },
@@ -101,9 +103,16 @@ export default function FullFeaturedCrudGrid() {
       }
    };
 
+   const handleSaveClick = (id) => () => {
+      console.log('save click')
+      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
+   };
+
    const processRowUpdate = (newRow) => {
       console.log(newRow)
+      setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
       if (isAuthAdminAdd) {
+         console.log('post oke')
          axios
             .post('https://630ed147379256341881df89.mockapi.io/products', { ...newRow })
             .then(res => {
@@ -112,12 +121,12 @@ export default function FullFeaturedCrudGrid() {
             .catch((err) => {
                console.log('Err', err)
             })
-         setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
-         setEditField({ ...newRow })
          localStorage.removeItem('adminAdd')
          return newRow;
       } else if (isAuthAdminEdit) {
-         let id = id
+         setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
+         let id = newRow.id
+         console.log('put oke')
          axios
             .put(`https://630ed147379256341881df89.mockapi.io/products/${id}`, { ...newRow })
             .then(res => {
@@ -126,26 +135,18 @@ export default function FullFeaturedCrudGrid() {
             .catch((err) => {
                console.log('Err', err)
             })
-         setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
-         setEditField({ ...newRow })
-         localStorage.removeItem('adminAdd')
+         localStorage.removeItem('adminEdit')
          return newRow;
       }
-
    };
 
-   const handleSaveClick = (id) => () => {
-      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
+   const handleRowEditStart = (params, event) => {
+      event.defaultMuiPrevented = true;
    };
 
-   // const handleRowEditStart = (params, event) => {
-   //    event.defaultMuiPrevented = true;
-   // };
-
-   // const handleRowEditStop = (params, event) => {
-   //    event.defaultMuiPrevented = true;
-   // };
-
+   const handleRowEditStop = (params, event) => {
+      event.defaultMuiPrevented = true;
+   };
 
    const columns = [
       {
@@ -226,13 +227,16 @@ export default function FullFeaturedCrudGrid() {
          }}
       >
          <DataGrid
+            onProcessRowUpdateError={(err) => {
+               console.log(err)
+            }}
             rows={rows}
             columns={columns}
             editMode="row"
             rowModesModel={rowModesModel}
-            // onRowEditStart={handleRowEditStart}
-            // onRowEditStop={handleRowEditStop}
+            onRowEditStart={handleRowEditStart}
             processRowUpdate={processRowUpdate}
+            onRowEditStop={handleRowEditStop}
             components={{
                Toolbar: EditToolbar,
             }}

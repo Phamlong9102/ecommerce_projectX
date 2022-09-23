@@ -12,7 +12,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { randomId } from '@mui/x-data-grid-generator';
 
 import axios from 'axios'; 
-import { useEffect } from 'react'; 
+import { useState, useEffect } from 'react'; 
 
 function EditToolbar(props) {
    const { setRows, setRowModesModel } = props;
@@ -35,14 +35,9 @@ function EditToolbar(props) {
    );
 }
 
-EditToolbar.propTypes = {
-   setRowModesModel: PropTypes.func.isRequired,
-   setRows: PropTypes.func.isRequired,
-};
-
 export default function FullFeaturedCrudGrid() {
-   const [rows, setRows] = React.useState([]);
-   const [rowModesModel, setRowModesModel] = React.useState({});
+   const [rows, setRows] = useState([]);
+   const [rowModesModel, setRowModesModel] = useState({});
 
    useEffect(() => {
       axios.get('https://630ed147379256341881df89.mockapi.io/users')

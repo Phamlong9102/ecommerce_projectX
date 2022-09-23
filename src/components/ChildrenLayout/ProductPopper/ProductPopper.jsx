@@ -30,7 +30,6 @@ function ProductPopper() {
       let count = 0
       if (groupedItems?.length > 0) {
          groupedItems.forEach((item) => {
-            console.log(item[0]);
             total += item.length * item[0].price;
             count += item.length
          });
@@ -39,19 +38,15 @@ function ProductPopper() {
          setTotalPrice(()=> total);
       }
    }, [groupedItems]);
-console.log({totalPrice})
+
    // Delete product in product popper
    const handleDeleteProduct = (index) => {
       let newGroupeditems = [...groupedItems]
       newGroupeditems.splice(index, 1)
       setGroupedItem(newGroupeditems);
 
-      console.log(newGroupeditems)  
-
       let getCurrentItems = JSON.parse(localStorage.getItem('dataProduct'))
       let getCurrentItemsUser = JSON.parse(localStorage.getItem('dataUser'))
-      console.log(getCurrentItems)
-      console.log(getCurrentItemsUser)
 
       if (getCurrentItems) {
          getCurrentItems = [{ ...getCurrentItems[0], cartItems: [...newGroupeditems] }]
