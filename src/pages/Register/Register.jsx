@@ -72,7 +72,7 @@ function Register() {
 
     return (
         <>
-            <div className="flex justify-center selection-default">
+            <div className="flex justify-center selection-default mt-[20px]">
                 <div className="w-[448px] h-fit py-[10px] px-[48px] border-black border-[1px] border-solid">
                     <div className="">
                         {Object.keys(formErrors).length === 0 && isSubmit ?
@@ -127,7 +127,7 @@ function Register() {
                             </div>
 
                             <Link to="/login" className="">
-                                <span className="text-[16px] text-black hover:text-red-600 font-normal font-['Poppins'] ">Have account yet?</span>
+                                <span className="text-[16px] text-black hover:text-red-600 font-normal font-['Poppins'] ">Have account yet? Sign in</span>
                             </Link>
                             <div className="text-center mt-[2.1rem]">
                                 <button

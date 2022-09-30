@@ -92,7 +92,7 @@ function Login() {
                      </div>
                      <div className="mt-[1.5rem]">
                         <Link to="/register">
-                           <span className="text-[16px] text-black hover:text-red-600 font-normal font-['Poppins'] ">You haven't account?</span>
+                           <span className="text-[16px] text-black hover:text-red-600 font-normal font-['Poppins'] ">You haven't account? Resgister now</span>
                         </Link>
                      </div>
                      <div className="text-center mt-[3.5rem]">
