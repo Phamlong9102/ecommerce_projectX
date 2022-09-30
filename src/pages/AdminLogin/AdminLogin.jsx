@@ -17,7 +17,7 @@ function Login() {
     const [formErrors, setFormErrors] = useState({})
     const [isLogin, setIsLogin] = useState(false)
     const [data, setData] = useState([])
-    const { adminData, isAuthAdmin, setAdminData } = useContext(AdminContext)
+    const { setAdminData } = useContext(AdminContext)
     const navigate = useNavigate();
 
     // Get values of 2 field

@@ -8,17 +8,10 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Header() {
-   const { dataContext, setDataContext, isAuth } = useContext(ClickGetDataContext);
+   const { setDataContext, isAuth } = useContext(ClickGetDataContext);
    const { setCartItems } = useContext(AppContext);
    const [isLogin, setIsLogin] = useState(false)
    const navigate = useNavigate();
-
-   // Check Login
-   useEffect(() => {
-      if (isAuth) {
-         setIsLogin(true);
-      }
-   }, [isAuth]);
 
    // Log out function
    const handleLogout = () => {
@@ -40,7 +33,6 @@ function Header() {
          localStorage.removeItem("dataUser");
          setCartItems([]);
          setDataContext([]);
-         setIsLogin(false);
          navigate(`/`)
          return; 
       }

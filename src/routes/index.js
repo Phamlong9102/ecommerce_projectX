@@ -18,10 +18,6 @@ import ShoulderBag from '~/pages/ProductPage/ShoulderBag';
 import DrawstringBag from '~/pages/ProductPage/DrawstringBag';
 import AdministratorProducts from '~/pages/Administrartor/AdministratorProducts';
 import AdministratorUsers from '~/pages/Administrartor/AdministratorUsers';
-import Clothes from '~/pages/Categories/Clothes';
-import Bags from '~/pages/Categories/Bags';
-import HighHeels from '~/pages/Categories/HighHeels';
-import Wallet from '~/pages/Categories/Wallet';
 import Login from '~/pages/Login/Login';
 import Register from '~/pages/Register/Register';
 import Checkout from '~/pages/Checkout/Checkout';
@@ -44,10 +40,6 @@ const publicRoutes = [
    { path: config.routes.shoulder_bag, component: ShoulderBag },
    { path: config.routes.drawstring_bag, component: DrawstringBag },
    { path: config.routes.store, component: Store },
-   { path: config.routes.category_clothes, component: Clothes },
-   { path: config.routes.category_bags, component: Bags },
-   { path: config.routes.category_highheels, component: HighHeels },
-   { path: config.routes.category_wallet, component: Wallet },
    { path: config.routes.checkout, component: Checkout },
    { path: config.routes.login, component: Login, layout: null },
    { path: config.routes.register, component: Register, layout: null },

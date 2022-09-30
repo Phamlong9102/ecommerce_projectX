@@ -8,7 +8,6 @@ import { useContext } from 'react';
 
 function AdministratorProducts() {
    const { isAuthAdmin } = useContext(AdminContext)
-
    const navigate = useNavigate()
 
    const handleLogoutAdmin = (e) => {

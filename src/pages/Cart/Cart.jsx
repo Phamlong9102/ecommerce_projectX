@@ -8,15 +8,14 @@ import _ from 'lodash';
 import axios from 'axios';
 
 function Cart() {
-   const { cartItems, setCartItems, getCartItems } = useContext(AppContext);
-   const { dataContext, setDataContext, isAuth } = useContext(ClickGetDataContext);
+   const { cartItems, setCartItems } = useContext(AppContext);
+   const { setDataContext, isAuth } = useContext(ClickGetDataContext);
    const [groupedItems, setGroupedItem] = useState();
    const [totalPrice, setTotalPrice] = useState(0);
    const initialValues = { name: "", address: "", phoneNumber: "" }
    const [formValues, setFormValues] = useState(initialValues)
    const [formErrors, setFormErrors] = useState({})
    const [isSubmit, setIsSubmit] = useState(false)
-
    const navigate = useNavigate();
 
    const getUserInfo = (e) => {

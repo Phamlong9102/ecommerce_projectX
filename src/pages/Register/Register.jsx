@@ -8,7 +8,6 @@ function Register() {
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false)
-
     const navigate = useNavigate();
 
     // Get values of 4 field

@@ -9,7 +9,7 @@ import { useContext, useEffect, useState } from 'react';
 import _ from 'lodash';
 
 function ProductPopper() {
-   const { cartItems, setCartItems } = useContext(AppContext);
+   const { cartItems } = useContext(AppContext);
    const [groupedItems, setGroupedItem] = useState();
    const [itemLength, setItemLength] = useState(0);
    const [totalPrice, setTotalPrice] = useState(0);
@@ -43,10 +43,8 @@ function ProductPopper() {
       let newGroupeditems = [...groupedItems]
       newGroupeditems.splice(index, 1)
       setGroupedItem(newGroupeditems);
-
       let getCurrentItems = JSON.parse(localStorage.getItem('dataProduct'))
       let getCurrentItemsUser = JSON.parse(localStorage.getItem('dataUser'))
-
       if (getCurrentItems) {
          getCurrentItems = [{ ...getCurrentItems[0], cartItems: [...newGroupeditems] }]
          localStorage.setItem('dataProduct', JSON.stringify(getCurrentItems))

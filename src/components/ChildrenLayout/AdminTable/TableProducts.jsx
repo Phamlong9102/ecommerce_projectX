@@ -123,7 +123,6 @@ export default function FullFeaturedCrudGrid() {
             .catch((err) => {
                console.log('Err', err)
             })
-
          return newRow;
       }
    };
