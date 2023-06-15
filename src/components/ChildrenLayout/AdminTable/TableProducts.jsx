@@ -10,42 +10,46 @@ import { GridRowModes, GridToolbarContainer, GridActionsCellItem } from '@mui/x-
 import { DataGrid } from '@mui/x-data-grid';
 import { randomId } from '@mui/x-data-grid-generator';
 
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-
-
-
 
 export default function FullFeaturedCrudGrid() {
    const [rows, setRows] = useState([]);
    const [rowModesModel, setRowModesModel] = useState({});
-   const initialValues = { id: "", name: "", price: "", imageURL: "", classify: "", category: "" }
+   const initialValues = { id: '', name: '', price: '', imageURL: '', classify: '', category: '' };
 
    useEffect(() => {
-      axios.get('https://630ed147379256341881df89.mockapi.io/products')
-         .then(res => {
+      axios
+         .get('https://630ed147379256341881df89.mockapi.io/products')
+         .then((res) => {
             const data = res.data.map((product) => {
                return {
-                  "id": product.id,
-                  "name": product.name,
-                  "price": product.price,
-                  "imageURL": product.imageURL,
-                  "classify": product.classify,
-                  "category": product.category
-               }
-            })
-            setRows(data)
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                  imageURL: product.imageURL,
+                  classify: product.classify,
+                  category: product.category,
+               };
+            });
+            setRows(data);
          })
-         .catch(err => { console.log('Error:', err) })
-   }, [])
+         .catch((err) => {
+            console.log('Error:', err);
+         });
+   }, []);
    const [action, setAction] = useState('');
    const EditToolbar = () => {
       const handleAddProduct = () => {
-         setAction('add')
+         setAction('add');
          let id = randomId();
-         setRows((oldRows) => [...oldRows, {
-            ...initialValues, id: id
-         }]);
+         setRows((oldRows) => [
+            ...oldRows,
+            {
+               ...initialValues,
+               id: id,
+            },
+         ]);
          setRowModesModel((oldModel) => ({
             ...oldModel,
             [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
@@ -54,33 +58,33 @@ export default function FullFeaturedCrudGrid() {
 
       return (
          <GridToolbarContainer>
-            <Button sx={{ color: '#000', }} startIcon={<AddIcon />} onClick={handleAddProduct}>
+            <Button sx={{ color: '#000' }} startIcon={<AddIcon />} onClick={handleAddProduct}>
                Add Product
             </Button>
          </GridToolbarContainer>
       );
-   }
+   };
 
    const handleEditClick = (id) => () => {
-      setAction('edit')
+      setAction('edit');
       setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
    };
 
    const handleDeleteClick = (id) => () => {
       axios
          .delete(`https://630ed147379256341881df89.mockapi.io/products/${id}`)
-         .then(res => {
-            console.log(res)
-            setRows(rows.filter((row) => row.id !== id))
+         .then((res) => {
+            console.log(res);
+            setRows(rows.filter((row) => row.id !== id));
          })
          .catch((err) => {
             console.log('Error =', err);
-            return
+            return;
          });
    };
 
    const handleCancelClick = (id) => () => {
-      localStorage.removeItem('adminEdit')
+      localStorage.removeItem('adminEdit');
       setRowModesModel({
          ...rowModesModel,
          [id]: { mode: GridRowModes.View, ignoreModifications: true },
@@ -92,37 +96,37 @@ export default function FullFeaturedCrudGrid() {
    };
 
    const handleSaveClick = (id) => () => {
-      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } })
+      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
    };
 
    const processRowUpdate = (newRow) => {
-      console.log(newRow)
-      console.log({ action })
+      console.log(newRow);
+      console.log({ action });
       if (action === 'add') {
          axios
             .post('https://630ed147379256341881df89.mockapi.io/products', { ...newRow })
-            .then(res => {
-               console.log(res)
+            .then((res) => {
+               console.log(res);
                setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
-               setAction('')
+               setAction('');
             })
             .catch((err) => {
-               console.log('Err', err)
-            })
+               console.log('Err', err);
+            });
          return newRow;
       }
       if (action === 'edit') {
-         let id = newRow.id
+         let id = newRow.id;
          axios
             .put(`https://630ed147379256341881df89.mockapi.io/products/${id}`, { ...newRow })
-            .then(res => {
-               console.log(res)
+            .then((res) => {
+               console.log(res);
                setRows(rows.map((row) => (row.id === newRow.id ? newRow : row)));
-               setAction('')
+               setAction('');
             })
             .catch((err) => {
-               console.log('Err', err)
-            })
+               console.log('Err', err);
+            });
          return newRow;
       }
    };
@@ -215,7 +219,7 @@ export default function FullFeaturedCrudGrid() {
       >
          <DataGrid
             onProcessRowUpdateError={(err) => {
-               console.log(err)
+               console.log(err);
             }}
             rows={rows}
             columns={columns}

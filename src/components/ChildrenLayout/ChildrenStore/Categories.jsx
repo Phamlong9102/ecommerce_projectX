@@ -1,14 +1,13 @@
 import NewLook from '~/images/NewLook/NewLook.jpg';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 function Categories({ defaultData, setData }) {
    const handleClick = (value) => {
       const cloneData = [...defaultData];
-      const newArr = cloneData.filter(item => {
-         return item.category === value
-      })
-      setData(() => [...newArr])
-   }
+      const newArr = cloneData.filter((item) => {
+         return item.category === value;
+      });
+      setData(() => [...newArr]);
+   };
 
    return (
       <>

@@ -1,7 +1,6 @@
-import TabPanelForClutchBag from '~/components/ChildrenLayout/ChildOfProduct/TabPanelForClutchBag';
 import RelatedProduct from '~/components/ChildrenLayout/ProductPageChildren/RelatedProduct';
 import ProductPageChildren from '~/components/ChildrenLayout/ProductPageChildren/ProductPageChildren';
-import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel'
+import TabPanel from '~/components/ChildrenLayout/ChildOfProduct/TabPanel';
 
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';

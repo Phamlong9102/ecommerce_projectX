@@ -66,61 +66,42 @@ function HomeLogIn() {
          const result = await axios('https://630ed147379256341881df89.mockapi.io/products');
          setData(result.data);
       };
-      fetchData();   
+      fetchData();
    }, []);
 
    return (
       <>
          {/* Carousel carousel */}
-         <div className="hidden xl:block select-none mt-9 mx-[52px] selection-default">
+         <div className="hidden xl:flex justify-center select-none mt-9 mx-[52px] selection-default">
             <div id="carouselExampleControls" className="carousel slide relative" data-bs-ride="carousel">
                <div className="carousel-inner relative w-full overflow-hidden">
                   <div className="carousel-item active relative float-left w-full">
                      <img className="relative h-fit block w-fit" src={PinkBackGround} alt="Wild Landscape" />
-                     <img className="absolute top-[19%] left-[calc(10%)] w-[12%]" src={ElementSlide1} alt="" />
+                     <img className="absolute top-[19%] left-[calc(10%)] w-[12%]" src={ElementSlide1} />
                      <div>
                         <span className="absolute top-[26%] w-[14%] left-[15%] font-bold text-[150px] text-white font-[Poppins]">
                            Jumpsuits
                         </span>
                      </div>
-                     <img className="absolute left-[47%] top-[-4%] w-[21%]" src={ElementSlide2} alt="" />
+                     <img className="absolute left-[47%] top-[-4%] w-[21%]" src={ElementSlide2} />
                   </div>
                   <div className="carousel-item relative float-left w-full">
                      <img className="max-h-[522px] block w-full" src={BlueBackGround} alt="Camera" />
-                     <img className="absolute top-[-5%] left-[8%] w-[40%]" src={ElementSlide3} alt="" />
-                     <img className="absolute left-[70%] top-[8%] w-[10%]" src={ElementSlide4} alt="" />
+                     <img className="absolute top-[-5%] left-[8%] w-[40%]" src={ElementSlide3} />
+                     <img className="absolute left-[70%] top-[8%] w-[10%]" src={ElementSlide4} />
                      <div className="absolute top-[26%] left-[18%]">
                         <span className=" font-bold text-[160px] text-white font-[Poppins]">-50% Off</span>
                      </div>
                   </div>
                   <div className="carousel-item relative float-left w-full">
                      <img className="max-h-[522px] block w-full" src={PinkBackGround} alt="Exotic Fruits" />
-                     <img className="absolute top-[15%] left-[12%] w-[9%]" src={ElementSlide5} alt="" />
+                     <img className="absolute top-[15%] left-[12%] w-[9%]" src={ElementSlide5} />
                      <div className="absolute top-[26%] left-[18%]">
                         <span className=" font-bold text-[160px] text-white font-[Poppins]">New look</span>
                      </div>
-                     <img className="absolute left-[46%] top-[-11%] w-[40%]" src={ElementSlide6} alt="" />
+                     <img className="absolute left-[46%] top-[-11%] w-[40%]" src={ElementSlide6} />
                   </div>
                </div>
-
-               {/* <button
-                  className="w-[62px] h-[62px] bg-black opacity-100 hover:opacity-100 carousel-control-prev absolute top-[44%] right-[calc(5%-1px)] flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline"
-                  type="button"
-                  data-bs-target="#carouselExampleControls"
-                  data-bs-slide="prev"
-               >
-                  <span className="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                  <span className="visually-hidden">Previous</span>
-               </button>
-               <button
-                  className="w-[62px] h-[62px] bg-black opacity-100 hover:opacity-100 carousel-control-next absolute top-[44%] right-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline"
-                  type="button"
-                  data-bs-target="#carouselExampleControls"
-                  data-bs-slide="next"
-               >
-                  <span className="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                  <span className="visually-hidden">Next</span>
-               </button> */}
 
                <div className="absolute bottom-[5%] flex text-[15px] font-[Poppins] ">
                   <div className="ml-8">
@@ -165,19 +146,19 @@ function HomeLogIn() {
                   modules={[Navigation]}
                >
                   <SwiperSlide>
-                     <img className="relative" src={ProductsDemo03} alt="" />
+                     <img className="relative" src={ProductsDemo03} />
                      <div className="absolute top-[3%] left-[5%]">
                         <span className="price-products-demo">$350.00</span>
                      </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                     <img className="relative" src={ProductsDemo02} alt="" />
+                     <img className="relative" src={ProductsDemo02} />
                      <div className="absolute top-[3%] left-[5%]">
                         <span className="price-products-demo">$230.00</span>
                      </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                     <img className="relative" src={ProductsDemo01} alt="" />
+                     <img className="relative" src={ProductsDemo01} />
                      <div className="absolute top-[3%] left-[5%]">
                         <span className="price-products-demo">$270.00</span>
                      </div>
@@ -186,14 +167,14 @@ function HomeLogIn() {
             </div>
 
             <div className="max-w-[284px] ml-[90px] mt-[146px]">
-               <img src={ProductsDemo04} alt="" />
+               <img src={ProductsDemo04} />
             </div>
          </div>
 
          {/* Products Demo 2 */}
          <div className="hidden xl:flex justify-center selection-default">
             <div className="select-none mr-[90px] mt-[134px] pl-[144px]">
-               <img className="h-[282px] " src={ProductsDemo05} alt="" />
+               <img className="h-[282px] " src={ProductsDemo05} />
             </div>
 
             <div className="relative max-w-[358px] ml-[90px]">
@@ -217,19 +198,19 @@ function HomeLogIn() {
                   modules={[Navigation]}
                >
                   <SwiperSlide>
-                     <img className="relative" src={ProductsDemo06} alt="" />
+                     <img className="relative" src={ProductsDemo06} />
                      <div className="absolute top-[3%] left-[5%]">
                         <span className="price-products-demo">$250.00</span>
                      </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                     <img className="relative" src={ProductsDemo07} alt="" />
+                     <img className="relative" src={ProductsDemo07} />
                      <div className="absolute top-[3%] left-[5%]">
                         <span className="price-products-demo">$550.00</span>
                      </div>
                   </SwiperSlide>
                   <SwiperSlide>
-                     <img className="relative" src={ProductsDemo08} alt="" />
+                     <img className="relative" src={ProductsDemo08} />
                      <div className="absolute top-[3%] left-[5%]">
                         <span className="price-products-demo">$130.00</span>
                      </div>
@@ -269,19 +250,19 @@ function HomeLogIn() {
          <div className="hidden lg:flex mt-[122px] select-none justify-center selection-default">
             <div className="relative bg-test min-w-[1347px] min-h-[700px]">
                <div className="absolute right-0">
-                  <img className="max-w-[650px] min-h-[690px]" src={banner01} alt="" />
+                  <img className="max-w-[650px] min-h-[690px]" src={banner01} />
                </div>
                <div className="absolute left-0 top-[8%]">
-                  <img className="w-[1246px] h-[586px]" src={banner02} alt="" />
+                  <img className="w-[1246px] h-[586px]" src={banner02} />
                </div>
                <div className="absolute left-[2%] top-[8%]">
-                  <img className="w-[82%]" src={banner03} alt="" />
+                  <img className="w-[82%]" src={banner03} />
                </div>
                <div className="absolute right-[32%] top-[24%]">
-                  <img className="w-[82%]" src={banner04} alt="" />
+                  <img className="w-[82%]" src={banner04} />
                </div>
                <div className="absolute left-[40%] top-[8%]">
-                  <img className="w-[87%]" src={banner05} alt="" />
+                  <img className="w-[87%]" src={banner05} />
                </div>
                <div className="absolute top-[32%] right-[10%]">
                   <Link className="flex flex-col banner-text" to="/">
@@ -378,26 +359,26 @@ function HomeLogIn() {
                      freeMode={true}
                      modules={[FreeMode, Autoplay]}
                   >
-                     <SwiperSlide className="">
-                        <img className="" src={brand01} alt="" />
+                     <SwiperSlide>
+                        <img src={brand01} />
                      </SwiperSlide>
-                     <SwiperSlide className="">
-                        <img className="" src={brand02} alt="" />
+                     <SwiperSlide>
+                        <img src={brand02} />
                      </SwiperSlide>
-                     <SwiperSlide className="">
-                        <img className="" src={brand03} alt="" />
+                     <SwiperSlide>
+                        <img src={brand03} />
                      </SwiperSlide>
-                     <SwiperSlide className="">
-                        <img className="" src={brand04} alt="" />
+                     <SwiperSlide>
+                        <img src={brand04} />
                      </SwiperSlide>
-                     <SwiperSlide className="">
-                        <img className="" src={brand05} alt="" />
+                     <SwiperSlide>
+                        <img src={brand05} />
                      </SwiperSlide>
-                     <SwiperSlide className="">
-                        <img className="" src={brand06} alt="" />
+                     <SwiperSlide>
+                        <img src={brand06} />
                      </SwiperSlide>
-                     <SwiperSlide className="">
-                        <img className="" src={brand07} alt="" />
+                     <SwiperSlide>
+                        <img src={brand07} />
                      </SwiperSlide>
                   </Swiper>
                </div>
@@ -409,7 +390,7 @@ function HomeLogIn() {
             <div className="bg-test relative w-[1347px] h-[600px]">
                <div className="absolute top-0 left-[4%] bg-[#ecf4fa] w-[684px] h-[500px]">
                   <div className="absolute top-[-14%] left-[9%]">
-                     <img className="w-[83%]" src={TimeToShine01} alt="" />
+                     <img className="w-[83%]" src={TimeToShine01} />
                   </div>
                </div>
 
@@ -446,7 +427,7 @@ function HomeLogIn() {
          <div className="mt-[60px] select-none flex justify-center selection-default">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[50px] sm:gap-x-[30px]">
                <div className="relative cursor-pointer mx-[8px]">
-                  <img className="w-full max-h-[342px]" src={FashionBlog01} alt="" />
+                  <img className="w-full max-h-[342px]" src={FashionBlog01} />
                   <div className="absolute top-[calc(8%-2px)] left-[-15%] w-[114px] h-[40px] bg-white text-black leading-[40px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">September 9</span>
                   </div>
@@ -460,7 +441,7 @@ function HomeLogIn() {
                   </div>
                </div>
                <div className="relative cursor-pointer mx-[8px]">
-                  <img className="w-full max-h-[342px]" src={FashionBlog02} alt="" />
+                  <img className="w-full max-h-[342px]" src={FashionBlog02} />
                   <div className="absolute top-[calc(8%-2px)] left-[-15%] w-[114px] h-[40px] bg-white text-black leading-[40px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">September 9</span>
                   </div>
@@ -474,7 +455,7 @@ function HomeLogIn() {
                   </div>
                </div>
                <div className="relative cursor-pointer mx-[8px]">
-                  <img className="w-full max-h-[342px]" src={FashionBlog03} alt="" />
+                  <img className="w-full max-h-[342px]" src={FashionBlog03} />
                   <div className="absolute top-[calc(8%-2px)] left-[-15%] w-[114px] h-[40px] bg-white text-black leading-[40px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">September 9</span>
                   </div>
@@ -488,7 +469,7 @@ function HomeLogIn() {
                   </div>
                </div>
                <div className="relative cursor-pointer mx-[8px]">
-                  <img className="w-full max-h-[342px]" src={FashionBlog04} alt="" />
+                  <img className="w-full max-h-[342px]" src={FashionBlog04} />
                   <div className="absolute top-[calc(8%-2px)] left-[-15%] w-[114px] h-[40px] bg-white text-black leading-[40px] text-center rotate-90">
                      <span className="head-tag-fashion-blog">September 9</span>
                   </div>
@@ -503,7 +484,6 @@ function HomeLogIn() {
                </div>
             </div>
          </div>
-
       </>
    );
 }
